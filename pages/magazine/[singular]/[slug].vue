@@ -1,10 +1,10 @@
 <template>
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+  <main class="mag-slug-main">
     <article v-if="content">
       <!-- Dynamic content rendering based on type -->
       <component :is="templateComponent" :content="content" />
     </article>
-    <div v-else class="text-center py-12">
+    <div v-else class="mag-slug-not-found">
       <p>Content not found</p>
     </div>
   </main>
@@ -179,3 +179,22 @@ watch(() => content.value, (newContent) => {
   }
 }, { immediate: true })
 </script>
+
+<style scoped>
+.mag-slug-main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+@media (max-width: 640px) {
+  .mag-slug-main {
+    padding: 2rem 1rem;
+  }
+}
+
+.mag-slug-not-found {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+</style>

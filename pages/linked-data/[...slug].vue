@@ -1,36 +1,36 @@
 <template>
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+  <main class="ld-main">
     <article v-if="content">
-      <div class="mb-12 pb-8 border-b border-accent">
-        <h1 class="font-serif text-5xl font-bold mb-4 leading-tight">{{ content.title }}</h1>
-        <div class="flex justify-between items-baseline">
+      <div class="ld-header">
+        <h1 class="ld-title">{{ content.title }}</h1>
+        <div class="ld-meta">
           <div>
-            <p v-if="content.author" class="text-muted text-sm mb-2">By <span class="font-bold">{{ content.author }}</span></p>
-            <p v-if="content.date" class="text-muted text-sm">{{ formatDate(content.date) }}</p>
+            <p v-if="content.author" class="ld-byline">By <span class="ld-author">{{ content.author }}</span></p>
+            <p v-if="content.date" class="ld-date">{{ formatDate(content.date) }}</p>
           </div>
-          <span v-if="content.category" class="bg-light text-xs px-3 py-1 font-sans">{{ content.category }}</span>
+          <span v-if="content.category" class="ld-category">{{ content.category }}</span>
         </div>
       </div>
 
       <!-- Linked Data Info -->
-      <div class="mb-12 pb-12 border-b-2 border-accent">
-        <h2 class="font-serif text-2xl font-bold mb-4">Graph Connections</h2>
-        <div v-if="connections" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="ld-connections-section">
+        <h2 class="ld-connections-title">Graph Connections</h2>
+        <div v-if="connections" class="ld-connections-grid">
           <div v-if="connections.authors?.length">
-            <h3 class="font-bold mb-2">Authors ({{ connections.authors.length }})</h3>
-            <ul class="text-sm space-y-1">
+            <h3 class="ld-connection-heading">Authors ({{ connections.authors.length }})</h3>
+            <ul class="ld-connection-list">
               <li v-for="author in connections.authors" :key="author">{{ author }}</li>
             </ul>
           </div>
           <div v-if="connections.categories?.length">
-            <h3 class="font-bold mb-2">Categories ({{ connections.categories.length }})</h3>
-            <ul class="text-sm space-y-1">
+            <h3 class="ld-connection-heading">Categories ({{ connections.categories.length }})</h3>
+            <ul class="ld-connection-list">
               <li v-for="cat in connections.categories" :key="cat">{{ cat }}</li>
             </ul>
           </div>
           <div v-if="connections.tags?.length">
-            <h3 class="font-bold mb-2">Tags ({{ connections.tags.length }})</h3>
-            <ul class="text-sm space-y-1">
+            <h3 class="ld-connection-heading">Tags ({{ connections.tags.length }})</h3>
+            <ul class="ld-connection-list">
               <li v-for="tag in connections.tags" :key="tag">{{ tag }}</li>
             </ul>
           </div>
@@ -38,11 +38,11 @@
       </div>
 
       <!-- Content -->
-      <div class="prose prose-lg max-w-none mb-16">
+      <div class="ld-content">
         <ContentRenderer :value="content" />
       </div>
     </article>
-    <div v-else class="text-center py-12">
+    <div v-else class="ld-not-found">
       <p>Content not found</p>
     </div>
   </main>
@@ -107,13 +107,120 @@ watch(() => content.value, (newContent) => {
 </script>
 
 <style scoped>
-.border-accent {
-  border-color: #1a1a1a;
+.ld-main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
-.text-muted {
+
+@media (max-width: 640px) {
+  .ld-main {
+    padding: 2rem 1rem;
+  }
+}
+
+.ld-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.ld-title {
+  font-family: Georgia, Garamond, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.ld-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.ld-byline {
   color: #666666;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
 }
-.bg-light {
+
+.ld-author {
+  font-weight: 700;
+}
+
+.ld-date {
+  color: #666666;
+  font-size: 0.875rem;
+}
+
+.ld-category {
   background-color: #F5F5F5;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  font-family: Arial, sans-serif;
+}
+
+.ld-connections-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.ld-connections-title {
+  font-family: Georgia, Garamond, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.ld-connections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.ld-connection-heading {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ld-connection-list {
+  font-size: 0.875rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ld-content {
+  line-height: 1.7;
+  margin-bottom: 4rem;
+}
+
+.ld-content :deep(p) {
+  margin-bottom: 1.5rem;
+}
+
+.ld-content :deep(h2) {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.75rem;
+}
+
+.ld-content :deep(ul) {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.ld-content :deep(ul li) {
+  margin-bottom: 0.5rem;
+}
+
+.ld-not-found {
+  text-align: center;
+  padding: 3rem 1rem;
 }
 </style>

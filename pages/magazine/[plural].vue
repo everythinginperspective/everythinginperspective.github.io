@@ -1,29 +1,29 @@
 <template>
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-    <div class="mb-12">
-      <h1 class="font-serif text-5xl font-bold mb-4 capitalize">{{ contentType?.plural }}</h1>
-      <p class="text-muted text-lg">Browse all {{ contentType?.plural }}</p>
+  <main class="mag-main">
+    <div class="mag-header">
+      <h1 class="mag-title">{{ contentType?.plural }}</h1>
+      <p class="mag-subtitle">Browse all {{ contentType?.plural }}</p>
     </div>
 
     <!-- Filter UI -->
     <FilterUI :items="items || []" @filtered="filteredItems = $event" />
 
     <!-- Results count -->
-    <div class="mb-8">
-      <p class="text-sm text-muted">{{ filteredItems.length }} of {{ (items || []).length }} {{ contentType?.plural }} found</p>
+    <div class="mag-results-count">
+      <p>{{ filteredItems.length }} of {{ (items || []).length }} {{ contentType?.plural }} found</p>
     </div>
 
     <!-- Content Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="mag-grid">
       <div
         v-for="item in filteredItems"
         :key="item.path"
-        class="border border-accent p-6 hover:shadow-lg transition-shadow"
+        class="mag-card"
       >
         <NuxtLink :to="`/magazine/${contentType?.singular}/${item.slug || item.path?.split('/').pop()}`">
-          <h2 class="font-serif text-2xl font-bold mb-2">{{ item.title }}</h2>
-          <p v-if="item.description" class="text-muted text-sm mb-4">{{ item.description }}</p>
-          <div class="text-xs text-muted">
+          <h2 class="mag-card-title">{{ item.title }}</h2>
+          <p v-if="item.description" class="mag-card-description">{{ item.description }}</p>
+          <div class="mag-card-meta">
             <span v-if="item.author">By {{ item.author }}</span>
             <span v-if="item.date"> · {{ formatDate(item.date) }}</span>
           </div>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div v-if="filteredItems.length === 0" class="text-center py-12 text-muted">
+    <div v-if="filteredItems.length === 0" class="mag-no-results">
       <p>No {{ contentType?.plural }} found with the selected filters.</p>
     </div>
   </main>
@@ -80,13 +80,84 @@ useSeoMeta({
 </script>
 
 <style scoped>
-.border-accent {
-  border-color: #e5e5e5;
+.mag-main {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
-.border-accent:hover {
+
+.mag-header {
+  margin-bottom: 3rem;
+}
+
+.mag-title {
+  font-family: Georgia, Garamond, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+}
+
+.mag-subtitle {
+  color: #666666;
+  font-size: 1.125rem;
+}
+
+.mag-results-count {
+  margin-bottom: 2rem;
+}
+
+.mag-results-count p {
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.mag-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mag-card {
+  border: 1px solid #e5e5e5;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.mag-card:hover {
   border-color: #1a1a1a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-.text-muted {
+
+.mag-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.mag-card-title {
+  font-family: Georgia, Garamond, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.mag-card-description {
+  color: #666666;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.mag-card-meta {
+  font-size: 0.75rem;
+  color: #666666;
+}
+
+.mag-no-results {
+  text-align: center;
+  padding: 3rem 1rem;
   color: #666666;
 }
 </style>
