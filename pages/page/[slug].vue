@@ -1,12 +1,12 @@
 <template>
-  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+  <main class="page-main">
     <article v-if="page">
-      <h1 class="font-serif text-4xl font-bold mb-8">{{ page.title }}</h1>
-      <div class="prose prose-lg max-w-none">
+      <h1 class="page-title">{{ page.title }}</h1>
+      <div class="page-content">
         <ContentRenderer :value="page" />
       </div>
     </article>
-    <div v-else class="text-center py-12">
+    <div v-else class="not-found">
       <p>Page not found</p>
     </div>
   </main>
@@ -64,13 +64,51 @@ watch(() => page.value, (newPage) => {
 </script>
 
 <style scoped>
-.prose :deep(p) {
+.page-main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+@media (max-width: 640px) {
+  .page-main {
+    padding: 2rem 1rem;
+  }
+}
+
+.page-title {
+  font-family: Georgia, Garamond, serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.page-content {
+  line-height: 1.7;
+}
+
+.page-content :deep(p) {
   margin-bottom: 1.5rem;
   line-height: 1.7;
 }
-.prose :deep(h2) {
+
+.page-content :deep(h2) {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: 1.5rem;
+}
+
+.page-content :deep(ul) {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-content :deep(ul li) {
+  margin-bottom: 0.5rem;
+}
+
+.not-found {
+  text-align: center;
+  padding: 3rem 1rem;
 }
 </style>

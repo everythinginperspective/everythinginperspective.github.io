@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- Page Header -->
-    <div class="mb-12 pb-8 border-b border-accent">
-      <h1 class="font-serif text-4xl font-bold mb-4 leading-tight">{{ content.title }}</h1>
-      <p v-if="content.description" class="text-lg text-muted">{{ content.description }}</p>
+    <div class="page-header">
+      <h1 class="page-title">{{ content.title }}</h1>
+      <p v-if="content.description" class="page-description">{{ content.description }}</p>
     </div>
 
     <!-- Page Content -->
-    <div class="page-content prose prose-lg max-w-none">
+    <div class="page-content">
       <ContentRenderer :value="content" />
     </div>
   </div>
@@ -20,12 +20,25 @@ defineProps<{
 </script>
 
 <style scoped>
-.border-accent {
-  border-color: #1a1a1a;
+.page-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1a1a1a;
 }
-.text-muted {
+
+.page-title {
+  font-family: Georgia, Garamond, serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.page-description {
+  font-size: 1.125rem;
   color: #666666;
 }
+
 .page-content {
   line-height: 1.7;
 }

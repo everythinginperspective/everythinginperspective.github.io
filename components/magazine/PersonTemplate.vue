@@ -1,28 +1,28 @@
 <template>
   <div>
     <!-- Person Header -->
-    <div class="mb-12 text-center">
-      <div v-if="content.image" class="mb-6">
-        <img :src="content.image" :alt="content.title" class="w-32 h-32 rounded-full mx-auto object-cover" />
+    <div class="person-header">
+      <div v-if="content.image" class="person-image-wrapper">
+        <img :src="content.image" :alt="content.title" class="person-image" />
       </div>
-      <h1 class="font-serif text-4xl font-bold mb-2">{{ content.title }}</h1>
-      <p v-if="content.role" class="text-lg text-muted mb-4">{{ content.role }}</p>
-      <div v-if="content.social" class="flex justify-center gap-4 text-sm">
-        <a v-if="content.social.twitter" :href="content.social.twitter" class="text-accent hover:underline">Twitter</a>
-        <a v-if="content.social.linkedin" :href="content.social.linkedin" class="text-accent hover:underline">LinkedIn</a>
-        <a v-if="content.social.website" :href="content.social.website" class="text-accent hover:underline">Website</a>
+      <h1 class="person-title">{{ content.title }}</h1>
+      <p v-if="content.role" class="person-role">{{ content.role }}</p>
+      <div v-if="content.social" class="person-social">
+        <a v-if="content.social.twitter" :href="content.social.twitter" class="social-link">Twitter</a>
+        <a v-if="content.social.linkedin" :href="content.social.linkedin" class="social-link">LinkedIn</a>
+        <a v-if="content.social.website" :href="content.social.website" class="social-link">Website</a>
       </div>
     </div>
 
     <!-- Bio Content -->
-    <div class="person-content prose prose-lg max-w-none mb-16">
+    <div class="person-content">
       <ContentRenderer :value="content" />
     </div>
 
     <!-- Articles by this person (if available) -->
-    <div class="mt-16 pt-8 border-t border-accent">
-      <h3 class="font-serif text-xl font-bold mb-4">Contributions</h3>
-      <p class="text-sm text-muted">Articles and perspectives by {{ content.title }} will appear here.</p>
+    <div class="person-footer">
+      <h3 class="person-contributions-title">Contributions</h3>
+      <p class="person-contributions-text">Articles and perspectives by {{ content.title }} will appear here.</p>
     </div>
   </div>
 </template>
@@ -34,16 +34,73 @@ defineProps<{
 </script>
 
 <style scoped>
-.border-accent {
-  border-color: #1a1a1a;
+.person-header {
+  margin-bottom: 3rem;
+  text-align: center;
 }
-.text-accent {
-  color: #1a1a1a;
+
+.person-image-wrapper {
+  margin-bottom: 1.5rem;
 }
-.text-muted {
+
+.person-image {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  margin: 0 auto;
+  object-fit: cover;
+  display: block;
+}
+
+.person-title {
+  font-family: Georgia, Garamond, serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.person-role {
+  font-size: 1.125rem;
   color: #666666;
+  margin-bottom: 1rem;
 }
+
+.person-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.social-link {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+
 .person-content {
   line-height: 1.7;
+  margin-bottom: 4rem;
+}
+
+.person-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #1a1a1a;
+}
+
+.person-contributions-title {
+  font-family: Georgia, Garamond, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.person-contributions-text {
+  font-size: 0.875rem;
+  color: #666666;
 }
 </style>

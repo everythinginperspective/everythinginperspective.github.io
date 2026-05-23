@@ -1,6 +1,6 @@
 <template>
-  <div class="relative">
-    <div class="flex items-center gap-2">
+  <div class="search-wrapper">
+    <div class="search-input-wrapper">
       <input
         v-model="query"
         type="text"
@@ -21,21 +21,21 @@
 
     <!-- Search Results Dropdown -->
     <div v-if="showResults && (query.length > 0 || results.length > 0)" class="search-results">
-      <div v-if="query.length === 0" class="p-4 text-sm text-muted">
+      <div v-if="query.length === 0" class="search-placeholder">
         Type to search...
       </div>
-      <div v-else-if="results.length === 0" class="p-4 text-sm text-muted">
+      <div v-else-if="results.length === 0" class="search-placeholder">
         No results found for "{{ query }}"
       </div>
-      <div v-else class="max-h-96 overflow-y-auto">
+      <div v-else class="search-results-list">
         <div
           v-for="result in results.slice(0, 10)"
           :key="result.path"
           class="search-result-item"
           @click="navigateTo(result.path)"
         >
-          <div class="font-bold text-sm">{{ result.title }}</div>
-          <div class="text-xs text-muted line-clamp-2">{{ result.excerpt }}</div>
+          <div class="result-title">{{ result.title }}</div>
+          <div class="result-excerpt">{{ result.excerpt }}</div>
         </div>
       </div>
     </div>
@@ -92,6 +92,16 @@ const navigateTo = (path: string) => {
 </script>
 
 <style scoped>
+.search-wrapper {
+  position: relative;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .search-input {
   padding: 0.5rem 0.75rem;
   border: 1px solid #ddd;
@@ -132,6 +142,17 @@ const navigateTo = (path: string) => {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.search-placeholder {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.search-results-list {
+  max-height: 384px;
+  overflow-y: auto;
+}
+
 .search-result-item {
   padding: 0.75rem;
   border-bottom: 1px solid #f0f0f0;
@@ -142,11 +163,14 @@ const navigateTo = (path: string) => {
   background-color: #f9f9f9;
 }
 
-.text-muted {
-  color: #666666;
+.result-title {
+  font-weight: 700;
+  font-size: 0.875rem;
 }
 
-.line-clamp-2 {
+.result-excerpt {
+  font-size: 0.75rem;
+  color: #666666;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;

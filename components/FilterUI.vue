@@ -1,52 +1,47 @@
 <template>
-  <div class="filter-container mb-8">
-    <div class="flex flex-col md:flex-row gap-6">
+  <div class="filter-container">
+    <div class="filter-wrapper">
       <!-- Categories Filter -->
       <div v-if="uniqueCategories.length > 0" class="filter-group">
-        <h3 class="text-sm font-bold mb-3">Category</h3>
-        <div class="space-y-2">
-          <label v-for="cat in uniqueCategories" :key="cat" class="flex items-center cursor-pointer">
+        <h3 class="filter-title">Category</h3>
+        <div class="filter-options">
+          <label v-for="cat in uniqueCategories" :key="cat" class="filter-label">
             <input
               type="checkbox"
               :checked="selectedCategories.includes(cat)"
               @change="toggleCategory(cat)"
-              class="mr-2 cursor-pointer"
+              class="filter-checkbox"
             />
-            <span class="text-sm">{{ cat }}</span>
+            <span>{{ cat }}</span>
           </label>
         </div>
       </div>
 
       <!-- Authors Filter -->
       <div v-if="uniqueAuthors.length > 0" class="filter-group">
-        <h3 class="text-sm font-bold mb-3">Author</h3>
-        <div class="space-y-2">
-          <label v-for="author in uniqueAuthors" :key="author" class="flex items-center cursor-pointer">
+        <h3 class="filter-title">Author</h3>
+        <div class="filter-options">
+          <label v-for="author in uniqueAuthors" :key="author" class="filter-label">
             <input
               type="checkbox"
               :checked="selectedAuthors.includes(author)"
               @change="toggleAuthor(author)"
-              class="mr-2 cursor-pointer"
+              class="filter-checkbox"
             />
-            <span class="text-sm">{{ author }}</span>
+            <span>{{ author }}</span>
           </label>
         </div>
       </div>
 
       <!-- Tags Filter -->
       <div v-if="uniqueTags.length > 0" class="filter-group">
-        <h3 class="text-sm font-bold mb-3">Tags</h3>
-        <div class="flex flex-wrap gap-2">
+        <h3 class="filter-title">Tags</h3>
+        <div class="filter-tags">
           <button
             v-for="tag in uniqueTags"
             :key="tag"
             @click="toggleTag(tag)"
-            :class="[
-              'text-xs px-3 py-1 rounded border transition-colors',
-              selectedTags.includes(tag)
-                ? 'bg-black text-white border-black'
-                : 'bg-light border-accent text-black hover:border-black'
-            ]"
+            :class="selectedTags.includes(tag) ? 'filter-tag-active' : 'filter-tag'"
           >
             {{ tag }}
           </button>
@@ -55,10 +50,10 @@
     </div>
 
     <!-- Reset Button -->
-    <div v-if="hasActiveFilters" class="mt-4">
+    <div v-if="hasActiveFilters" class="filter-reset-wrapper">
       <button
         @click="resetFilters"
-        class="text-xs font-semibold text-muted hover:text-black transition-colors"
+        class="filter-reset-btn"
       >
         Clear All Filters
       </button>
@@ -188,6 +183,20 @@ const resetFilters = () => {
   padding: 1rem;
   border-radius: 0.375rem;
   border: 1px solid #e5e5e5;
+  margin-bottom: 2rem;
+}
+
+.filter-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .filter-wrapper {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
 }
 
 .filter-group {
@@ -195,15 +204,79 @@ const resetFilters = () => {
   min-width: 150px;
 }
 
-.bg-light {
+.filter-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.filter-checkbox {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-tag,
+.filter-tag-active {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-tag {
   background-color: #f5f5f5;
-}
-
-.border-accent {
   border-color: #e5e5e5;
+  color: #000000;
 }
 
-.text-muted {
+.filter-tag:hover {
+  border-color: #000000;
+}
+
+.filter-tag-active {
+  background-color: #000000;
+  border-color: #000000;
+  color: white;
+}
+
+.filter-reset-wrapper {
+  margin-top: 1rem;
+}
+
+.filter-reset-btn {
+  font-size: 0.75rem;
+  font-weight: 600;
   color: #666666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.filter-reset-btn:hover {
+  color: #000000;
 }
 </style>

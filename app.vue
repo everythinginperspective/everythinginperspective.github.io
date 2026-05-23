@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-stone-50 text-stone-900">
+  <div>
     <Header />
     <Breadcrumbs />
     <NuxtPage />
