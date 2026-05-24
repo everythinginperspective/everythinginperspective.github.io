@@ -84,16 +84,6 @@ defineProps<{
   margin-bottom: 4rem;
 }
 
-.book-content :deep(ul) {
-  margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
-  list-style: disc inside;
-}
-
-.book-content :deep(ul li) {
-  margin-bottom: 0.5rem;
-}
-
 .book-metadata {
   margin-top: 4rem;
   padding-top: 2rem;

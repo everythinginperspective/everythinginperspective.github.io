@@ -2,6 +2,7 @@
   <header>
     <!-- Hilltopads Banner Ad (optional) -->
     <div style="background-color: var(--stone-50); padding: 0.5rem 1rem;" v-html="hilltopadsScript"></div>
+    <Breadcrumbs />
     <div style="background-color: var(--stone-50); border-bottom: 1px solid var(--stone-200);">
       <div class="header-content">
         <div style="display: flex; justify-content: space-between; align-items: flex-start;">

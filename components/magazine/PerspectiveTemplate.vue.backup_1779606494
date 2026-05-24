@@ -120,16 +120,6 @@ const formatDate = (date: string) => {
   font-size: 2rem;
 }
 
-.perspective-content :deep(ul) {
-  margin-left: 1.5rem;
-  margin-bottom: 2rem;
-  list-style: disc inside;
-}
-
-.perspective-content :deep(ul li) {
-  margin-bottom: 0.5rem;
-}
-
 .perspective-footer {
   margin-top: 4rem;
   padding-top: 2rem;

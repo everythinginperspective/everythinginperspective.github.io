@@ -42,14 +42,4 @@ defineProps<{
 .page-content {
   line-height: 1.7;
 }
-
-.page-content :deep(ul) {
-  margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
-  list-style: disc inside;
-}
-
-.page-content :deep(ul li) {
-  margin-bottom: 0.5rem;
-}
 </style>
