@@ -1,5 +1,5 @@
-import { mergeProps, useSSRContext } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/vue/index.mjs';
-import { ssrRenderAttrs, ssrRenderSlot } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/vue/server-renderer/index.mjs';
+import { mergeProps, useSSRContext } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/vue/index.mjs';
+import { ssrRenderAttrs, ssrRenderSlot } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/vue/server-renderer/index.mjs';
 
 const _sfc_main = {
   __name: "ProsePre",

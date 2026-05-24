@@ -1,33 +1,33 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { createConsola } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/consola/dist/index.mjs';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, createError, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getRequestProtocol, getRequestHost, getQuery as getQuery$1, getResponseStatus, getCookie, setCookie, sanitizeStatusCode, removeResponseHeader, setHeader, getHeader, appendHeader, getRouterParam, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/h3/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withoutTrailingSlash, withLeadingSlash, withBase, withTrailingSlash, withoutLeadingSlash, joinRelativeURL, parsePath, decodePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/ufo/dist/index.mjs';
-import destr from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/destr/dist/index.mjs';
-import { createHooks } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/hookable/dist/index.mjs';
-import { createFetch, Headers as Headers$1 } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/ofetch/dist/node.mjs';
-import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/node-mock-http/dist/index.mjs';
-import { createStorage, defineDriver, prefixStorage, normalizeKey } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/fs.mjs';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { createConsola } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/consola/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, createError, sendRedirect, proxyRequest, getRequestHeader, setResponseHeaders, setResponseStatus, send, getRequestHeaders, setResponseHeader, appendResponseHeader, getRequestURL, getResponseHeader, getRequestProtocol, getRequestHost, getQuery as getQuery$1, getResponseStatus, getCookie, setCookie, sanitizeStatusCode, removeResponseHeader, setHeader, getHeader, appendHeader, getRouterParam, readBody, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/h3/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, hasProtocol, withHttps, withoutTrailingSlash, withLeadingSlash, withBase, withTrailingSlash, withoutLeadingSlash, joinRelativeURL, parsePath, decodePath, stringifyQuery, parseQuery, encodePath, stringifyParsedURL } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/ufo/dist/index.mjs';
+import destr from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/destr/dist/index.mjs';
+import { createHooks } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/hookable/dist/index.mjs';
+import { createFetch, Headers as Headers$1 } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/ofetch/dist/node.mjs';
+import { fetchNodeRequestHandler, callNodeRequestHandler } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/node-mock-http/dist/index.mjs';
+import { createStorage, defineDriver, prefixStorage, normalizeKey } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/fs.mjs';
 import crypto from 'node:crypto';
-import fsDriver from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/fs-lite.mjs';
-import lruCacheDriver from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/lru-cache.mjs';
-import { digest } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/nitropack/node_modules/ohash/dist/index.mjs';
-import { klona } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/klona/dist/index.mjs';
-import defu, { defuFn, defu as defu$1, createDefu } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/defu/dist/defu.mjs';
-import { snakeCase } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/scule/dist/index.mjs';
-import { getContext } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unctx/dist/index.mjs';
-import { toRouteMatcher, createRouter } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/radix3/dist/index.mjs';
-import { toValue } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/vue/index.mjs';
-import { parse } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/devalue/index.js';
-import { hash as hash$1 } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/node_modules/ohash/dist/index.mjs';
-import { createRouterMatcher } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/@nuxtjs/i18n/node_modules/vue-router/vue-router.node.mjs';
+import fsDriver from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/fs-lite.mjs';
+import lruCacheDriver from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/lru-cache.mjs';
+import { digest } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/nitropack/node_modules/ohash/dist/index.mjs';
+import { klona } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/klona/dist/index.mjs';
+import defu, { defuFn, defu as defu$1, createDefu } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/defu/dist/defu.mjs';
+import { snakeCase } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/scule/dist/index.mjs';
+import { getContext } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unctx/dist/index.mjs';
+import { toRouteMatcher, createRouter } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/radix3/dist/index.mjs';
+import { toValue } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/vue/index.mjs';
+import { parse } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/devalue/index.js';
+import { hash as hash$1 } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/node_modules/ohash/dist/index.mjs';
+import { createRouterMatcher } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/@nuxtjs/i18n/node_modules/vue-router/vue-router.node.mjs';
 import { promises } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { dirname, resolve as resolve$1 } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/pathe/dist/index.mjs';
-import { createFilter } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxtseo-shared/dist/utils.mjs';
-import { isAbsolute } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/@nuxt/content/node_modules/pathe/dist/index.mjs';
-import localAdapter from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/db0/dist/connectors/better-sqlite3.mjs';
+import { dirname, resolve as resolve$1 } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/pathe/dist/index.mjs';
+import { createFilter } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxtseo-shared/dist/utils.mjs';
+import { isAbsolute } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/@nuxt/content/node_modules/pathe/dist/index.mjs';
+import localAdapter from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/db0/dist/connectors/better-sqlite3.mjs';
 
-const serverAssets = [{"baseName":"server","dir":"/Volumes/B87P4/everythinginperspective_nuxt/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/Volumes/B95P4/everythinginperspective_nuxt/server/assets"}];
 
 const assets$1 = createStorage();
 
@@ -48,7 +48,7 @@ function normalizeFsKey (item) {
   return `${prefix}-${hash}`
 }
 
-const _47Volumes_47B87P4_47everythinginperspective_nuxt_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js = defineDriver(
+const _47Volumes_47B95P4_47everythinginperspective_nuxt_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js = defineDriver(
   /**
    * @param {{ base?: string }} opts
    */
@@ -78,12 +78,12 @@ const storage$1 = createStorage({});
 
 storage$1.mount('/assets', assets$1);
 
-storage$1.mount('internal:nuxt:prerender', _47Volumes_47B87P4_47everythinginperspective_nuxt_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js({"driver":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js","base":"/Volumes/B87P4/everythinginperspective_nuxt/.nuxt/cache/nitro/prerender"}));
+storage$1.mount('internal:nuxt:prerender', _47Volumes_47B95P4_47everythinginperspective_nuxt_47node_modules_47_64nuxt_47nitro_45server_47dist_47runtime_47utils_47cache_45driver_46js({"driver":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/@nuxt/nitro-server/dist/runtime/utils/cache-driver.js","base":"/Volumes/B95P4/everythinginperspective_nuxt/.nuxt/cache/nitro/prerender"}));
 storage$1.mount('data', fsDriver({"driver":"fsLite","base":"./.data/kv"}));
-storage$1.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Volumes/B87P4/everythinginperspective_nuxt","watchOptions":{"ignored":[null]}}));
-storage$1.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Volumes/B87P4/everythinginperspective_nuxt/server","watchOptions":{"ignored":[null]}}));
-storage$1.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Volumes/B87P4/everythinginperspective_nuxt/.nuxt"}));
-storage$1.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Volumes/B87P4/everythinginperspective_nuxt/.nuxt/cache"}));
+storage$1.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Volumes/B95P4/everythinginperspective_nuxt","watchOptions":{"ignored":[null]}}));
+storage$1.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Volumes/B95P4/everythinginperspective_nuxt/server","watchOptions":{"ignored":[null]}}));
+storage$1.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Volumes/B95P4/everythinginperspective_nuxt/.nuxt"}));
+storage$1.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Volumes/B95P4/everythinginperspective_nuxt/.nuxt/cache"}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage$1, base) : storage$1;
@@ -656,7 +656,7 @@ function _expandFromEnv(value) {
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
-    "buildId": "70a3ace9-db2f-4d6f-9880-af12b3f54c3b",
+    "buildId": "cc9dfe98-26fd-4332-8e50-3be7e739a4c6",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -739,77 +739,77 @@ const _inlineRuntimeConfig = {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/en.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/fr.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/de.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/es.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/it.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/pt.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/nl.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/zh.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/ja.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/__sitemap__/ar.xml": {
         "headers": {
           "Content-Type": "text/xml; charset=UTF-8",
           "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2026-05-15T22:54:54.465Z"
+          "X-Sitemap-Prerendered": "2026-05-24T07:42:39.294Z"
         }
       },
       "/_og/d/**": {
@@ -1248,7 +1248,7 @@ const _inlineRuntimeConfig = {
     },
     "localDatabase": {
       "type": "sqlite",
-      "filename": "/Volumes/B87P4/everythinginperspective_nuxt/.data/content/contents.sqlite"
+      "filename": "/Volumes/B95P4/everythinginperspective_nuxt/.data/content/contents.sqlite"
     },
     "integrityCheck": true
   },
@@ -1991,7 +1991,7 @@ function minifyChunk(chunk) {
   });
   return out;
 }
-const _8GGUsxU7kT0YDbcYUbeIXrVyOHObVvSMT9jQN7lPa0E = defineNitroPlugin((nitroApp) => {
+const _fC1UCQBPKmSUH_fCd8wzwGKyaAFxAzJnYt0WFas5E3k = defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook("render:html", (html) => {
     for (const arr of [html.head, html.bodyPrepend, html.body, html.bodyAppend]) {
       for (let i = 0; i < arr.length; i++)
@@ -2324,7 +2324,7 @@ function getSiteConfig(e, _options) {
 }
 
 const PRERENDER_NO_SSR_ROUTES$1 = /* @__PURE__ */ new Set(["/index.html", "/200.html", "/404.html"]);
-const _HZvGkPKgmMTpd2Mk3K1gmrmAzEThpRTSDuknAuiJno = defineNitroPlugin(async (nitroApp) => {
+const _A8y0MMHGzwXd4vlxSbkHXsGFGwgMtq4CoOxYyrFZsw = defineNitroPlugin(async (nitroApp) => {
   nitroApp.hooks.hook("render:html", async (ctx, { event }) => {
     const routeOptions = getRouteRules(event);
     const isIsland = process.env.NUXT_COMPONENT_ISLANDS && event.path.startsWith("/__nuxt_island");
@@ -2853,7 +2853,7 @@ async function resolveRobotsTxtContext(e, nitro = useNitroApp()) {
 }
 
 const PRERENDER_NO_SSR_ROUTES = /* @__PURE__ */ new Set(["/index.html", "/200.html", "/404.html"]);
-const _s8AZRtyyuDCvawDQ_vE2rMbngJ92j3C1PGF89OP51dg = defineNitroPlugin(async (nitroApp) => {
+const _zRZu4TpcNeYNZSZ6yr7x7e_tp0HQ8i13zFQLjnPYg8k = defineNitroPlugin(async (nitroApp) => {
   const { isNuxtContentV2, robotsDisabledValue, botDetection } = useRuntimeConfigNuxtRobots();
   if (botDetection !== false) {
     nitroApp._robotsPatternMap = createPatternMap();
@@ -3506,7 +3506,7 @@ function createNitroRouteRuleMatcher$2() {
   };
 }
 
-const componentNames = [{"hash":"","pascalName":"BlogPostTakumi","kebabName":"blog-post-takumi","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"takumi","propNames":[]},{"hash":"","pascalName":"BrutalistSatori","kebabName":"brutalist-satori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"DocsTakumi","kebabName":"docs-takumi","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"takumi","propNames":[]},{"hash":"","pascalName":"FrameSatori","kebabName":"frame-satori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"NuxtSatori","kebabName":"nuxt-satori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"NuxtSeoSatori","kebabName":"nuxt-seo-satori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"NuxtSeoTakumi","kebabName":"nuxt-seo-takumi","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"takumi","propNames":[]},{"hash":"","pascalName":"PergelSatori","kebabName":"pergel-satori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"ProductCardTakumi","kebabName":"product-card-takumi","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"takumi","propNames":[]},{"hash":"","pascalName":"SaaSSatori","kebabName":"saa-ssatori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"SimpleBlogSatori","kebabName":"simple-blog-satori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"UnJsSatori","kebabName":"un-js-satori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"WithEmojiSatori","kebabName":"with-emoji-satori","path":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]}];
+const componentNames = [{"hash":"","pascalName":"BlogPostTakumi","kebabName":"blog-post-takumi","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"takumi","propNames":[]},{"hash":"","pascalName":"BrutalistSatori","kebabName":"brutalist-satori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"DocsTakumi","kebabName":"docs-takumi","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"takumi","propNames":[]},{"hash":"","pascalName":"FrameSatori","kebabName":"frame-satori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"NuxtSatori","kebabName":"nuxt-satori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"NuxtSeoSatori","kebabName":"nuxt-seo-satori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"NuxtSeoTakumi","kebabName":"nuxt-seo-takumi","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"takumi","propNames":[]},{"hash":"","pascalName":"PergelSatori","kebabName":"pergel-satori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"ProductCardTakumi","kebabName":"product-card-takumi","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"takumi","propNames":[]},{"hash":"","pascalName":"SaaSSatori","kebabName":"saa-ssatori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"SimpleBlogSatori","kebabName":"simple-blog-satori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"UnJsSatori","kebabName":"un-js-satori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]},{"hash":"","pascalName":"WithEmojiSatori","kebabName":"with-emoji-satori","path":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/app/components/Templates/Community","category":"community","renderer":"satori","propNames":[]}];
 
 const RENDERER_SUFFIXES = ["satori", "browser", "takumi"];
 const RE_RENDERER_SUFFIX_DOT = /\.?(satori|browser|takumi)$/i;
@@ -3930,7 +3930,7 @@ function getPayloadFromHtml(html) {
   const match = String(html).match(PAYLOAD_REGEX);
   return match ? String(match[1]) : null;
 }
-const _GCKn7thj1_r2tsnOceKU5iQGVL1FQOhOg29LGNrwLU = defineNitroPlugin(async (nitro) => {
+const _RLNLwwn1pr3_1gq3Rv3lCGMXfmVtYTLsMJ0grdY_Js = defineNitroPlugin(async (nitro) => {
   const routeRuleMatcher = createNitroRouteRuleMatcher$2();
   nitro.hooks.hook("render:html", async (html, ctx) => {
     const { head, bodyAppend } = html;
@@ -4085,7 +4085,7 @@ var found$9 = "found";
 var by$9 = "By";
 var notFound$9 = "Not found";
 var readMore$9 = "Read More";
-const locale_en_46json_fa76968c = {
+const locale_en_46json_63102306 = {
 	home: home$9,
 	articles: articles$9,
 	perspectives: perspectives$9,
@@ -4122,7 +4122,7 @@ var found$8 = "found";
 var by$8 = "By";
 var notFound$8 = "Not found";
 var readMore$8 = "Read More";
-const locale_fr_46json_637ba10e = {
+const locale_fr_46json_7e822155 = {
 	home: home$8,
 	articles: articles$8,
 	perspectives: perspectives$8,
@@ -4159,7 +4159,7 @@ var found$7 = "found";
 var by$7 = "By";
 var notFound$7 = "Not found";
 var readMore$7 = "Read More";
-const locale_de_46json_969e0107 = {
+const locale_de_46json_4c363b9f = {
 	home: home$7,
 	articles: articles$7,
 	perspectives: perspectives$7,
@@ -4196,7 +4196,7 @@ var found$6 = "found";
 var by$6 = "By";
 var notFound$6 = "Not found";
 var readMore$6 = "Read More";
-const locale_es_46json_6b345c52 = {
+const locale_es_46json_f992d491 = {
 	home: home$6,
 	articles: articles$6,
 	perspectives: perspectives$6,
@@ -4233,7 +4233,7 @@ var found$5 = "found";
 var by$5 = "By";
 var notFound$5 = "Not found";
 var readMore$5 = "Read More";
-const locale_it_46json_08e8db69 = {
+const locale_it_46json_b17a1c40 = {
 	home: home$5,
 	articles: articles$5,
 	perspectives: perspectives$5,
@@ -4270,7 +4270,7 @@ var found$4 = "found";
 var by$4 = "By";
 var notFound$4 = "Not found";
 var readMore$4 = "Read More";
-const locale_pt_46json_37ff6206 = {
+const locale_pt_46json_c9c6d172 = {
 	home: home$4,
 	articles: articles$4,
 	perspectives: perspectives$4,
@@ -4307,7 +4307,7 @@ var found$3 = "found";
 var by$3 = "By";
 var notFound$3 = "Not found";
 var readMore$3 = "Read More";
-const locale_nl_46json_5ca8de1a = {
+const locale_nl_46json_afb617f8 = {
 	home: home$3,
 	articles: articles$3,
 	perspectives: perspectives$3,
@@ -4344,7 +4344,7 @@ var found$2 = "found";
 var by$2 = "By";
 var notFound$2 = "Not found";
 var readMore$2 = "Read More";
-const locale_zh_46json_1932ad6c = {
+const locale_zh_46json_f59c0033 = {
 	home: home$2,
 	articles: articles$2,
 	perspectives: perspectives$2,
@@ -4381,7 +4381,7 @@ var found$1 = "found";
 var by$1 = "By";
 var notFound$1 = "Not found";
 var readMore$1 = "Read More";
-const locale_ja_46json_7bc62a85 = {
+const locale_ja_46json_9abd9eb8 = {
 	home: home$1,
 	articles: articles$1,
 	perspectives: perspectives$1,
@@ -4418,7 +4418,7 @@ var found = "found";
 var by = "By";
 var notFound = "Not found";
 var readMore = "Read More";
-const locale_ar_46json_215c3443 = {
+const locale_ar_46json_e8e704ca = {
 	home: home,
 	articles: articles,
 	perspectives: perspectives,
@@ -4454,71 +4454,71 @@ const localeCodes =  [
 const localeLoaders = {
   en: [
     {
-      key: "locale_en_46json_fa76968c",
-      load: () => Promise.resolve(locale_en_46json_fa76968c),
+      key: "locale_en_46json_63102306",
+      load: () => Promise.resolve(locale_en_46json_63102306),
       cache: true
     }
   ],
   fr: [
     {
-      key: "locale_fr_46json_637ba10e",
-      load: () => Promise.resolve(locale_fr_46json_637ba10e),
+      key: "locale_fr_46json_7e822155",
+      load: () => Promise.resolve(locale_fr_46json_7e822155),
       cache: true
     }
   ],
   de: [
     {
-      key: "locale_de_46json_969e0107",
-      load: () => Promise.resolve(locale_de_46json_969e0107),
+      key: "locale_de_46json_4c363b9f",
+      load: () => Promise.resolve(locale_de_46json_4c363b9f),
       cache: true
     }
   ],
   es: [
     {
-      key: "locale_es_46json_6b345c52",
-      load: () => Promise.resolve(locale_es_46json_6b345c52),
+      key: "locale_es_46json_f992d491",
+      load: () => Promise.resolve(locale_es_46json_f992d491),
       cache: true
     }
   ],
   it: [
     {
-      key: "locale_it_46json_08e8db69",
-      load: () => Promise.resolve(locale_it_46json_08e8db69),
+      key: "locale_it_46json_b17a1c40",
+      load: () => Promise.resolve(locale_it_46json_b17a1c40),
       cache: true
     }
   ],
   pt: [
     {
-      key: "locale_pt_46json_37ff6206",
-      load: () => Promise.resolve(locale_pt_46json_37ff6206),
+      key: "locale_pt_46json_c9c6d172",
+      load: () => Promise.resolve(locale_pt_46json_c9c6d172),
       cache: true
     }
   ],
   nl: [
     {
-      key: "locale_nl_46json_5ca8de1a",
-      load: () => Promise.resolve(locale_nl_46json_5ca8de1a),
+      key: "locale_nl_46json_afb617f8",
+      load: () => Promise.resolve(locale_nl_46json_afb617f8),
       cache: true
     }
   ],
   zh: [
     {
-      key: "locale_zh_46json_1932ad6c",
-      load: () => Promise.resolve(locale_zh_46json_1932ad6c),
+      key: "locale_zh_46json_f59c0033",
+      load: () => Promise.resolve(locale_zh_46json_f59c0033),
       cache: true
     }
   ],
   ja: [
     {
-      key: "locale_ja_46json_7bc62a85",
-      load: () => Promise.resolve(locale_ja_46json_7bc62a85),
+      key: "locale_ja_46json_9abd9eb8",
+      load: () => Promise.resolve(locale_ja_46json_9abd9eb8),
       cache: true
     }
   ],
   ar: [
     {
-      key: "locale_ar_46json_215c3443",
-      load: () => Promise.resolve(locale_ar_46json_215c3443),
+      key: "locale_ar_46json_e8e704ca",
+      load: () => Promise.resolve(locale_ar_46json_e8e704ca),
       cache: true
     }
   ]
@@ -5549,7 +5549,7 @@ function createRedirectResponse(event, dest, code) {
     body: `<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=${dest.replace(/"/g, "%22")}"></head></html>`
   };
 }
-const _qjkZHVvkmymy9QCCYpfcu7hNUaZNvd853TM_etMPsDE = defineNitroPlugin(async (nitro) => {
+const _2iq5CzdTHl2rCBH6qfNi220DkGs81yL4GmD5rjy7J58 = defineNitroPlugin(async (nitro) => {
   const runtimeI18n = useRuntimeI18n();
   const rootRedirect = resolveRootRedirect(runtimeI18n.rootRedirect);
   runtimeI18n.defaultLocale || "";
@@ -5652,11 +5652,11 @@ const _qjkZHVvkmymy9QCCYpfcu7hNUaZNvd853TM_etMPsDE = defineNitroPlugin(async (ni
 });
 
 const plugins = [
-  _8GGUsxU7kT0YDbcYUbeIXrVyOHObVvSMT9jQN7lPa0E,
-_HZvGkPKgmMTpd2Mk3K1gmrmAzEThpRTSDuknAuiJno,
-_s8AZRtyyuDCvawDQ_vE2rMbngJ92j3C1PGF89OP51dg,
-_GCKn7thj1_r2tsnOceKU5iQGVL1FQOhOg29LGNrwLU,
-_qjkZHVvkmymy9QCCYpfcu7hNUaZNvd853TM_etMPsDE
+  _fC1UCQBPKmSUH_fCd8wzwGKyaAFxAzJnYt0WFas5E3k,
+_A8y0MMHGzwXd4vlxSbkHXsGFGwgMtq4CoOxYyrFZsw,
+_zRZu4TpcNeYNZSZ6yr7x7e_tp0HQ8i13zFQLjnPYg8k,
+_RLNLwwn1pr3_1gq3Rv3lCGMXfmVtYTLsMJ0grdY_Js,
+_2iq5CzdTHl2rCBH6qfNi220DkGs81yL4GmD5rjy7J58
 ];
 
 const assets = {};
@@ -5684,7 +5684,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _kQxHaP = eventHandler((event) => {
+const _FOF6PH = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -5751,7 +5751,7 @@ const _kQxHaP = eventHandler((event) => {
 const _SxA8c9 = defineEventHandler(() => {});
 
 const PORT_SUFFIX_RE = /:\d+$/;
-const _APFHMZ = eventHandler(async (e) => {
+const _C3TBPk = eventHandler(async (e) => {
   if (e.context._initedSiteConfig)
     return;
   const runtimeConfig = useRuntimeConfig(e);
@@ -5795,7 +5795,7 @@ const _APFHMZ = eventHandler(async (e) => {
   e.context._initedSiteConfig = true;
 });
 
-const _7OYNAq = defineEventHandler(async (e) => {
+const _5TiEap = defineEventHandler(async (e) => {
   const nitroApp = useNitroApp();
   const { indexable} = getSiteRobotConfig(e);
   const { credits, isNuxtContentV2, cacheControl } = useRuntimeConfigNuxtRobots(e);
@@ -5848,7 +5848,7 @@ const _7OYNAq = defineEventHandler(async (e) => {
   return hookCtx.robotsTxt;
 });
 
-const _Yd0t8t = defineEventHandler(async (e) => {
+const _NX_cEK = defineEventHandler(async (e) => {
   if (e.path === "/robots.txt" || e.path.startsWith("/__") || e.path.startsWith("/api") || e.path.startsWith("/_nuxt"))
     return;
   const nuxtRobotsConfig = useRuntimeConfigNuxtRobots(e);
@@ -5866,7 +5866,7 @@ const filters = new Map();
 
 const onUrlFns = new Map();
 
-const _pQl8oA = defineEventHandler(async (e) => {
+const _HdJ3DL = defineEventHandler(async (e) => {
   const collections = [];
   for (const collection in contentManifest) {
     if (contentManifest[collection].fields.sitemap)
@@ -5999,7 +5999,7 @@ function useSitemapRuntimeConfig(e) {
   return Object.freeze(clone);
 }
 
-const _to1iB6 = defineEventHandler(async (e) => {
+const _WGhI4w = defineEventHandler(async (e) => {
   const fixPath = createSitePathResolver(e, { absolute: false, withBase: true });
   const { sitemapName: fallbackSitemapName, cacheMaxAgeSeconds, version, xslColumns, xslTips } = useSitemapRuntimeConfig();
   setHeader(e, "Content-Type", "application/xslt+xml");
@@ -6896,7 +6896,7 @@ async function parseSitemapXml(xml) {
   if (!xml) {
     throw new Error("Empty XML input provided");
   }
-  const { XMLParser } = await import('file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/fast-xml-parser/src/fxp.js');
+  const { XMLParser } = await import('file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/fast-xml-parser/src/fxp.js');
   const parser = new XMLParser({
     isArray: (tagName) => ["url", "image", "video", "link", "tag", "price"].includes(tagName),
     removeNSPrefix: true,
@@ -7931,15 +7931,15 @@ async function sitemapChildXmlEventHandler(e) {
   return createSitemap(e, sitemapConfig, runtimeConfig);
 }
 
-const _omnzNW = defineEventHandler(sitemapXmlEventHandler);
+const _BkOn1T = defineEventHandler(sitemapXmlEventHandler);
 
-const _GBD0zM = defineEventHandler((e) => {
+const _yd5WUY = defineEventHandler((e) => {
   {
     return;
   }
 });
 
-const _9nVQ4N = eventHandler(async (event) => {
+const _WzE0Qq = eventHandler(async (event) => {
   const collection = getRouterParam(event, "collection") || event.path?.split("/")?.[2] || "";
   setHeader(event, "Content-Type", "text/plain");
   const data = await useStorage().getItem(`build:content:database.compressed.mjs`) || "";
@@ -8068,7 +8068,7 @@ const _messagesHandlerCached = defineCachedEventHandler(_cachedMessageLoader, {
   swr: false,
   getKey: (event) => [getRouterParam(event, "locale") ?? "null", getRouterParam(event, "hash") ?? "null"].join("-")
 });
-const _iQXyU7 = _messagesHandlerCached;
+const _ZD5fvH = _messagesHandlerCached;
 
 async function decompressSQLDump(base64Str, compressionType = "gzip") {
   let binaryData;
@@ -8359,7 +8359,7 @@ function cleanupQuery(query, options = { removeString: false }) {
   return result;
 }
 
-const _SnCLFE = eventHandler(async (event) => {
+const _BAR1H1 = eventHandler(async (event) => {
   const { sql } = await readBody(event);
   const collection = getRouterParam(event, "collection") || event.path?.split("/")?.[2] || "";
   assertSafeQuery(sql, collection);
@@ -8370,45 +8370,45 @@ const _SnCLFE = eventHandler(async (event) => {
   return loadDatabaseAdapter(conf).all(sql);
 });
 
-const _lazy_wbQLj0 = () => import('../routes/api/_type/_...slug_.mjs');
-const _lazy_8DbdRX = () => import('../routes/sitemap_index.xml.mjs');
-const _lazy_mkrgRi = () => import('../routes/__sitemap__/_sitemap_.xml.mjs');
-const _lazy_hamhGY = () => import('../routes/_og/d/image.mjs');
-const _lazy_s_PDuW = () => import('../routes/_og/r/resolve.mjs');
-const _lazy_yplF63 = () => import('../_/renderer2.mjs');
+const _lazy_kIRD6K = () => import('../routes/api/_type/_...slug_.mjs');
+const _lazy_6GLXii = () => import('../routes/sitemap_index.xml.mjs');
+const _lazy_xnZrZe = () => import('../routes/__sitemap__/_sitemap_.xml.mjs');
+const _lazy_NsSqxJ = () => import('../routes/_og/d/image.mjs');
+const _lazy_bhGs8G = () => import('../routes/_og/r/resolve.mjs');
+const _lazy_CA5bjT = () => import('../_/renderer2.mjs');
 
 const handlers = [
-  { route: '', handler: _kQxHaP, lazy: false, middleware: true, method: undefined },
-  { route: '/api/:type/**:slug', handler: _lazy_wbQLj0, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _FOF6PH, lazy: false, middleware: true, method: undefined },
+  { route: '/api/:type/**:slug', handler: _lazy_kIRD6K, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '', handler: _APFHMZ, lazy: false, middleware: true, method: undefined },
-  { route: '/robots.txt', handler: _7OYNAq, lazy: false, middleware: false, method: undefined },
-  { route: '', handler: _Yd0t8t, lazy: false, middleware: true, method: undefined },
-  { route: '/__sitemap__/nuxt-content-urls.json', handler: _pQl8oA, lazy: false, middleware: false, method: undefined },
-  { route: '/sitemap_index.xml', handler: _lazy_8DbdRX, lazy: true, middleware: false, method: undefined },
-  { route: '/__sitemap__/**:sitemap', handler: _lazy_mkrgRi, lazy: true, middleware: false, method: undefined },
-  { route: '/__sitemap__/style.xsl', handler: _to1iB6, lazy: false, middleware: false, method: undefined },
-  { route: '/sitemap.xml', handler: _omnzNW, lazy: false, middleware: false, method: undefined },
-  { route: '/_og/d/**', handler: _lazy_hamhGY, lazy: true, middleware: false, method: undefined },
-  { route: '/_og/s/**', handler: _lazy_hamhGY, lazy: true, middleware: false, method: undefined },
-  { route: '/_og/r/**', handler: _lazy_s_PDuW, lazy: true, middleware: false, method: undefined },
-  { route: '', handler: _GBD0zM, lazy: false, middleware: true, method: undefined },
-  { route: '/__nuxt_content/articles/sql_dump.txt', handler: _9nVQ4N, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/perspectives/sql_dump.txt', handler: _9nVQ4N, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/pages/sql_dump.txt', handler: _9nVQ4N, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/books/sql_dump.txt', handler: _9nVQ4N, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/people/sql_dump.txt', handler: _9nVQ4N, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/languages/sql_dump.txt', handler: _9nVQ4N, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/info/sql_dump.txt', handler: _9nVQ4N, lazy: false, middleware: false, method: undefined },
-  { route: '/_i18n/:hash/:locale/messages.json', handler: _iQXyU7, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/articles/query', handler: _SnCLFE, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/perspectives/query', handler: _SnCLFE, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/pages/query', handler: _SnCLFE, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/books/query', handler: _SnCLFE, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/people/query', handler: _SnCLFE, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/languages/query', handler: _SnCLFE, lazy: false, middleware: false, method: undefined },
-  { route: '/__nuxt_content/info/query', handler: _SnCLFE, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_yplF63, lazy: true, middleware: false, method: undefined }
+  { route: '', handler: _C3TBPk, lazy: false, middleware: true, method: undefined },
+  { route: '/robots.txt', handler: _5TiEap, lazy: false, middleware: false, method: undefined },
+  { route: '', handler: _NX_cEK, lazy: false, middleware: true, method: undefined },
+  { route: '/__sitemap__/nuxt-content-urls.json', handler: _HdJ3DL, lazy: false, middleware: false, method: undefined },
+  { route: '/sitemap_index.xml', handler: _lazy_6GLXii, lazy: true, middleware: false, method: undefined },
+  { route: '/__sitemap__/**:sitemap', handler: _lazy_xnZrZe, lazy: true, middleware: false, method: undefined },
+  { route: '/__sitemap__/style.xsl', handler: _WGhI4w, lazy: false, middleware: false, method: undefined },
+  { route: '/sitemap.xml', handler: _BkOn1T, lazy: false, middleware: false, method: undefined },
+  { route: '/_og/d/**', handler: _lazy_NsSqxJ, lazy: true, middleware: false, method: undefined },
+  { route: '/_og/s/**', handler: _lazy_NsSqxJ, lazy: true, middleware: false, method: undefined },
+  { route: '/_og/r/**', handler: _lazy_bhGs8G, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _yd5WUY, lazy: false, middleware: true, method: undefined },
+  { route: '/__nuxt_content/articles/sql_dump.txt', handler: _WzE0Qq, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/perspectives/sql_dump.txt', handler: _WzE0Qq, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/pages/sql_dump.txt', handler: _WzE0Qq, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/books/sql_dump.txt', handler: _WzE0Qq, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/people/sql_dump.txt', handler: _WzE0Qq, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/languages/sql_dump.txt', handler: _WzE0Qq, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/info/sql_dump.txt', handler: _WzE0Qq, lazy: false, middleware: false, method: undefined },
+  { route: '/_i18n/:hash/:locale/messages.json', handler: _ZD5fvH, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/articles/query', handler: _BAR1H1, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/perspectives/query', handler: _BAR1H1, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/pages/query', handler: _BAR1H1, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/books/query', handler: _BAR1H1, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/people/query', handler: _BAR1H1, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/languages/query', handler: _BAR1H1, lazy: false, middleware: false, method: undefined },
+  { route: '/__nuxt_content/info/query', handler: _BAR1H1, lazy: false, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_CA5bjT, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

@@ -1,37 +1,37 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defu } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/defu/dist/defu.mjs';
-import { withBase, withoutLeadingSlash } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/ufo/dist/index.mjs';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defu } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/defu/dist/defu.mjs';
+import { withBase, withoutLeadingSlash } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/ufo/dist/index.mjs';
 import { A as getNitroOrigin, u as useOgImageRuntimeConfig, o as useRuntimeConfig, B as fontArrayCache, g as logger, C as fontCache, l as logger$1, D as toBase64Image, d as useStorage, f as fetchIsland, E as withTimeout } from '../nitro/nitro.mjs';
-import { $fetch as $fetch$1 } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/ofetch/dist/node.mjs';
-import { getRequestHost } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/h3/dist/index.mjs';
+import { $fetch as $fetch$1 } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/ofetch/dist/node.mjs';
+import { getRequestHost } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/h3/dist/index.mjs';
 import { g as getFetchTimeout, r as resolvedFonts, a as applyEmojis } from './index.mjs';
 import { readFile } from 'node:fs/promises';
-import { join } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/node_modules/pathe/dist/index.mjs';
-import { parse, ELEMENT_NODE, TEXT_NODE } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/ultrahtml/dist/index.js';
-import { querySelector } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/ultrahtml/dist/selector.js';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/consola/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/destr/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/hookable/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/node-mock-http/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unstorage/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/fs.mjs';
+import { join } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/node_modules/pathe/dist/index.mjs';
+import { parse, ELEMENT_NODE, TEXT_NODE } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/ultrahtml/dist/index.js';
+import { querySelector } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/ultrahtml/dist/selector.js';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/consola/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/destr/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/hookable/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/node-mock-http/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unstorage/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/fs.mjs';
 import 'node:crypto';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/fs-lite.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/lru-cache.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/nitropack/node_modules/ohash/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/klona/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/scule/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unctx/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/radix3/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/vue/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/devalue/index.js';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/node_modules/ohash/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/@nuxtjs/i18n/node_modules/vue-router/vue-router.node.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/fs-lite.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unstorage/drivers/lru-cache.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/nitropack/node_modules/ohash/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/klona/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/scule/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unctx/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/radix3/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/vue/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/devalue/index.js';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/node_modules/ohash/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/@nuxtjs/i18n/node_modules/vue-router/vue-router.node.mjs';
 import 'node:fs';
 import 'node:url';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/pathe/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxtseo-shared/dist/utils.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/@nuxt/content/node_modules/pathe/dist/index.mjs';
-import 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/db0/dist/connectors/better-sqlite3.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/pathe/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxtseo-shared/dist/utils.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/@nuxt/content/node_modules/pathe/dist/index.mjs';
+import 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/db0/dist/connectors/better-sqlite3.mjs';
 
 function getCloudflareAssets(event) {
   const assets = event.context.cloudflare?.env?.ASSETS || event.context.ASSETS;
@@ -255,8 +255,8 @@ async function fetchWithRedirectValidation(initialUrl, opts) {
   }
 }
 
-const buildDir = "/Volumes/B87P4/everythinginperspective_nuxt/.nuxt";
-const rootDir = "/Volumes/B87P4/everythinginperspective_nuxt";
+const buildDir = "/Volumes/B95P4/everythinginperspective_nuxt/.nuxt";
+const rootDir = "/Volumes/B95P4/everythinginperspective_nuxt";
 
 let fontUrlMapping;
 async function loadFontUrlMapping() {

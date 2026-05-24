@@ -1,7 +1,7 @@
-import { createHead as createHead$1 } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unhead/dist/server.mjs';
-import { FlatMetaPlugin } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unhead/dist/plugins.mjs';
-import { walkResolver } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/unhead/dist/utils.mjs';
-import { isRef, toValue, hasInjectionContext, inject, ref, watchEffect, getCurrentInstance, onBeforeUnmount, onDeactivated, onActivated } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/vue/index.mjs';
+import { createHead as createHead$1 } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unhead/dist/server.mjs';
+import { FlatMetaPlugin } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unhead/dist/plugins.mjs';
+import { walkResolver } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/unhead/dist/utils.mjs';
+import { isRef, toValue, hasInjectionContext, inject, ref, watchEffect, getCurrentInstance, onBeforeUnmount, onDeactivated, onActivated } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/vue/index.mjs';
 
 const VueResolver = (_, value) => {
   return isRef(value) ? toValue(value) : value;

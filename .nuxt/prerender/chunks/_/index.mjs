@@ -1,4 +1,4 @@
-import { $fetch } from 'file:///Volumes/B87P4/everythinginperspective_nuxt/node_modules/ofetch/dist/node.mjs';
+import { $fetch } from 'file:///Volumes/B95P4/everythinginperspective_nuxt/node_modules/ofetch/dist/node.mjs';
 import { F as emojiCache } from '../nitro/nitro.mjs';
 
 const MIN_TIMEOUT_MS = 100;
@@ -9,7 +9,7 @@ function getFetchTimeout(runtimeConfig) {
   return value;
 }
 
-const resolvedFonts = [{"family":"Inter","src":"/_og-static-fonts/inter-400-latin.ttf","weight":400,"style":"normal","satoriSrc":"/_og-static-fonts/inter-400-latin.ttf","absolutePath":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/public/_og-fonts/inter-400-latin.ttf","fallback":true},{"family":"Inter","src":"/_og-static-fonts/inter-700-latin.ttf","weight":700,"style":"normal","satoriSrc":"/_og-static-fonts/inter-700-latin.ttf","absolutePath":"/Volumes/B87P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/public/_og-fonts/inter-700-latin.ttf","fallback":true}];
+const resolvedFonts = [{"family":"Inter","src":"/_og-static-fonts/inter-400-latin.ttf","weight":400,"style":"normal","satoriSrc":"/_og-static-fonts/inter-400-latin.ttf","absolutePath":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/public/_og-fonts/inter-400-latin.ttf","fallback":true},{"family":"Inter","src":"/_og-static-fonts/inter-700-latin.ttf","weight":700,"style":"normal","satoriSrc":"/_og-static-fonts/inter-700-latin.ttf","absolutePath":"/Volumes/B95P4/everythinginperspective_nuxt/node_modules/nuxt-og-image/dist/runtime/public/_og-fonts/inter-700-latin.ttf","fallback":true}];
 
 const EMOJI_CODEPOINT_TO_NAME = {
   // Faces - most popular
