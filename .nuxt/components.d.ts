@@ -16,8 +16,10 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 
 export const Breadcrumbs: typeof import("../components/Breadcrumbs.vue")['default']
 export const CarouselRow: typeof import("../components/CarouselRow.vue")['default']
+export const FeaturedArticle: typeof import("../components/FeaturedArticle.vue")['default']
 export const FilterUI: typeof import("../components/FilterUI.vue")['default']
 export const Footer: typeof import("../components/Footer.vue")['default']
+export const GridSection: typeof import("../components/GridSection.vue")['default']
 export const Header: typeof import("../components/Header.vue")['default']
 export const SearchBar: typeof import("../components/SearchBar.vue")['default']
 export const MagazineArticleTemplate: typeof import("../components/magazine/ArticleTemplate.vue")['default']
@@ -106,8 +108,10 @@ export const SchemaOrgSoftwareApp: typeof import("@unhead/schema-org/vue")['Sche
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const LazyBreadcrumbs: LazyComponent<typeof import("../components/Breadcrumbs.vue")['default']>
 export const LazyCarouselRow: LazyComponent<typeof import("../components/CarouselRow.vue")['default']>
+export const LazyFeaturedArticle: LazyComponent<typeof import("../components/FeaturedArticle.vue")['default']>
 export const LazyFilterUI: LazyComponent<typeof import("../components/FilterUI.vue")['default']>
 export const LazyFooter: LazyComponent<typeof import("../components/Footer.vue")['default']>
+export const LazyGridSection: LazyComponent<typeof import("../components/GridSection.vue")['default']>
 export const LazyHeader: LazyComponent<typeof import("../components/Header.vue")['default']>
 export const LazySearchBar: LazyComponent<typeof import("../components/SearchBar.vue")['default']>
 export const LazyMagazineArticleTemplate: LazyComponent<typeof import("../components/magazine/ArticleTemplate.vue")['default']>

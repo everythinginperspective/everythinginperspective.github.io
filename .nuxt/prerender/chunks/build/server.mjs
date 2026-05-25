@@ -604,28 +604,6 @@ const matcher = /* @__PURE__ */ (() => {
       r.unshift({ data: $0 });
     } else if (p === "/sitemap.xml") {
       r.unshift({ data: $1 });
-    } else if (p === "/sitemap_index.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/en.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/fr.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/de.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/es.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/it.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/pt.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/nl.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/zh.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/ja.xml") {
-      r.unshift({ data: $2 });
-    } else if (p === "/__sitemap__/ar.xml") {
-      r.unshift({ data: $2 });
     } else if (p === "/_nuxt") {
       r.unshift({ data: $2 });
     }
@@ -1099,61 +1077,61 @@ const _routes = [
     name: "index___en",
     path: "/",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___fr",
     path: "/fr",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___de",
     path: "/de",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___es",
     path: "/es",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___it",
     path: "/it",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___pt",
     path: "/pt",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___nl",
     path: "/nl",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___zh",
     path: "/zh",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___ja",
     path: "/ja",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "index___ar",
     path: "/ar",
     meta: __nuxt_page_meta$6 || {},
-    component: () => import('./index-BUIOhrlq.mjs')
+    component: () => import('./index-sg999VrK.mjs')
   },
   {
     name: "page-slug___en",
@@ -9276,13 +9254,9 @@ const ssg_detect_IpHCGcQQ_IR5Rl99qyukWoMA9fJGfuTYyoksTzy81cs = /* @__PURE__ */ d
   dependsOn: ["i18n:plugin", "i18n:plugin:route-locale-detect"],
   enforce: "post",
   setup(_nuxt) {
-    const nuxt = useNuxtApp(_nuxt._id);
-    const ctx = useNuxtI18nContext(nuxt);
-    nuxt.hook("app:mounted", async () => {
-      const detected = detectLocale(nuxt, nuxt.$router.currentRoute.value);
-      await nuxt.runWithContext(() => nuxt.$i18n.setLocale(detected));
-      ctx.initial = false;
-    });
+    {
+      return;
+    }
   }
 });
 const init_IycSiUTa0ooOjNElHE0EG94Rz0cZb4_bKuXwa_4z9aY = /* @__PURE__ */ defineNuxtPlugin({

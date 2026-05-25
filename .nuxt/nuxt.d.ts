@@ -1,5 +1,5 @@
-/// <reference types="@nuxt/content" />
 /// <reference types="@nuxtjs/seo" />
+/// <reference types="@nuxt/content" />
 /// <reference types="@nuxtjs/i18n" />
 /// <reference types="@nuxt/telemetry" />
 /// <reference path="types/nitro-layouts.d.ts" />

@@ -14,33 +14,47 @@
       <div class="rainbow-bar"></div>
     </section>
 
-    <!-- Carousel Sections -->
-    <CarouselRow 
+    <!-- Featured Article -->
+    <FeaturedArticle 
       v-if="articles.length > 0"
-      title="Latest Articles" 
-      :items="articles.slice(0, 6)"
+      :item="articles[0]"
       collection-type="articles"
     />
 
-    <CarouselRow 
+    <!-- Latest Articles Grid -->
+    <GridSection 
+      v-if="articles.length > 0"
+      title="Latest Articles" 
+      :items="articles.slice(1, 7)"
+      collection-type="articles"
+      view-all-link="/magazine/articles"
+    />
+
+    <!-- Perspectives Grid -->
+    <GridSection 
       v-if="perspectives.length > 0"
       title="Perspectives" 
       :items="perspectives.slice(0, 6)"
       collection-type="perspectives"
+      view-all-link="/magazine/perspectives"
     />
 
-    <CarouselRow 
+    <!-- People Grid -->
+    <GridSection 
       v-if="people.length > 0"
       title="People" 
       :items="people.slice(0, 6)"
       collection-type="people"
+      view-all-link="/magazine/people"
     />
 
-    <CarouselRow 
+    <!-- Languages Grid -->
+    <GridSection 
       v-if="languages.length > 0"
       title="Languages" 
       :items="languages.slice(0, 6)"
       collection-type="languages"
+      view-all-link="/magazine/languages"
     />
 
     <!-- Footer spacer -->

@@ -235,33 +235,6 @@
       ],
       "#content/local-adapter": [
         "./db0/connectors/better-sqlite3"
-      ],
-      "#og-image/renderers/satori": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
-      ],
-      "#og-image/renderers/browser": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
-      ],
-      "#og-image/renderers/takumi": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
-      ],
-      "#og-image/bindings/sharp": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
-      ],
-      "#og-image/bindings/resvg": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
-      ],
-      "#og-image/bindings/takumi": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
-      ],
-      "#og-image/bindings/satori": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
-      ],
-      "#og-image/bindings/browser": [
-        "../node_modules/nuxt-og-image/dist/runtime/mock/empty"
-      ],
-      "#og-image/yoga-wasm": [
-        "../node_modules/nuxt-og-image/dist/shared/satori/yoga.wasm?module"
       ]
     },
     "lib": [

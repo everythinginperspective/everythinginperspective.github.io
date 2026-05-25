@@ -16,8 +16,10 @@ type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {},
 interface _GlobalComponents {
   Breadcrumbs: typeof import("../../components/Breadcrumbs.vue")['default']
   CarouselRow: typeof import("../../components/CarouselRow.vue")['default']
+  FeaturedArticle: typeof import("../../components/FeaturedArticle.vue")['default']
   FilterUI: typeof import("../../components/FilterUI.vue")['default']
   Footer: typeof import("../../components/Footer.vue")['default']
+  GridSection: typeof import("../../components/GridSection.vue")['default']
   Header: typeof import("../../components/Header.vue")['default']
   SearchBar: typeof import("../../components/SearchBar.vue")['default']
   MagazineArticleTemplate: typeof import("../../components/magazine/ArticleTemplate.vue")['default']
@@ -106,8 +108,10 @@ interface _GlobalComponents {
   NuxtIsland: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
   LazyBreadcrumbs: LazyComponent<typeof import("../../components/Breadcrumbs.vue")['default']>
   LazyCarouselRow: LazyComponent<typeof import("../../components/CarouselRow.vue")['default']>
+  LazyFeaturedArticle: LazyComponent<typeof import("../../components/FeaturedArticle.vue")['default']>
   LazyFilterUI: LazyComponent<typeof import("../../components/FilterUI.vue")['default']>
   LazyFooter: LazyComponent<typeof import("../../components/Footer.vue")['default']>
+  LazyGridSection: LazyComponent<typeof import("../../components/GridSection.vue")['default']>
   LazyHeader: LazyComponent<typeof import("../../components/Header.vue")['default']>
   LazySearchBar: LazyComponent<typeof import("../../components/SearchBar.vue")['default']>
   LazyMagazineArticleTemplate: LazyComponent<typeof import("../../components/magazine/ArticleTemplate.vue")['default']>
