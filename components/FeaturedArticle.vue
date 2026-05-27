@@ -40,13 +40,23 @@ const formatDate = (date: string) => {
 
 const getItemLink = (item: any) => {
   const path = item._path || ''
-  const filename = path.split('/').pop() || ''
-  const slug = filename.replace(/\.md$/, '') // Remove .md extension
-  if (path.includes('articles')) return `/magazine/article/${slug}`
-  if (path.includes('perspectives')) return `/magazine/perspective/${slug}`
-  if (path.includes('people')) return `/magazine/person/${slug}`
-  if (path.includes('languages')) return `/magazine/language/${slug}`
-  return '/'
+  // path format: /articles/slug or articles/slug
+  const parts = path.split('/').filter(Boolean)
+  if (parts.length === 0) return '/'
+  const collection = parts[0] // articles, perspectives, people, languages, books, pages
+  const slug = parts[1]?.replace(/\.md$/, '') || ''
+  
+  const collectionMap: Record<string, string> = {
+    articles: 'article',
+    perspectives: 'perspective',
+    people: 'person',
+    languages: 'language',
+    books: 'book',
+    pages: 'page'
+  }
+  
+  const singular = collectionMap[collection]
+  return singular && slug ? `/magazine/${singular}/${slug}` : '/'
 }
 </script>
 
