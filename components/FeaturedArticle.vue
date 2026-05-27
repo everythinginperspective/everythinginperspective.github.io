@@ -40,11 +40,19 @@ const formatDate = (date: string) => {
 
 const getItemLink = (item: any) => {
   const path = item._path || ''
-  // path format: /articles/slug or articles/slug
+  // path format: /articles/slug.md or articles/articles/slug.md (Nuxt Content doubled path)
   const parts = path.split('/').filter(Boolean)
   if (parts.length === 0) return '/'
-  const collection = parts[0] // articles, perspectives, people, languages, books, pages
-  const slug = parts[1]?.replace(/\.md$/, '') || ''
+  
+  // Handle doubled articles/articles case from Nuxt Content
+  let collection = parts[0]
+  let slug = parts[1]?.replace(/\.md$/, '') || ''
+  
+  if (parts.length >= 3 && parts[0] === parts[1]) {
+    // Doubled path case: articles/articles/slug.md
+    collection = parts[0]
+    slug = parts[2]?.replace(/\.md$/, '') || ''
+  }
   
   const collectionMap: Record<string, string> = {
     articles: 'article',
