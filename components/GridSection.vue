@@ -56,12 +56,13 @@ const formatDate = (date: string) => {
 
 const getItemLink = (item: any) => {
   const path = item._path || ''
-  if (path.includes('articles')) return `/magazine/article/${item._id}`
-  if (path.includes('perspectives')) return `/magazine/perspective/${item._id}`
-  if (path.includes('people')) return `/magazine/person/${item._id}`
-  if (path.includes('languages')) return `/magazine/language/${item._id}`
-  if (path.includes('books')) return `/magazine/book/${item._id}`
-  if (path.includes('pages')) return `/magazine/page/${item._id}`
+  const slug = path.split('/').pop() || ''
+  if (path.includes('articles')) return `/magazine/article/${slug}`
+  if (path.includes('perspectives')) return `/magazine/perspective/${slug}`
+  if (path.includes('people')) return `/magazine/person/${slug}`
+  if (path.includes('languages')) return `/magazine/language/${slug}`
+  if (path.includes('books')) return `/magazine/book/${slug}`
+  if (path.includes('pages')) return `/magazine/page/${slug}`
   return '/'
 }
 </script>
