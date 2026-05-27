@@ -23,6 +23,11 @@ useHead({
   ],
   script: [
     {
+      async: true,
+      src: 'https://js.mbidadm.com/static/scripts.js',
+      'data-admpid': '442242'
+    },
+    {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',

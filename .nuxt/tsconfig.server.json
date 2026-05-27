@@ -114,10 +114,10 @@
         "../node_modules/nitropack"
       ],
       "#content/components": [
-        "./content/components"
+        "./content/components.ts"
       ],
       "#content/manifest": [
-        "./content/manifest"
+        "./content/manifest.ts"
       ],
       "#shared": [
         "../shared"
@@ -168,13 +168,13 @@
         "../node_modules/nuxt/dist/head/runtime/composables/v3"
       ],
       "#mdc-configs": [
-        "./mdc-configs"
+        "./mdc-configs.mjs"
       ],
       "#mdc-highlighter": [
-        "./mdc-highlighter"
+        "./mdc-highlighter.mjs"
       ],
       "#mdc-imports": [
-        "./mdc-imports"
+        "./mdc-imports.mjs"
       ],
       "#site-config": [
         "../node_modules/nuxt-site-config/dist/runtime"
@@ -228,7 +228,7 @@
         "../node_modules/@nuxtjs/robots/dist/runtime/server/composables/*"
       ],
       "#content/dump": [
-        "./content/database.compressed"
+        "./content/database.compressed.mjs"
       ],
       "#content/adapter": [
         "./db0/connectors/better-sqlite3"

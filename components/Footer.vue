@@ -35,6 +35,9 @@
       </div>
       <div class="footer-divider">
         <div style="padding: 1rem 0; margin-bottom: 1rem;" v-html="hilltopadsScript"></div>
+        <div class="mybid-banner">
+          <div data-banner-id="2022021"></div>
+        </div>
         <p class="footer-copyright">&copy; 2026 Everything in Perspective. All rights reserved.</p>
       </div>
     </div>
@@ -44,3 +47,10 @@
 <script setup lang="ts">
 const hilltopadsScript = '<script async src="//untimely-hello.com/bWX/V/s.d/Gslj0mYdWIcS/keTma9Mu/Z/Uxl/kkPMT/chw/MyjGA/yKNFTfM/tbNFzBA-yPMpDlId1pN-wT" referrerpolicy="no-referrer-when-downgrade"><\/script>'
 </script>
+
+<style scoped>
+.mybid-banner {
+  margin: 1rem 0;
+  text-align: center;
+}
+</style>

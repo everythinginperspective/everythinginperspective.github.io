@@ -6,6 +6,9 @@ declare module "nitropack/types" {
     '/api/:type/**:slug': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/[type]/[...slug]').default>>>>
     }
+    '/__nuxt_error': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
+    }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
     }

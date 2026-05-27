@@ -40,19 +40,19 @@ const formatDate = (date: string) => {
 
 const getItemLink = (item: any) => {
   const path = item._path || ''
-  // path format: /articles/slug.md or articles/articles/slug.md (Nuxt Content doubled path)
+  // path format: /articles/slug or /articles/slug.md (Nuxt Content)
   const parts = path.split('/').filter(Boolean)
   if (parts.length === 0) return '/'
   
-  // Handle doubled articles/articles case from Nuxt Content
-  let collection = parts[0]
-  let slug = parts[1]?.replace(/\.md$/, '') || ''
+  // First part is collection (articles, perspectives, etc.)
+  const collection = parts[0]
   
-  if (parts.length >= 3 && parts[0] === parts[1]) {
-    // Doubled path case: articles/articles/slug.md
-    collection = parts[0]
-    slug = parts[2]?.replace(/\.md$/, '') || ''
-  }
+  // Second part is slug, remove .md and language suffix if present
+  let slug = parts[1] || ''
+  // Remove .md extension if present
+  slug = slug.replace(/\.md$/, '')
+  // Remove language suffix (e.g., .zh, .de, .en) if present
+  slug = slug.replace(/\.[a-z]{2}$/, '')
   
   const collectionMap: Record<string, string> = {
     articles: 'article',
@@ -64,7 +64,12 @@ const getItemLink = (item: any) => {
   }
   
   const singular = collectionMap[collection]
-  return singular && slug ? `/magazine/${singular}/${slug}` : '/'
+  if (!singular || !slug) {
+    console.warn(`Could not map path: ${path} (collection: ${collection}, slug: ${slug})`)
+    return '/'
+  }
+  
+  return `/magazine/${singular}/${slug}`
 }
 </script>
 
