@@ -56,7 +56,8 @@ const formatDate = (date: string) => {
 
 const getItemLink = (item: any) => {
   const path = item._path || ''
-  const slug = path.split('/').pop() || ''
+  const filename = path.split('/').pop() || ''
+  const slug = filename.replace(/\.md$/, '') // Remove .md extension
   if (path.includes('articles')) return `/magazine/article/${slug}`
   if (path.includes('perspectives')) return `/magazine/perspective/${slug}`
   if (path.includes('people')) return `/magazine/person/${slug}`
