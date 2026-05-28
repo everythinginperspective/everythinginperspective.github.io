@@ -114,7 +114,8 @@ export default defineNuxtConfig({
   
   // Sitemap config
   sitemap: {
-    enabled: true
+    enabled: true,
+    sitemaps: false
   },
 
   // @nuxt/content v3 configuration
