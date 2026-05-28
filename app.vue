@@ -24,6 +24,16 @@ useHead({
   script: [
     {
       async: true,
+      src: 'https://www.googletagmanager.com/gtag/js?id=G-L1QCYE5G36'
+    },
+    {
+      innerHTML: `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L1QCYE5G36');`
+    },
+    {
+      async: true,
       src: 'https://js.mbidadm.com/static/scripts.js',
       'data-admpid': '442242'
     },
