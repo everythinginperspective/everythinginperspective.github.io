@@ -55,20 +55,10 @@ const formatDate = (date: string) => {
 }
 
 const getItemLink = (item: any) => {
-  const path = item._path || ''
-  // path format: /articles/slug or /articles/slug.md (Nuxt Content)
+  const path = item._path || item.path || ''
   const parts = path.split('/').filter(Boolean)
-  if (parts.length === 0) return '/'
-  
-  // First part is collection (articles, perspectives, etc.)
   const collection = parts[0]
-  
-  // Second part is slug, remove .md and language suffix if present
-  let slug = parts[1] || ''
-  // Remove .md extension if present
-  slug = slug.replace(/\.md$/, '')
-  // Remove language suffix (e.g., .zh, .de, .en) if present
-  slug = slug.replace(/\.[a-z]{2}$/, '')
+  const slug = item.slug || item.path?.split('/').pop()?.replace(/\.md$/, '')
   
   const collectionMap: Record<string, string> = {
     articles: 'article',
@@ -81,7 +71,7 @@ const getItemLink = (item: any) => {
   
   const singular = collectionMap[collection]
   if (!singular || !slug) {
-    console.warn(`Could not map path: ${path} (collection: ${collection}, slug: ${slug})`)
+    console.warn(`Could not map item link:`, item)
     return '/'
   }
   
