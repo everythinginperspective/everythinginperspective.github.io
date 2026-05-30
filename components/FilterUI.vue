@@ -87,7 +87,7 @@ const emit = defineEmits<{
 const selectedCategories = ref<string[]>([])
 const selectedAuthors = ref<string[]>([])
 const selectedTags = ref<string[]>([])
-const showTags = ref(true)
+const showTags = ref(false)
 
 // Extract unique values
 const uniqueCategories = computed(() => {
@@ -212,9 +212,9 @@ const resetFilters = () => {
 
 .filter-title-with-toggle {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .filter-title {
@@ -227,16 +227,17 @@ const resetFilters = () => {
 .filter-toggle-btn {
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
   color: #666666;
-  padding: 0;
-  width: 24px;
-  height: 24px;
+  padding: 0 0.25rem;
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: color 0.3s ease;
+  line-height: 1;
 }
 
 .filter-toggle-btn:hover {
