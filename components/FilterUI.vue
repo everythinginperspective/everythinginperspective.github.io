@@ -35,8 +35,13 @@
 
       <!-- Tags Filter -->
       <div v-if="uniqueTags.length > 0" class="filter-group">
-        <h3 class="filter-title">Tags</h3>
-        <div class="filter-tags">
+        <div class="filter-title-with-toggle">
+          <h3 class="filter-title">Tags</h3>
+          <button @click="showTags = !showTags" class="filter-toggle-btn" :title="showTags ? 'Collapse' : 'Expand'">
+            {{ showTags ? '−' : '+' }}
+          </button>
+        </div>
+        <div v-if="showTags" class="filter-tags">
           <button
             v-for="tag in uniqueTags"
             :key="tag"
@@ -82,6 +87,7 @@ const emit = defineEmits<{
 const selectedCategories = ref<string[]>([])
 const selectedAuthors = ref<string[]>([])
 const selectedTags = ref<string[]>([])
+const showTags = ref(true)
 
 // Extract unique values
 const uniqueCategories = computed(() => {
@@ -204,11 +210,37 @@ const resetFilters = () => {
   min-width: 150px;
 }
 
+.filter-title-with-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .filter-title {
   font-size: 0.875rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
   margin-top: 0;
+}
+
+.filter-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #666666;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.filter-toggle-btn:hover {
+  color: #000000;
 }
 
 .filter-options {
