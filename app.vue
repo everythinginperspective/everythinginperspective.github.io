@@ -38,6 +38,23 @@ useHead({
       'data-admpid': '442242'
     },
     {
+      defer: true,
+      src: 'https://cloud.umami.is/script.js',
+      'data-website-id': 'd28e1242-720a-46c7-8809-9845bc1f0c0c'
+    },
+    {
+      defer: true,
+      'data-workspace': '6a1eb34394b1fd622377befc',
+      src: 'https://cdn.jsdelivr.net/npm/litlyx-js@latest/browser/litlyx.js'
+    },
+    {
+      async: true,
+      src: 'https://plausible.io/js/pa-Yy-F8aaxiRk0-nCFyYuxJ.js'
+    },
+    {
+      innerHTML: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`
+    },
+    {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
