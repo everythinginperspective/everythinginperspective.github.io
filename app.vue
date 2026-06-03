@@ -55,6 +55,28 @@ useHead({
       innerHTML: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`
     },
     {
+      innerHTML: `async function trackCustomLitlyxPageVisit() {
+        const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+        const date = new Date();
+        const tzOffset = -date.getTimezoneOffset() / 60;
+        window.Lit?.event('page_visit', {
+          metadata: {
+            ip: ipData.ip,
+            continent: ipData.continent_name,
+            country: ipData.country_name,
+            referrer: document.referrer,
+            user_agent: navigator.userAgent,
+            date_iso: date.toISOString(),
+            date_string: date.toString(),
+            timezone_offset: tzOffset,
+            current_url: location.href,
+            current_host: location.host
+          }
+        });
+      }
+      trackCustomLitlyxPageVisit();`
+    },
+    {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
