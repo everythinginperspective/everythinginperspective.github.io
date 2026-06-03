@@ -74,7 +74,10 @@ useHead({
           }
         });
       }
-      trackCustomLitlyxPageVisit();`
+      if (!window.__litlyxTracked) {
+        window.__litlyxTracked = true;
+        trackCustomLitlyxPageVisit();
+      }`
     },
     {
       type: 'application/ld+json',
