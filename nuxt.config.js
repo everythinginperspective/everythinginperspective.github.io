@@ -1,52 +1,8 @@
-// Generate prerender routes from content
-const { readdirSync, statSync } = require('fs')
-const { join } = require('path')
-const contentDir = join(process.cwd(), 'content')
-
-const preloadRoutes = () => {
-  const routes = ['/']
-  try {
-    const folders = readdirSync(contentDir)
-      .filter(item => {
-        const itemPath = join(contentDir, item)
-        return statSync(itemPath).isDirectory() && !item.startsWith('.')
-      })
-    
-    for (const folder of folders) {
-      const folderPath = join(contentDir, folder)
-      // Add collection index routes for all content types
-      routes.push(`/magazine/${folder}`)
-      routes.push(`/linked-data/${folder}`)
-      
-      try {
-        const files = readdirSync(folderPath).filter(f => f.endsWith('.md'))
-        for (const file of files) {
-          const slug = file.replace(/\.md$/, '')
-          routes.push(`/linked-data/${folder}/${slug}`)
-          const singular = folder.replace(/s$/, '')
-          routes.push(`/magazine/${singular}/${slug}`)
-        }
-      } catch (e) {
-        // skip
-      }
-    }
-  } catch (e) {
-    console.warn('Could not read content directories')
-  }
-  return routes
-}
-
 export default defineNuxtConfig({
-  // Build output to .dist for Surge deployment
   nitro: {
     prerender: {
       crawlLinks: true,
-      failOnError: false,
-      ignore: ['/api/**'],
-      routes: preloadRoutes()
-    },
-    routeRules: {
-      '/api/**': { cache: false, swr: false }
+      failOnError: true
     }
   },
   
@@ -164,23 +120,10 @@ export default defineNuxtConfig({
     }
   },
 
-  // Generate static site at build time
+  // Short URL aliases with 301 redirects
   routeRules: {
-    '/': { prerender: true },
-    // Short URL aliases with 301 redirects
-    '/mag/**': { redirect: { to: '/magazine/**', statusCode: 301 }, prerender: true },
-    '/ld/**': { redirect: { to: '/linked-data/**', statusCode: 301 }, prerender: true },
-    // Legacy routes (keeping for backwards compatibility)
-    '/article/**': { prerender: true },
-    '/perspective/**': { prerender: true },
-    '/page/**': { prerender: true },
-    '/book/**': { prerender: true },
-    // New dynamic magazine routes
-    '/magazine/**': { prerender: true },
-    // Linked data routes
-    '/linked-data/**': { prerender: true },
-    // API routes - no cache
-    '/api/**': { cache: false }
+    '/mag/**': { redirect: { to: '/magazine/**', statusCode: 301 } },
+    '/ld/**': { redirect: { to: '/linked-data/**', statusCode: 301 } }
   },
 
   // DevTools

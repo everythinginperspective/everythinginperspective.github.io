@@ -7,7 +7,7 @@
         <div style="display: flex; justify-content: space-between; align-items: flex-start;">
           <!-- Logo/Branding -->
           <div class="header-branding">
-            <NuxtLink to="/" style="display: inline-block;">
+            <NuxtLink to="/" external style="display: inline-block;">
               <h1>Everything in Perspective</h1>
             </NuxtLink>
             <p class="header-tagline">Essays on trends, context & nuance</p>
@@ -15,11 +15,11 @@
 
           <!-- Desktop Navigation -->
           <nav class="nav-desktop">
-            <NuxtLink to="/">Home</NuxtLink>
-            <NuxtLink to="/magazine/articles">Articles</NuxtLink>
-            <NuxtLink to="/magazine/perspectives">Perspectives</NuxtLink>
-            <NuxtLink to="/page/faq">FAQ</NuxtLink>
-            <NuxtLink to="/page/contact-us">Contact</NuxtLink>
+            <NuxtLink to="/" external>Home</NuxtLink>
+            <NuxtLink to="/magazine/articles" external>Articles</NuxtLink>
+            <NuxtLink to="/magazine/perspectives" external>Perspectives</NuxtLink>
+            <NuxtLink to="/page/faq" external>FAQ</NuxtLink>
+            <NuxtLink to="/page/contact-us" external>Contact</NuxtLink>
             <SearchBar />
           </nav>
 
@@ -50,51 +50,59 @@
         ✕
       </button>
       <div class="nav-drawer-content">
-        <NuxtLink 
-          to="/" 
+        <NuxtLink
+          to="/"
+          external
           @click="navOpen = false"
         >
           Home
         </NuxtLink>
-        <NuxtLink 
-          to="/magazine/articles" 
+        <NuxtLink
+          to="/magazine/articles"
+          external
           @click="navOpen = false"
         >
           Articles
         </NuxtLink>
-        <NuxtLink 
-          to="/magazine/perspectives" 
+        <NuxtLink
+          to="/magazine/perspectives"
+          external
           @click="navOpen = false"
         >
           Perspectives
         </NuxtLink>
-        <NuxtLink 
-          to="/page/faq" 
+        <NuxtLink
+          to="/page/faq"
+          external
           @click="navOpen = false"
         >
           FAQ
         </NuxtLink>
-        <NuxtLink 
-          to="/page/contact-us" 
+        <NuxtLink
+          to="/page/contact-us"
+          external
           @click="navOpen = false"
         >
           Contact
         </NuxtLink>
         <div class="nav-drawer-divider">
-          <NuxtLink 
-            to="/page/privacy-policy" 
+          <NuxtLink
+            to="/page/privacy-policy"
+            external
             @click="navOpen = false"
           >
             Privacy Policy
           </NuxtLink>
-          <NuxtLink 
-            to="/page/terms-conditions" 
+          <NuxtLink
+            to="/page/terms-conditions"
+            external
             @click="navOpen = false"
           >
             Terms & Conditions
           </NuxtLink>
-          <NuxtLink 
-            to="/page/cookie-policy" 
+          <NuxtLink
+            to="/page/cookie-policy"
+            external
             @click="navOpen = false"
           >
             Cookie Policy

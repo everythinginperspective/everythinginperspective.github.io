@@ -5,24 +5,24 @@
         <div class="footer-column">
           <h4>Magazine</h4>
           <ul>
-            <li><NuxtLink to="/">Home</NuxtLink></li>
+            <li><NuxtLink to="/" external>Home</NuxtLink></li>
             <li><a href="/sitemap.xml">Sitemap</a></li>
           </ul>
         </div>
         <div class="footer-column">
           <h4>Brand</h4>
           <ul>
-            <li><NuxtLink to="/page/about">About</NuxtLink></li>
-            <li><NuxtLink to="/page/faq">FAQ</NuxtLink></li>
-            <li><NuxtLink to="/page/contact-us">Contact</NuxtLink></li>
+            <li><NuxtLink to="/page/about" external>About</NuxtLink></li>
+            <li><NuxtLink to="/page/faq" external>FAQ</NuxtLink></li>
+            <li><NuxtLink to="/page/contact-us" external>Contact</NuxtLink></li>
           </ul>
         </div>
         <div class="footer-column">
           <h4>Legal</h4>
           <ul>
-            <li><NuxtLink to="/page/privacy-policy">Privacy Policy</NuxtLink></li>
-            <li><NuxtLink to="/page/terms-conditions">Terms & Conditions</NuxtLink></li>
-            <li><NuxtLink to="/page/cookie-policy">Cookie Policy</NuxtLink></li>
+            <li><NuxtLink to="/page/privacy-policy" external>Privacy Policy</NuxtLink></li>
+            <li><NuxtLink to="/page/terms-conditions" external>Terms & Conditions</NuxtLink></li>
+            <li><NuxtLink to="/page/cookie-policy" external>Cookie Policy</NuxtLink></li>
           </ul>
         </div>
         <div class="footer-column">
