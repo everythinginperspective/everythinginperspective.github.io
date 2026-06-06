@@ -9,7 +9,7 @@ declare module '#app' {
 }
 declare module '@unhead/schema' {
 
-  type PublicFiles = '/content-types.json' | '/favicon.ico' | '/graph.json' | (string & Record<never, never>)
+  type PublicFiles = '/ads.txt' | '/bec4b6ad13fe452b8e155aa73081092a.txt' | '/content-types.json' | '/favicon.ico' | '/google4d35b1e02e030dba.html' | '/graph.json' | '/yandex_bb3e8063889348fb.html' | (string & Record<never, never>)
   type JsFiles = (string & Record<never, never>)
 
   interface SchemaAugmentations {
