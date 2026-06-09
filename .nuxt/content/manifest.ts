@@ -1,5 +1,5 @@
 export const checksums = {
-  "articles": "v3.5.0--0V2P-673lSZaplntLT4pLXR5833jTTNSsYrkoBwvlPI",
+  "articles": "v3.5.0--0RlUPJnEtlRxfer4JkVaizxT3klibFhjR7c_KuiXEkc",
   "perspectives": "v3.5.0--Ga0LZ6jP_x7tVSJNdxs12T51N4M3YAnbEIoSgn_JWjE",
   "pages": "v3.5.0--gHRo8EtQ2kW4kndcKh9Xq31jpqQMRl0VVuHw10VgwsU",
   "books": "v3.5.0--McJY6dSkrRLSKXme3ja4k9YFQTTvGE4Y7zDCCqrv5uw",
