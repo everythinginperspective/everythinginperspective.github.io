@@ -30,6 +30,7 @@
     "vue": "^3.4.0"
   },
   "devDependencies": {
+    "@nuxt/devtools": "^1.0.0",
     "typescript": "^5.3.0",
     "vue-tsc": "^1.8.0"
   }
