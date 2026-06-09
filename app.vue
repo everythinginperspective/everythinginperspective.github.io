@@ -42,11 +42,11 @@ useHead({
       src: 'https://cloud.umami.is/script.js',
       'data-website-id': 'd28e1242-720a-46c7-8809-9845bc1f0c0c'
     },
-    // {
-    //   defer: true,
-    //   'data-workspace': '6a1eb34394b1fd622377befc',
-    //   src: 'https://cdn.jsdelivr.net/npm/litlyx-js@latest/browser/litlyx.js'
-    // },
+    {
+      defer: true,
+      'data-workspace': '6a1eb34394b1fd622377befc',
+      src: 'https://cdn.jsdelivr.net/npm/litlyx-js@latest/browser/litlyx.js'
+    },
     {
       async: true,
       src: 'https://plausible.io/js/pa-Yy-F8aaxiRk0-nCFyYuxJ.js'
@@ -54,31 +54,31 @@ useHead({
     {
       innerHTML: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`
     },
-    // {
-    //   innerHTML: `async function trackCustomLitlyxPageVisit() {
-    //     const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
-    //     const date = new Date();
-    //     const tzOffset = -date.getTimezoneOffset() / 60;
-    //     window.Lit?.event('page_visit', {
-    //       metadata: {
-    //         ip: ipData.ip,
-    //         continent: ipData.continent_name,
-    //         country: ipData.country_name,
-    //         referrer: document.referrer,
-    //         user_agent: navigator.userAgent,
-    //         date_iso: date.toISOString(),
-    //         date_string: date.toString(),
-    //         timezone_offset: tzOffset,
-    //         current_url: location.href,
-    //         current_host: location.host
-    //       }
-    //     });
-    //   }
-    //   if (!window.__litlyxTracked) {
-    //     window.__litlyxTracked = true;
-    //     trackCustomLitlyxPageVisit();
-    //   }`
-    // },
+    {
+      innerHTML: `async function trackCustomLitlyxPageVisit() {
+        const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+        const date = new Date();
+        const tzOffset = -date.getTimezoneOffset() / 60;
+        window.Lit?.event('page_visit', {
+          metadata: {
+            ip: ipData.ip,
+            continent: ipData.continent_name,
+            country: ipData.country_name,
+            referrer: document.referrer,
+            user_agent: navigator.userAgent,
+            date_iso: date.toISOString(),
+            date_string: date.toString(),
+            timezone_offset: tzOffset,
+            current_url: location.href,
+            current_host: location.host
+          }
+        });
+      }
+      if (!window.__litlyxTracked) {
+        window.__litlyxTracked = true;
+        trackCustomLitlyxPageVisit();
+      }`
+    },
     {
       async: true,
       src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5562455580904451',
