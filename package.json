@@ -29,6 +29,7 @@
     "vue": "*"
   },
   "devDependencies": {
+    "@nuxt/devtools": "*",
     "typescript": "*",
     "vue-tsc": "*"
   }
