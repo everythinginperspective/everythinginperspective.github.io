@@ -12,6 +12,18 @@ export const pathToI18nConfig = {
     "ja": "/",
     "ar": "/"
   },
+  "/:slug(.*)*": {
+    "en": "/:slug(.*)*",
+    "fr": "/:slug(.*)*",
+    "de": "/:slug(.*)*",
+    "es": "/:slug(.*)*",
+    "it": "/:slug(.*)*",
+    "pt": "/:slug(.*)*",
+    "nl": "/:slug(.*)*",
+    "zh": "/:slug(.*)*",
+    "ja": "/:slug(.*)*",
+    "ar": "/:slug(.*)*"
+  },
   "/page/:slug()": {
     "en": "/page/:slug()",
     "fr": "/page/:slug()",
@@ -87,10 +99,12 @@ export const pathToI18nConfig = {
 };
 export const i18nPathToPath = {
   "/": "/",
+  "/:slug(.*)*": "/:slug(.*)*",
   "/page/:slug()": "/page/:slug()",
   "/article/:slug()": "/article/:slug()",
   "/magazine/:plural()": "/magazine/:plural()",
   "/linked-data/:plural()": "/linked-data/:plural()",
   "/linked-data/:slug(.*)*": "/linked-data/:slug(.*)*",
   "/magazine/:singular()/:slug()": "/magazine/:singular()/:slug()"
-};
+}
+export const disabledI18nPathToPath = {};
