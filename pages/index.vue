@@ -67,21 +67,21 @@ definePageMeta({
   layout: 'default'
 })
 
-// Fetch all collections from @nuxt/content
+// Fetch collections with limits to prevent stack overflow during prerender
 const { data: articles } = await useAsyncData('articles', () =>
-  queryCollection('articles').all()
+  queryCollection('articles').find().limit(20).all()
 )
 
 const { data: perspectives } = await useAsyncData('perspectives', () =>
-  queryCollection('perspectives').all()
+  queryCollection('perspectives').find().limit(20).all()
 )
 
 const { data: people } = await useAsyncData('people', () =>
-  queryCollection('people').all()
+  queryCollection('people').find().limit(20).all()
 )
 
 const { data: languages } = await useAsyncData('languages', () =>
-  queryCollection('languages').all()
+  queryCollection('languages').find().limit(20).all()
 )
 
 // SEO
