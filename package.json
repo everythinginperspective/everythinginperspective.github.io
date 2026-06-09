@@ -14,6 +14,7 @@
   "author": "Everything in Perspective",
   "license": "MIT",
   "dependencies": {
+    "@mdream/rust-linux-x64-gnu": "^1.1.0",
     "@nuxt/content": "^3.13.0",
     "@nuxtjs/i18n": "^10.3.0",
     "@nuxtjs/seo": "^5.1.3",
