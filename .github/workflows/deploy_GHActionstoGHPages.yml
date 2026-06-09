@@ -32,7 +32,7 @@ jobs:
         run: npm ci
 
       - name: Generate static site
-        run: NODE_OPTIONS="--max-old-space-size=4096" npm run generate
+        run: NODE_OPTIONS="--max-old-space-size=4096 --stack-size=8000" npm run generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
