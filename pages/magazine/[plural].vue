@@ -20,14 +20,14 @@
         :key="item.path"
         class="mag-card"
       >
-        <NuxtLink :to="`/magazine/${contentType?.singular}/${item.slug || item.path?.split('/').pop()}`">
+        <a :href="`/magazine/${contentType?.singular}/${item.slug || item.path?.split('/').pop()}`">
           <h2 class="mag-card-title">{{ item.title }}</h2>
           <p v-if="item.description" class="mag-card-description">{{ item.description }}</p>
           <div class="mag-card-meta">
             <span v-if="item.author">By {{ item.author }}</span>
             <span v-if="item.date"> · {{ formatDate(item.date) }}</span>
           </div>
-        </NuxtLink>
+        </a>
       </div>
     </div>
 
