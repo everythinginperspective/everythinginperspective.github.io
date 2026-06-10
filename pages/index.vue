@@ -63,26 +63,32 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 definePageMeta({
   layout: 'default'
 })
 
 // Fetch collections with limits to prevent stack overflow during prerender
-const { data: articles } = await useAsyncData('articles', () =>
+const { data: articlesData } = await useAsyncData('articles', () =>
   queryCollection('articles').find().limit(20).all()
 )
+const articles = computed(() => articlesData.value || [])
 
-const { data: perspectives } = await useAsyncData('perspectives', () =>
+const { data: perspectivesData } = await useAsyncData('perspectives', () =>
   queryCollection('perspectives').find().limit(20).all()
 )
+const perspectives = computed(() => perspectivesData.value || [])
 
-const { data: people } = await useAsyncData('people', () =>
+const { data: peopleData } = await useAsyncData('people', () =>
   queryCollection('people').find().limit(20).all()
 )
+const people = computed(() => peopleData.value || [])
 
-const { data: languages } = await useAsyncData('languages', () =>
+const { data: languagesData } = await useAsyncData('languages', () =>
   queryCollection('languages').find().limit(20).all()
 )
+const languages = computed(() => languagesData.value || [])
 
 // SEO
 useSeoMeta({
