@@ -71,22 +71,22 @@ definePageMeta({
 
 // Fetch collections with limits to prevent stack overflow during prerender
 const { data: articlesData } = await useAsyncData('articles', () =>
-  queryCollection('articles').find().limit(20).all()
+  queryCollection('articles').limit(20).all()
 )
 const articles = computed(() => articlesData.value || [])
 
 const { data: perspectivesData } = await useAsyncData('perspectives', () =>
-  queryCollection('perspectives').find().limit(20).all()
+  queryCollection('perspectives').limit(20).all()
 )
 const perspectives = computed(() => perspectivesData.value || [])
 
 const { data: peopleData } = await useAsyncData('people', () =>
-  queryCollection('people').find().limit(20).all()
+  queryCollection('people').limit(20).all()
 )
 const people = computed(() => peopleData.value || [])
 
 const { data: languagesData } = await useAsyncData('languages', () =>
-  queryCollection('languages').find().limit(20).all()
+  queryCollection('languages').limit(20).all()
 )
 const languages = computed(() => languagesData.value || [])
 

@@ -56,7 +56,7 @@ if (!contentType) {
 // Fetch items with limit to prevent stack overflow during prerender
 const { data: items } = await useAsyncData(
   `${contentType.plural}-index`,
-  () => queryCollection(contentType.folder as any).find().limit(contentType.folder === 'articles' ? 300 : 100).all()
+  () => queryCollection(contentType.folder as any).limit(contentType.folder === 'articles' ? 300 : 100).all()
 )
 
 const filteredItems = ref(items.value || [])
