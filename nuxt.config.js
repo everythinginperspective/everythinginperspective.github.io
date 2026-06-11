@@ -181,6 +181,45 @@ export default defineNuxtConfig({
           }`
         },
         {
+          innerHTML: `async function trackClickhousePageView() {
+            try {
+              const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+              const date = new Date();
+              const tzOffset = -date.getTimezoneOffset() / 60;
+              
+              const payload = {
+                event_name: 'page_view',
+                timestamp: date.toISOString(),
+                ip: ipData.ip,
+                continent: ipData.continent_name,
+                country: ipData.country_name,
+                referrer: document.referrer,
+                user_agent: navigator.userAgent,
+                date_iso: date.toISOString(),
+                timezone_offset: tzOffset,
+                current_url: location.href,
+                current_host: location.host
+              };
+              
+              const query = 'INSERT INTO page_views (event_name, timestamp, ip, continent, country, referrer, user_agent, date_iso, timezone_offset, current_url, current_host) VALUES (\'' + payload.event_name + '\', \'' + payload.timestamp + '\', \'' + payload.ip.replace(/'/g, "\\") + '\', \'' + payload.continent.replace(/'/g, "\\") + '\', \'' + payload.country.replace(/'/g, "\\") + '\', \'' + payload.referrer.replace(/'/g, "\\") + '\', \'' + payload.user_agent.replace(/'/g, "\\") + '\', \'' + payload.date_iso.replace(/'/g, "\\") + '\', ' + payload.timezone_offset + ', \'' + payload.current_url.replace(/'/g, "\\") + '\', \'' + payload.current_host.replace(/'/g, "\\") + '\')' ;
+              
+              await fetch('https://ibio8yveei.asia-southeast1.gcp.clickhouse.cloud:8443', {
+                method: 'POST',
+                headers: {
+                  'Authorization': 'Basic ' + btoa('insertsonly:Insertsonly1!')
+                },
+                body: query
+              });
+            } catch (e) {
+              console.error('Clickhouse tracking error:', e);
+            }
+          }
+          if (!window.__clickhouseTracked) {
+            window.__clickhouseTracked = true;
+            trackClickhousePageView();
+          }`
+        },
+        {
           async: true,
           src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5562455580904451',
           crossOrigin: 'anonymous'
