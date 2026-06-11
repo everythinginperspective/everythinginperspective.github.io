@@ -188,7 +188,8 @@ export default defineNuxtConfig({
               };
               console.log('Clickhouse: Payload created', payload);
               
-              const query = 'INSERT INTO page_views (event_name, timestamp, ip, continent, country, referrer, user_agent, date_iso, timezone_offset, current_url, current_host) VALUES (\'' + payload.event_name + '\', \'' + payload.timestamp + '\', \'' + payload.ip.replace(/'/g, "\\") + '\', \'' + payload.continent.replace(/'/g, "\\") + '\', \'' + payload.country.replace(/'/g, "\\") + '\', \'' + payload.referrer.replace(/'/g, "\\") + '\', \'' + payload.user_agent.replace(/'/g, "\\") + '\', \'' + payload.date_iso.replace(/'/g, "\\") + '\', ' + payload.timezone_offset + ', \'' + payload.current_url.replace(/'/g, "\\") + '\', \'' + payload.current_host.replace(/'/g, "\\") + '\')' ;
+              const escapeSQL = (str) => String(str).replace(/'/g, "\\'");
+              const query = `INSERT INTO page_views (event_name, timestamp, ip, continent, country, referrer, user_agent, date_iso, timezone_offset, current_url, current_host) VALUES ('${payload.event_name}', '${payload.timestamp}', '${escapeSQL(payload.ip)}', '${escapeSQL(payload.continent)}', '${escapeSQL(payload.country)}', '${escapeSQL(payload.referrer)}', '${escapeSQL(payload.user_agent)}', '${payload.date_iso}', ${payload.timezone_offset}, '${escapeSQL(payload.current_url)}', '${escapeSQL(payload.current_host)}')`
               console.log('Clickhouse: Query prepared');
               
               const response = await fetch('https://ibio8yveei.asia-southeast1.gcp.clickhouse.cloud:8443', {
