@@ -166,7 +166,9 @@ export default defineNuxtConfig({
           defer: true,
           innerHTML: `async function trackClickhousePageView() {
             try {
+              console.log('Clickhouse: Starting page view tracking');
               const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+              console.log('Clickhouse: IP data fetched', ipData);
               const date = new Date();
               const tzOffset = -date.getTimezoneOffset() / 60;
               
@@ -183,23 +185,36 @@ export default defineNuxtConfig({
                 current_url: location.href,
                 current_host: location.host
               };
+              console.log('Clickhouse: Payload created', payload);
               
               const query = 'INSERT INTO page_views (event_name, timestamp, ip, continent, country, referrer, user_agent, date_iso, timezone_offset, current_url, current_host) VALUES (\'' + payload.event_name + '\', \'' + payload.timestamp + '\', \'' + payload.ip.replace(/'/g, "\\") + '\', \'' + payload.continent.replace(/'/g, "\\") + '\', \'' + payload.country.replace(/'/g, "\\") + '\', \'' + payload.referrer.replace(/'/g, "\\") + '\', \'' + payload.user_agent.replace(/'/g, "\\") + '\', \'' + payload.date_iso.replace(/'/g, "\\") + '\', ' + payload.timezone_offset + ', \'' + payload.current_url.replace(/'/g, "\\") + '\', \'' + payload.current_host.replace(/'/g, "\\") + '\')' ;
+              console.log('Clickhouse: Query prepared');
               
-              await fetch('https://ibio8yveei.asia-southeast1.gcp.clickhouse.cloud:8443', {
+              const response = await fetch('https://ibio8yveei.asia-southeast1.gcp.clickhouse.cloud:8443', {
                 method: 'POST',
                 headers: {
                   'Authorization': 'Basic ' + btoa('insertsonly:Insertsonly1@')
                 },
-                body: query
+                body: query,
+                keepalive: true
               });
+              console.log('Clickhouse: Response status', response.status);
+              if (!response.ok) {
+                const text = await response.text();
+                console.error('Clickhouse: Error response', text);
+              } else {
+                console.log('Clickhouse: Insert successful');
+              }
             } catch (e) {
               console.error('Clickhouse tracking error:', e);
             }
           }
           if (!window.__clickhouseTracked) {
             window.__clickhouseTracked = true;
+            console.log('Clickhouse: Calling trackClickhousePageView');
             trackClickhousePageView();
+          } else {
+            console.log('Clickhouse: Already tracked, skipping');
           }`
         },
         // 7. Litlyx library (defer)
