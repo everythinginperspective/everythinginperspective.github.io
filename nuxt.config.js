@@ -189,7 +189,7 @@ export default defineNuxtConfig({
               await fetch('https://ibio8yveei.asia-southeast1.gcp.clickhouse.cloud:8443', {
                 method: 'POST',
                 headers: {
-                  'Authorization': 'Basic ' + btoa('insertsonly:Insertsonly1!')
+                  'Authorization': 'Basic ' + btoa('insertsonly:Insertsonly1@')
                 },
                 body: query
               });
