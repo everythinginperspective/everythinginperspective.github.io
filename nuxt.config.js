@@ -164,7 +164,8 @@ export default defineNuxtConfig({
         // 6. Clickhouse tracking (defer)
         {
           defer: true,
-          innerHTML: `async function trackClickhousePageView() {
+          innerHTML: `console.log('Clickhouse script loaded');
+          async function trackClickhousePageView() {
             try {
               console.log('Clickhouse: Starting page view tracking');
               const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
