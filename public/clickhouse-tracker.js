@@ -8,7 +8,7 @@ async function trackClickhousePageView() {
     // Commented out ipapi.co: const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
     let ipData = null;
     try {
-      const response = await fetch('http://ip-api.com/json/');
+      const response = await fetch('https://ip-api.com/json/');
       if (response.ok) {
         ipData = await response.json();
         console.log('Clickhouse: IP data fetched', ipData);
