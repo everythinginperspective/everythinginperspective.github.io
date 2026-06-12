@@ -3,17 +3,31 @@ console.log('Clickhouse script loaded');
 async function trackClickhousePageView() {
   try {
     console.log('Clickhouse: Starting page view tracking');
-    const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
-    console.log('Clickhouse: IP data fetched', ipData);
+    
+    // Try to fetch IP data from ip-api.com
+    // Commented out ipapi.co: const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+    let ipData = null;
+    try {
+      const response = await fetch('http://ip-api.com/json/');
+      if (response.ok) {
+        ipData = await response.json();
+        console.log('Clickhouse: IP data fetched', ipData);
+      } else {
+        console.warn('Clickhouse: IP fetch failed, status', response.status);
+      }
+    } catch (ipError) {
+      console.warn('Clickhouse: IP fetch error (continuing without IP):', ipError);
+    }
+    
     const date = new Date();
     const tzOffset = -date.getTimezoneOffset() / 60;
     
     const payload = {
       event_name: 'page_view',
       timestamp: date.toISOString(),
-      ip: ipData.ip,
-      continent: ipData.continent_name,
-      country: ipData.country_name,
+      ip: ipData?.query || '',
+      continent: ipData?.continent || '',
+      country: ipData?.country || '',
       referrer: document.referrer,
       user_agent: navigator.userAgent,
       date_iso: date.toISOString(),
