@@ -4,11 +4,12 @@ async function trackClickhousePageView() {
   try {
     console.log('Clickhouse: Starting page view tracking');
     
-    // Try to fetch IP data from ip-api.com
+    // Try to fetch IP data from ipapi.com
     // Commented out ipapi.co: const ipData = await fetch('https://ipapi.co/json/').then(r => r.json());
+    // Commented out ip-api.com (free HTTPS not available)
     let ipData = null;
     try {
-      const response = await fetch('https://ip-api.com/json/');
+      const response = await fetch('https://api.ipapi.com/api/check?access_key=289228c5175188ce4dd038d2375ea0dc');
       if (response.ok) {
         ipData = await response.json();
         console.log('Clickhouse: IP data fetched', ipData);
@@ -25,9 +26,9 @@ async function trackClickhousePageView() {
     const payload = {
       event_name: 'page_view',
       timestamp: date.toISOString(),
-      ip: ipData?.query || '',
-      continent: ipData?.continent || '',
-      country: ipData?.country || '',
+      ip: ipData?.ip || '',
+      continent: ipData?.continent_name || '',
+      country: ipData?.country_name || '',
       referrer: document.referrer,
       user_agent: navigator.userAgent,
       date_iso: date.toISOString(),
