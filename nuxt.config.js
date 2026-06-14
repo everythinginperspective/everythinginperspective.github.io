@@ -149,30 +149,35 @@ export default defineNuxtConfig({
           gtag('js', new Date());
           gtag('config', 'G-L1QCYE5G36');`
         },
-        // 4. AdSense (async)
+        // 4. RichAds (async)
+        {
+          async: true,
+          src: 'https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=1013955&siteid=398832'
+        },
+        // 5. AdSense (async)
         {
           async: true,
           src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5562455580904451',
           crossOrigin: 'anonymous'
         },
-        // 5. Mbidadm ads (defer)
+        // 6. Mbidadm ads (defer)
         {
           defer: true,
           src: 'https://js.mbidadm.com/static/scripts.js',
           'data-admpid': '442242'
         },
-        // 6. Clickhouse tracking (defer)
+        // 7. Clickhouse tracking (defer)
         {
           defer: true,
           src: '/clickhouse-tracker.js'
         },
-        // 7. Litlyx library (defer)
+        // 8. Litlyx library (defer)
         {
           defer: true,
           'data-workspace': '6a1eb34394b1fd622377befc',
           src: 'https://cdn.jsdelivr.net/npm/litlyx-js@latest/browser/litlyx.js'
         },
-        // 8. Litlyx custom tracking (defer)
+        // 9. Litlyx custom tracking (defer)
         {
           defer: true,
           innerHTML: `async function trackCustomLitlyxPageVisit() {
@@ -198,6 +203,14 @@ export default defineNuxtConfig({
             window.__litlyxTracked = true;
             trackCustomLitlyxPageVisit();
           }`
+        },
+        // 10. aclib tracking (body, defer)
+        {
+          type: 'text/javascript',
+          body: true,
+          innerHTML: `aclib.runAutoTag({
+            zoneId: 'txt61rv5pk',
+          });`
         }
         // COMMENTED OUT:
         // Umami (performance optimization)
