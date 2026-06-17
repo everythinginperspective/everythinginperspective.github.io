@@ -152,7 +152,10 @@ export default defineNuxtConfig({
         // 4. RichAds (async)
         {
           async: true,
-          src: 'https://richinfo.co/richpartners/in-page/js/richads-ob.js?pubid=1013955&siteid=398832'
+          src: 'https://richinfo.co/richpartners/pops/js/richads-pu-ob.js',
+          'data-pubid': '1013955',
+          'data-siteid': '399567',
+          'data-cfasync': 'false'
         },
         // 5. AdSense (async)
         {
