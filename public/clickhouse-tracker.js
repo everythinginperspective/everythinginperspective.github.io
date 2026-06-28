@@ -23,6 +23,8 @@ async function trackClickhousePageView() {
     const date = new Date();
     const tzOffset = -date.getTimezoneOffset() / 60;
     
+    const itisme = localStorage.getItem('itisme') || '';
+    
     const payload = {
       event_name: 'page_view',
       timestamp: date.toISOString(),
@@ -34,12 +36,13 @@ async function trackClickhousePageView() {
       date_iso: date.toISOString(),
       timezone_offset: tzOffset,
       current_url: location.href,
-      current_host: location.host
+      current_host: location.host,
+      itisme: itisme
     };
     console.log('Clickhouse: Payload created', payload);
     
     const escapeSQL = (str) => String(str).replace(/'/g, "\\'");
-    const query = `INSERT INTO page_views (event_name, timestamp, ip, continent, country, referrer, user_agent, date_iso, timezone_offset, current_url, current_host) VALUES ('${payload.event_name}', '${payload.timestamp}', '${escapeSQL(payload.ip)}', '${escapeSQL(payload.continent)}', '${escapeSQL(payload.country)}', '${escapeSQL(payload.referrer)}', '${escapeSQL(payload.user_agent)}', '${payload.date_iso}', ${payload.timezone_offset}, '${escapeSQL(payload.current_url)}', '${escapeSQL(payload.current_host)}')`;
+    const query = `INSERT INTO page_views (event_name, timestamp, ip, continent, country, referrer, user_agent, date_iso, timezone_offset, current_url, current_host, itisme) VALUES ('${payload.event_name}', '${payload.timestamp}', '${escapeSQL(payload.ip)}', '${escapeSQL(payload.continent)}', '${escapeSQL(payload.country)}', '${escapeSQL(payload.referrer)}', '${escapeSQL(payload.user_agent)}', '${payload.date_iso}', ${payload.timezone_offset}, '${escapeSQL(payload.current_url)}', '${escapeSQL(payload.current_host)}', '${escapeSQL(payload.itisme)}')`;
     console.log('Clickhouse: Query prepared');
     
     const response = await fetch('https://ibio8yveei.asia-southeast1.gcp.clickhouse.cloud:8443', {
