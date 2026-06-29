@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "generate": "nuxt generate && rm -rf docs && cp -r .output/public docs && pagefind --site docs",
+    "generate": "nuxt generate && rm -rf docs && cp -r .output/public docs && cp docs/404.html docs/200.html && pagefind --site docs",
     "dev": "nuxt dev",
     "start": "nuxt preview",
     "deploy": "npm run generate && git add docs && git commit -m 'Deploy to GitHub Pages' && git push origin main"
