@@ -85,7 +85,7 @@ watch(() => article.value, (newArticle) => {
           innerHTML: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
-            '@id': `https://everythinginperspective.github.io/article/${slug}#article`,
+            '@id': `https://everythinginperspective.github.io/magazine/article/${slug}#article`,
             headline: newArticle.title,
             name: newArticle.title,
             description: newArticle.description,
@@ -126,10 +126,10 @@ watch(() => article.value, (newArticle) => {
             keywords: typeof newArticle.keywords === 'string' ? newArticle.keywords : Array.isArray(newArticle.keywords) ? newArticle.keywords.join(', ') : newArticle.tags?.join(', ') || newArticle.category || 'perspective',
             inLanguage: 'en-US',
             isAccessibleForFree: true,
-            url: `https://everythinginperspective.github.io/article/${slug}`,
+            url: `https://everythinginperspective.github.io/magazine/article/${slug}`,
             mainEntity: {
               '@type': 'NewsArticle',
-              '@id': `https://everythinginperspective.github.io/article/${slug}#article`
+              '@id': `https://everythinginperspective.github.io/magazine/article/${slug}#article`
             }
           })
         },
@@ -155,7 +155,7 @@ watch(() => article.value, (newArticle) => {
                 '@type': 'ListItem',
                 position: 3,
                 name: newArticle.title,
-                item: `https://everythinginperspective.github.io/article/${slug}`
+                item: `https://everythinginperspective.github.io/magazine/article/${slug}`
               }
             ]
           })
