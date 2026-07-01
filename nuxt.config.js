@@ -1,8 +1,48 @@
+import { readdirSync, statSync } from 'fs'
+import { join } from 'path'
+import pluralize from 'pluralize'
+
+// Generate routes from content files
+function generateRoutes() {
+  const contentDir = join(process.cwd(), 'content')
+  const routes = []
+  
+  try {
+    const folders = readdirSync(contentDir)
+      .filter(item => {
+        const itemPath = join(contentDir, item)
+        return statSync(itemPath).isDirectory()
+      })
+      .filter(folder => !folder.startsWith('.') && !folder.startsWith('_'))
+    
+    folders.forEach(folder => {
+      const singular = pluralize.singular(folder)
+      const plural = pluralize.plural(folder)
+      const folderPath = join(contentDir, folder)
+      const files = readdirSync(folderPath).filter(f => f.endsWith('.md'))
+      
+      files.forEach(file => {
+        const slug = file.replace('.md', '')
+        routes.push(`/magazine/${singular}/${slug}`)
+        routes.push(`/linked-data/${folder}/${slug}`)
+      })
+      
+      routes.push(`/magazine/${plural}`)
+      routes.push(`/linked-data/${plural}`)
+    })
+  } catch (e) {
+    console.warn('Could not generate routes from content:', e.message)
+  }
+  
+  return routes
+}
+
 export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      failOnError: false
+      failOnError: false,
+      routes: generateRoutes()
     }
   },
   
