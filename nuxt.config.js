@@ -2,6 +2,8 @@ import { readdirSync, statSync } from 'fs'
 import { join } from 'path'
 import pluralize from 'pluralize'
 
+const SITE_URL = 'https://everythinginperspective.vercel.app'
+
 // Generate routes from content files
 function generateRoutes() {
   const contentDir = join(process.cwd(), 'content')
@@ -54,14 +56,14 @@ export default defineNuxtConfig({
   
   // Site URL for SEO and sitemap
   site: {
-    url: 'https://everythinginperspective.github.io',
+    url: SITE_URL,
     name: 'Everything in Perspective'
   },
   
   // Site config for @nuxtjs/seo
   siteConfig: {
     name: 'Everything in Perspective',
-    url: 'https://everythinginperspective.github.io',
+    url: SITE_URL,
     description: 'Essays on trends, context & nuance'
   },
   
@@ -78,7 +80,7 @@ export default defineNuxtConfig({
   robots: {
     allow: '/',
     disallow: ['/api/', '/admin/'],
-    sitemap: 'https://everythinginperspective.github.io/sitemap.xml'
+    sitemap: `${SITE_URL}/sitemap.xml`
   },
   
   // nuxt-schema-org configuration  
@@ -170,8 +172,8 @@ export default defineNuxtConfig({
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Everything in Perspective',
-            url: 'https://humanitiesclinic.github.io',
-            logo: 'https://humanitiesclinic.github.io/logo.png',
+            url: SITE_URL,
+            logo: `${SITE_URL}/logo.png`,
             description: 'Essays on trends, context & nuance',
             sameAs: []
           })
@@ -280,6 +282,16 @@ export default defineNuxtConfig({
     '/mag/**': { redirect: { to: '/magazine/**', statusCode: 301 } },
     '/ld/**': { redirect: { to: '/linked-data/**', statusCode: 301 } }
   },
+  
+  // Prerender config: exclude wiki routes (served dynamically)
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      routes: generateRoutes(),
+      ignore: ['/encyclopedia', '/dictionary']
+    }
+  },
 
   // DevTools
   devtools: { enabled: false },
@@ -291,3 +303,6 @@ export default defineNuxtConfig({
     }
   }
 })
+
+// Export SITE_URL for use in pages/components
+export { SITE_URL }
