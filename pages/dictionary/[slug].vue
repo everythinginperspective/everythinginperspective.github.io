@@ -65,7 +65,7 @@
   </main>
 </template>
 
-<script setup lang=\"ts\">
+<script setup lang="ts">
 interface Definition {
   partOfSpeech: string
   definitions: string[]
