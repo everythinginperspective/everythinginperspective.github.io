@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="hero-text">
         <h1>
-          Everything in Perspective Workflow Test B
+          Everything in Perspective Workflow Test C
         </h1>
         <p>
           A curated collection of essays exploring global trends, context, and nuance. Organized by articles, perspectives, people, and languages.
@@ -108,13 +108,13 @@ useHead({
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        '@id': 'https://everythinginperspective.github.io/#website',
+        '@id': 'https://everythinginperspective.vercel.app/#website',
         name: 'Everything in Perspective',
-        url: 'https://everythinginperspective.github.io',
+        url: 'https://everythinginperspective.vercel.app',
         description: 'Essays on trends, context & nuance',
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://everythinginperspective.github.io/?q={search_term_string}',
+          target: 'https://everythinginperspective.vercel.app/?q={search_term_string}',
           'query-input': 'required name=search_term_string'
         },
         sameAs: [],
