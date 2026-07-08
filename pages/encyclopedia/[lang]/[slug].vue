@@ -57,21 +57,21 @@ definePageMeta({
 })
 
 const route = useRoute()
+const lang = (route.params.lang as string) || 'en'
 const slug = decodeURIComponent(route.params.slug as string)
 
-// Fetch Wikipedia content
+// Fetch Wikipedia content from language-specific endpoint
 const { data: article, pending, error } = await useFetch(
-  () => `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(slug)}`,
+  () => `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(slug)}`,
   {
     server: true,
     transform: (data: any) => {
-      // Only extract first 3-4 sentences of the extract for preview
       return {
         title: data.title,
         description: data.description || '',
         extract: data.extract || '',
         image: data.originalimage?.source || null,
-        url: data.content_urls?.desktop?.page || `https://en.wikipedia.org/wiki/${encodeURIComponent(slug)}`
+        url: data.content_urls?.desktop?.page || `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(slug)}`
       }
     }
   }
@@ -81,9 +81,9 @@ const { data: article, pending, error } = await useFetch(
 const extractParagraphs = computed(() => {
   if (!article.value?.extract) return []
   return article.value.extract
-    .split(/(?<=[.!?])\s+(?=[A-Z])/g) // Split on sentence boundaries
+    .split(/(?<=[.!?])\s+(?=[A-Z])/g)
     .filter((p: string) => p.trim().length > 0)
-    .slice(0, 4) // Show first 4 sentences
+    .slice(0, 4)
 })
 
 // SEO

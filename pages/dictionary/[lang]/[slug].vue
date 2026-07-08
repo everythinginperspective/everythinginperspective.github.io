@@ -84,22 +84,20 @@ definePageMeta({
 })
 
 const route = useRoute()
+const lang = (route.params.lang as string) || 'en'
 const slug = decodeURIComponent(route.params.slug as string)
 
-// Fetch Wiktionary content
+// Fetch Wiktionary content from language-specific endpoint
 const { data: entry, pending, error } = await useFetch(
-  () => `https://en.wiktionary.org/api/rest_v1/page/definition/${encodeURIComponent(slug)}`,
+  () => `https://${lang}.wiktionary.org/api/rest_v1/page/definition/${encodeURIComponent(slug)}`,
   {
     server: true,
     transform: (data: any): Entry => {
-      // Parse Wiktionary API response
       const definitions: Definition[] = []
       
       if (data && typeof data === 'object') {
-        // Wiktionary API returns an object with language keys and part of speech
-        for (const [lang, content] of Object.entries(data)) {
-          if (lang === 'en' && Array.isArray(content)) {
-            // Each item in the array is a definition with partOfSpeech
+        for (const [langKey, content] of Object.entries(data)) {
+          if (Array.isArray(content)) {
             for (const item of content) {
               if (item.partOfSpeech) {
                 definitions.push({
@@ -116,15 +114,14 @@ const { data: entry, pending, error } = await useFetch(
       return {
         word: slug,
         pronunciation: data?.pronunciation || undefined,
-        url: `https://en.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
+        url: `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
         definitions
       }
     },
     onResponseError() {
-      // If API request fails, still provide a valid entry with link to Wiktionary
       return {
         word: slug,
-        url: `https://en.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
+        url: `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
         definitions: []
       }
     }

@@ -7,6 +7,25 @@
       </p>
     </div>
 
+    <!-- Language Selector -->
+    <div class="language-selector">
+      <label for="lang-select">Select language:</label>
+      <select v-model="selectedLang" id="lang-select" class="lang-select">
+        <option value="en">English</option>
+        <option value="es">Español (Spanish)</option>
+        <option value="fr">Français (French)</option>
+        <option value="de">Deutsch (German)</option>
+        <option value="it">Italiano (Italian)</option>
+        <option value="pt">Português (Portuguese)</option>
+        <option value="ru">Русский (Russian)</option>
+        <option value="ja">日本語 (Japanese)</option>
+        <option value="zh">中文 (Chinese)</option>
+        <option value="ko">한국어 (Korean)</option>
+        <option value="ar">العربية (Arabic)</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+      </select>
+    </div>
+
     <!-- Search Box -->
     <div class="dictionary-search">
       <input
@@ -25,7 +44,7 @@
     <div v-if="searchQuery && !loading" class="dictionary-results">
       <p class="results-info">
         Looking for "{{ searchQuery }}" — 
-        <a :href="`/dictionary/${encodeURIComponent(searchQuery)}`" class="results-link">
+        <a :href="`/dictionary/${selectedLang}/${encodeURIComponent(searchQuery)}`" class="results-link">
           View definition →
         </a>
       </p>
@@ -39,14 +58,14 @@
     <!-- Help Text -->
     <div v-if="!searchQuery" class="dictionary-help">
       <p>
-        Enter a word to search for its definition and usage on Wiktionary.
+        Select a language and enter a word to search for its definition and usage on Wiktionary.
       </p>
     </div>
 
     <!-- Attribution -->
     <WikiAttribution
       source-name="Wiktionary"
-      :source-url="`https://en.wiktionary.org/`"
+      :source-url="`https://${selectedLang}.wiktionary.org/`"
       title="Wiktionary"
     />
   </main>
@@ -54,13 +73,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 
 definePageMeta({
   layout: 'default'
 })
 
-const router = useRouter()
+const selectedLang = ref('en')
 const searchQuery = ref('')
 const loading = ref(false)
 
@@ -69,8 +87,7 @@ const performSearch = async () => {
   
   loading.value = true
   try {
-    // Redirect to the dictionary entry page with the search term
-    await router.push(`/dictionary/${encodeURIComponent(searchQuery.value)}`)
+    await navigateTo(`/dictionary/${selectedLang.value}/${encodeURIComponent(searchQuery.value)}`)
   } finally {
     loading.value = false
   }
@@ -108,6 +125,35 @@ useSeoMeta({
   color: #666666;
   font-size: 1.125rem;
   margin: 0;
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.language-selector label {
+  font-weight: 600;
+  color: #333;
+}
+
+.lang-select {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.lang-select:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
 }
 
 .dictionary-search {
@@ -197,6 +243,15 @@ useSeoMeta({
 
   .dictionary-title {
     font-size: 2rem;
+  }
+
+  .language-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .lang-select {
+    min-width: unset;
   }
 
   .dictionary-search {
