@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Set is_me Flag</title>
+    <title>Set itisme Flag</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -42,7 +42,7 @@
     </style>
 </head>
 <body>
-    <h1>Set is_me Flag</h1>
+    <h1>Set itisme Flag</h1>
     <p>Enter a value to identify this browser/device:</p>
     <input type="text" id="ismeInput" placeholder="e.g., iPhone Safari iOS, Desktop macOS12 Firefox, etc." />
     <button onclick="setIsMe()">Set is_me</button>
@@ -55,9 +55,9 @@
                 alert('Please enter a value');
                 return;
             }
-            localStorage.setItem('is_me', value);
+            localStorage.setItem('itisme', value);
             const resultDiv = document.getElementById('result');
-            resultDiv.textContent = '✓ is_me set to: "' + value + '"';
+            resultDiv.textContent = '✓ itisme set to: "' + value + '"';
             resultDiv.className = 'result success';
             resultDiv.style.display = 'block';
         }
