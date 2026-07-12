@@ -87,33 +87,47 @@ const route = useRoute()
 const lang = (route.params.lang as string) || 'en'
 const slug = decodeURIComponent(route.params.slug as string)
 
-// Fetch Wiktionary content from language-specific endpoint
+// Fetch and scrape Wiktionary HTML page
 const { data: entry, pending, error } = await useFetch(
-  () => `https://${lang}.wiktionary.org/api/rest_v1/page/definition/${encodeURIComponent(slug)}`,
+  () => `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
   {
     server: true,
-    transform: (data: any): Entry => {
+    transform: async (html: string): Promise<Entry> => {
+      const { load } = await import('cheerio')
+      const $ = load(html)
       const definitions: Definition[] = []
       
-      if (data && typeof data === 'object') {
-        for (const [langKey, content] of Object.entries(data)) {
-          if (Array.isArray(content)) {
-            for (const item of content) {
-              if (item.partOfSpeech) {
-                definitions.push({
-                  partOfSpeech: item.partOfSpeech,
-                  definitions: item.definitions || [],
-                  examples: item.examples || []
-                })
-              }
-            }
+      // Extract definitions from Wiktionary page structure
+      // Look for definition lists (varies by language, but typically <ol> or <dl>)
+      const definitionSections = $('h2, h3').filter((i, el) => {
+        const text = $(el).text().toLowerCase()
+        return text.includes('definition') || text.includes('noun') || text.includes('verb') || text.includes('adjective')
+      })
+      
+      definitionSections.each((i, section) => {
+        const heading = $(section).text()
+        const defList = $(section).nextUntil('h2, h3').filter('ol, ul, dl')
+        const defs: string[] = []
+        
+        defList.find('li, dd').each((j, item) => {
+          const text = $(item).text().trim()
+          if (text && text.length > 0) {
+            defs.push(text)
           }
+        })
+        
+        if (defs.length > 0) {
+          definitions.push({
+            partOfSpeech: heading.split(/\(|,/)[0].trim() || 'Definition',
+            definitions: defs,
+            examples: []
+          })
         }
-      }
-
+      })
+      
       return {
         word: slug,
-        pronunciation: data?.pronunciation || undefined,
+        pronunciation: undefined,
         url: `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
         definitions
       }
