@@ -4,9 +4,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Redirecting...</title>
+  <script src="/clickhouse-tracker.js"></script>
   <script>
     var path = window.location.pathname + window.location.search + window.location.hash;
-    window.location.replace('https://everythinginperspective.vercel.app' + path);
+    var currentRef = document.referrer;
+    var savedRef = sessionStorage.getItem('original_referrer');
+    
+    // Update sessionStorage: use current referrer if external, keep saved if internal
+    if (!currentRef || currentRef.includes('github.io')) {
+      sessionStorage.setItem('original_referrer', currentRef || savedRef);
+    } else {
+      sessionStorage.setItem('original_referrer', currentRef);
+    }
+    
+    // Wait for Clickhouse to finish before redirecting
+    trackClickhousePageView().then(() => {
+      window.location.replace('https://everythinginperspective.vercel.app' + path);
+    }).catch(() => {
+      // Even if Clickhouse fails, redirect anyway
+      window.location.replace('https://everythinginperspective.vercel.app' + path);
+    });
   </script>
   <meta http-equiv="refresh" content="0; url=https://everythinginperspective.vercel.app">
   <link rel="canonical" href="https://everythinginperspective.vercel.app">

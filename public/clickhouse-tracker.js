@@ -25,13 +25,16 @@ async function trackClickhousePageView() {
     
     const itisme = localStorage.getItem('itisme') || '';
     
+    // Get referrer from sessionStorage (set by 404.html redirect) or use document.referrer
+    const referrer = sessionStorage.getItem('original_referrer') || document.referrer;
+    
     const payload = {
       event_name: 'page_view',
       timestamp: date.toISOString(),
       ip: ipData?.ip || '',
       continent: ipData?.continent_name || '',
       country: ipData?.country_name || '',
-      referrer: document.referrer,
+      referrer: referrer,
       user_agent: navigator.userAgent,
       date_iso: date.toISOString(),
       timezone_offset: tzOffset,
@@ -60,8 +63,10 @@ async function trackClickhousePageView() {
     } else {
       console.log('Clickhouse: Insert successful');
     }
+    return response;
   } catch (e) {
     console.error('Clickhouse tracking error:', e);
+    return null;
   }
 }
 
