@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get itisme Flag</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #34C759;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:active {
+            background-color: #2fa94d;
+            opacity: 0.8;
+        }
+        @media (hover: hover) {
+            button:hover {
+                background-color: #2fa94d;
+            }
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+            word-break: break-all;
+        }
+        .not-set {
+            color: #666;
+            background-color: #f5f5f5;
+        }
+        .is-set {
+            color: #155724;
+            background-color: #d4edda;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get itisme Flag</h1>
+    <p>Check what itisme value is stored:</p>
+    <button onclick="getIsMe()">Get is_me</button>
+    <div id="result" class="result"></div>
+
+    <script>
+        function getIsMe() {
+            const value = localStorage.getItem('itisme');
+            const resultDiv = document.getElementById('result');
+            if (value) {
+                resultDiv.textContent = '✓ itisme: "' + value + '"';
+                resultDiv.className = 'result is-set';
+            } else {
+                resultDiv.textContent = '✗ No itisme value set';
+                resultDiv.className = 'result not-set';
+            }
+        }
+        // Auto-check on load
+        window.addEventListener('load', getIsMe);
+    </script>
+</body>
+</html>
