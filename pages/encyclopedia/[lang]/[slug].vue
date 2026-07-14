@@ -14,30 +14,8 @@
 
     <!-- Content -->
     <article v-else-if="article" class="encyclopedia-article">
-      <!-- Article Header -->
-      <div class="article-header">
-        <h1 class="article-title">{{ article.title }}</h1>
-        <p v-if="article.description" class="article-description">{{ article.description }}</p>
-      </div>
-
-      <!-- Featured Image -->
-      <figure v-if="article.image" class="article-image">
-        <img :src="article.image" :alt="article.title" loading="lazy">
-      </figure>
-
-      <!-- Article Extract -->
-      <div class="article-extract">
-        <p v-for="(paragraph, index) in extractParagraphs" :key="index" class="article-paragraph">
-          {{ paragraph }}
-        </p>
-      </div>
-
-      <!-- Read More Link -->
-      <div class="article-read-more">
-        <a :href="article.url" target="_blank" rel="noopener noreferrer" class="read-more-link">
-          Read full article on Wikipedia →
-        </a>
-      </div>
+      <!-- Wikipedia Content -->
+      <div v-html="article.body" class="wikipedia-content"></div>
 
       <!-- Attribution -->
       <WikiAttribution
@@ -60,31 +38,26 @@ const route = useRoute()
 const lang = (route.params.lang as string) || 'en'
 const slug = decodeURIComponent(route.params.slug as string)
 
-// Fetch Wikipedia content from language-specific endpoint
+// Fetch Wikipedia HTML page
 const { data: article, pending, error } = await useFetch(
-  () => `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(slug)}`,
+  () => `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(slug)}`,
   {
     server: true,
-    transform: (data: any) => {
+    transform: async (html: string): Promise<any> => {
+      const { load } = await import('cheerio')
+      const $ = load(html)
+      
+      const title = $('h1.firstHeading').text() || slug
+      const body = $('div.mw-parser-output').html() || ''
+      
       return {
-        title: data.title,
-        description: data.description || '',
-        extract: data.extract || '',
-        image: data.originalimage?.source || null,
-        url: data.content_urls?.desktop?.page || `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(slug)}`
+        title,
+        body,
+        url: `https://${lang}.wikipedia.org/wiki/${encodeURIComponent(slug)}`
       }
     }
   }
 )
-
-// Split extract into paragraphs for better readability
-const extractParagraphs = computed(() => {
-  if (!article.value?.extract) return []
-  return article.value.extract
-    .split(/(?<=[.!?])\s+(?=[A-Z])/g)
-    .filter((p: string) => p.trim().length > 0)
-    .slice(0, 4)
-})
 
 // SEO
 watch(() => article.value, (newArticle) => {

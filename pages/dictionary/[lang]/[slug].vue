@@ -14,46 +14,8 @@
 
     <!-- Content -->
     <article v-else-if="entry" class="dictionary-entry">
-      <!-- Entry Header -->
-      <div class="entry-header">
-        <h1 class="entry-word">{{ entry.word }}</h1>
-        <p v-if="entry.pronunciation" class="entry-pronunciation">
-          <em>{{ entry.pronunciation }}</em>
-        </p>
-      </div>
-
-      <!-- Definitions by Part of Speech -->
-      <div v-for="pos in entry.definitions" :key="pos.partOfSpeech" class="pos-section">
-        <h2 class="pos-heading">{{ pos.partOfSpeech }}</h2>
-        
-        <ol class="definitions-list">
-          <li v-for="(def, index) in pos.definitions" :key="index" class="definition-item">
-            <p class="definition-text">{{ def }}</p>
-          </li>
-        </ol>
-
-        <!-- Examples if available -->
-        <div v-if="pos.examples && pos.examples.length > 0" class="examples-section">
-          <h3 class="examples-heading">Examples:</h3>
-          <ul class="examples-list">
-            <li v-for="(example, index) in pos.examples" :key="index" class="example-item">
-              {{ example }}
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- No Definitions Found -->
-      <div v-if="!entry.definitions || entry.definitions.length === 0" class="no-definitions">
-        <p>No definitions found. <a :href="entry.url" target="_blank" rel="noopener noreferrer">View on Wiktionary →</a></p>
-      </div>
-
-      <!-- Read More Link -->
-      <div class="entry-read-more">
-        <a :href="entry.url" target="_blank" rel="noopener noreferrer" class="read-more-link">
-          View full entry on Wiktionary →
-        </a>
-      </div>
+      <!-- Wiktionary Content -->
+      <div v-html="entry.body" class="wiktionary-content"></div>
 
       <!-- Attribution -->
       <WikiAttribution
@@ -66,17 +28,10 @@
 </template>
 
 <script setup lang="ts">
-interface Definition {
-  partOfSpeech: string
-  definitions: string[]
-  examples?: string[]
-}
-
 interface Entry {
   word: string
-  pronunciation?: string
+  body: string
   url: string
-  definitions: Definition[]
 }
 
 definePageMeta({
@@ -87,7 +42,7 @@ const route = useRoute()
 const lang = (route.params.lang as string) || 'en'
 const slug = decodeURIComponent(route.params.slug as string)
 
-// Fetch and scrape Wiktionary HTML page
+// Fetch Wiktionary HTML page
 const { data: entry, pending, error } = await useFetch(
   () => `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
   {
@@ -95,48 +50,20 @@ const { data: entry, pending, error } = await useFetch(
     transform: async (html: string): Promise<Entry> => {
       const { load } = await import('cheerio')
       const $ = load(html)
-      const definitions: Definition[] = []
       
-      // Extract definitions from Wiktionary page structure
-      // Look for definition lists (varies by language, but typically <ol> or <dl>)
-      const definitionSections = $('h2, h3').filter((i, el) => {
-        const text = $(el).text().toLowerCase()
-        return text.includes('definition') || text.includes('noun') || text.includes('verb') || text.includes('adjective')
-      })
-      
-      definitionSections.each((i, section) => {
-        const heading = $(section).text()
-        const defList = $(section).nextUntil('h2, h3').filter('ol, ul, dl')
-        const defs: string[] = []
-        
-        defList.find('li, dd').each((j, item) => {
-          const text = $(item).text().trim()
-          if (text && text.length > 0) {
-            defs.push(text)
-          }
-        })
-        
-        if (defs.length > 0) {
-          definitions.push({
-            partOfSpeech: heading.split(/\(|,/)[0].trim() || 'Definition',
-            definitions: defs,
-            examples: []
-          })
-        }
-      })
+      const body = $('div.mw-parser-output').html() || ''
       
       return {
         word: slug,
-        pronunciation: undefined,
-        url: `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
-        definitions
+        body,
+        url: `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`
       }
     },
     onResponseError() {
       return {
         word: slug,
-        url: `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`,
-        definitions: []
+        body: '',
+        url: `https://${lang}.wiktionary.org/wiki/${encodeURIComponent(slug)}`
       }
     }
   }
@@ -145,16 +72,11 @@ const { data: entry, pending, error } = await useFetch(
 // SEO
 watch(() => entry.value, (newEntry) => {
   if (newEntry) {
-    const description = newEntry.definitions
-      ?.flatMap(pos => pos.definitions)
-      .slice(0, 2)
-      .join(' • ') || `Definition of ${newEntry.word}`
-
     useSeoMeta({
       title: `${newEntry.word} | Dictionary`,
-      description,
+      description: `Definition of ${newEntry.word} from Wiktionary`,
       ogTitle: newEntry.word,
-      ogDescription: description,
+      ogDescription: `Definition of ${newEntry.word}`,
       ogType: 'website'
     })
 
