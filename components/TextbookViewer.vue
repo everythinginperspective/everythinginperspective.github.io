@@ -41,7 +41,7 @@ const loadTextbook = async () => {
   
   try {
     const slug = route.params.slug || 'polyglot-linguistics'
-    const response = await fetch(`/textbook/${slug}`)
+    const response = await fetch(`/api/textbook/${slug}`)
     
     if (!response.ok) {
       throw new Error('Page not found')
