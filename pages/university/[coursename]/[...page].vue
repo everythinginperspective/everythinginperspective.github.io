@@ -14,6 +14,8 @@ const fixed = computed(() => {
   if (!html.value) return ''
   
   return html.value
+    // Remove meta refresh redirects
+    .replace(/<meta[^>]*http-equiv=["']refresh["'][^>]*>/gi, '')
     // Remove .html from page links and prefix
     .replace(/href="([^":#/]+)\.html"/g, `href="/university/${coursename}/$1"`)
     // Prefix relative asset paths
