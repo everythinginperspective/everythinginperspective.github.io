@@ -7,7 +7,16 @@ const route = useRoute()
 const coursename = route.params.coursename
 const page = Array.isArray(route.params.page) ? route.params.page.join('/') : route.params.page
 
-const { data: html } = await useFetch(`/courses/${coursename}/${page}.html`)
+// Use $fetch with baseURL for SSR compatibility
+const config = useRuntimeConfig()
+const baseURL = import.meta.server ? config.public.siteUrl || 'https://everythinginperspective.vercel.app' : ''
+const html = ref('')
+
+try {
+  html.value = await $fetch(`${baseURL}/courses/${coursename}/${page}.html`, { responseType: 'text' })
+} catch (e) {
+  console.error('Failed to fetch textbook page:', e)
+}
 
 // Rewrite relative URLs: remove .html and prefix with /university/{coursename}/
 const fixed = computed(() => {
