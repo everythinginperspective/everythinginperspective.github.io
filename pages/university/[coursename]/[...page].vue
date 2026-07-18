@@ -13,7 +13,7 @@ const baseURL = import.meta.server ? config.public.siteUrl || 'https://everythin
 const html = ref('')
 
 try {
-  html.value = await $fetch(`${baseURL}/courses/${coursename}/${page}.html`, { responseType: 'text' })
+  html.value = await $fetch(`${baseURL}/university/${coursename}/${page}.html`, { responseType: 'text' })
 } catch (e) {
   console.error('Failed to fetch textbook page:', e)
 }
@@ -28,9 +28,9 @@ const fixed = computed(() => {
     // Remove .html from page links and prefix
     .replace(/href="([^":#/]+)\.html"/g, `href="/university/${coursename}/$1"`)
     // Prefix relative asset paths
-    .replace(/href="(_static[^"]*)"/g, `href="/courses/${coursename}/$1"`)
-    .replace(/src="(_static[^"]*)"/g, `src="/courses/${coursename}/$1"`)
-    .replace(/src="(lunr[^"]*)"/g, `src="/courses/${coursename}/$1"`)
+    .replace(/href="(_static[^"]*)"/g, `href="/university/${coursename}/$1"`)
+    .replace(/src="(_static[^"]*)"/g, `src="/university/${coursename}/$1"`)
+    .replace(/src="(lunr[^"]*)"/g, `src="/university/${coursename}/$1"`)
 })
 
 definePageMeta({
