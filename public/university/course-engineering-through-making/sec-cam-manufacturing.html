@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Manufacturing Methods: From Raw Material to Finished Part</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "textmacros",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[tex]/textmacros",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Engineering Through Making">
+<meta property="book:author" content="Everything in Perspective">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.1.14';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.cb5af2e851de3574.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f51cd4153b45055d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="engineering-through-making.html"><span class="title">Engineering Through Making</span> <span class="subtitle">Design, Manufacture, and Production</span></a></h1>
+<p class="byline">Everything in Perspective</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-cam-materials.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="target-1-camera-fixture.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-cam-build.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">How This Course Works</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="target-1-camera-fixture.html" class="internal"><span class="codenumber">1</span> <span class="title">Target 1: Multi-Camera Podcasting Fixture</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-problem.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Problem: Repeatability at Scale</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-problem.html#subsec-requirements" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Design Requirements (The Hard Constraints)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-design.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Design Constraints: Why Engineering Requires Trade-offs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-design.html#subsec-rigidity" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Constraint 1: Rigidity vs. Weight</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-design.html#subsec-adjustability" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Constraint 2: Adjustability vs. Stability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-design.html#subsec-compatibility" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Constraint 3: Universal Mounting</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-design.html#subsec-manufacturing" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Constraint 4: Manufacturability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-materials.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Materials: Why We Choose What We Choose</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-materials.html#subsec-material-candidates" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Evaluating Material Options</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-materials.html#subsec-material-properties" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Deep Dive: Why Aluminum Extrusion Works</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-materials.html#subsec-component-materials" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Material Selection for Each Component</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-cam-manufacturing.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Manufacturing Methods: From Raw Material to Finished Part</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-manufacturing.html#subsec-tools-needed" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Tools You’ll Need</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-manufacturing.html#subsec-cutting" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Manufacturing Step 1: Cutting Aluminum Extrusion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-manufacturing.html#subsec-drilling" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Manufacturing Step 2: Drilling Mounting Holes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-manufacturing.html#subsec-assembly" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Manufacturing Step 3: Assembly and Joining</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-build.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Step-by-Step Build: Making Your Fixture</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-materials-list" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Bill of Materials (What You Need to Buy)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-phase1-frame" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Build Phase 1: Main Frame (1-2 hours)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-phase2-arms" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Build Phase 2: Camera Mounting Arms (2-3 hours)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-phase3-cables" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Build Phase 3: Cable Management (30-45 minutes)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-phase4-cameras" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Build Phase 4: Installing Your Cameras (30 minutes)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-testing.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Testing and Validation: Verifying Your Build Works</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-testing.html#subsec-test-rigidity" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Test 1: Rigidity and Stability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-testing.html#subsec-test-repeatability" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Test 2: Repeatability (The Core Requirement)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-testing.html#subsec-test-quick-swap" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Test 3: Quick-Swap Capability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-testing.html#subsec-test-audio" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Test 4: Audio and Power Management</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-production.html" class="internal"><span class="codenumber">1.7</span> <span class="title">From One to Many: Scaling to Production</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-production.html#subsec-standardization" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Standardization: Designing for Production</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-production.html#subsec-cost-reduction" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Cost Reduction: Maintaining Margin</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-production.html#subsec-quality" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Quality Control: Maintaining Standards</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="target-2-scoliosis-mattress.html" class="internal"><span class="codenumber">2</span> <span class="title">Target 2: Custom Scoliosis Support Mattress</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-problem.html" class="internal"><span class="codenumber">2.1</span> <span class="title">The Problem: Scoliosis and Sleep</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-problem.html#subsec-scoliosis-basics" class="internal"><span class="codenumber">2.1.1</span> <span class="title">What Is Scoliosis? (And Why It Matters for Sleep)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-problem.html#subsec-existing-solutions" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Why Existing Solutions Fail</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-problem.html#subsec-design-requirements" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Design Requirements for the Scoliosis Mattress Topper</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-biomechanics.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Biomechanics: Understanding How the Body Works</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-biomechanics.html#subsec-pressure-points" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Pressure Points and Load Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-biomechanics.html#subsec-spine-curvature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Measuring and Understanding Individual Spine Curvature</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-biomechanics.html#subsec-firmness-comfort" class="internal"><span class="codenumber">2.2.3</span> <span class="title">The Firmness Paradox: Support vs. Comfort</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-materials.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Materials Science: Fabrics, Fillings, and Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-materials.html#subsec-outer-fabric" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Outer Fabric: Choosing Your Shell</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-materials.html#subsec-filling-material" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Fill Material: Creating the Support</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-materials.html#subsec-cover-design" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Cover Design: Removable and Washable</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-manufacturing.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Manufacturing: Building the Custom Topper</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-manufacturing.html#subsec-tools-sewing" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Tools and Equipment</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-manufacturing.html#subsec-custom-fit" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Phase 1: Creating a Custom Fit (Design)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-manufacturing.html#subsec-cutting-assembly" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Phase 2: Cutting and Assembling Panels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-manufacturing.html#subsec-filling" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Phase 3: Filling and Sealing</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-testing.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Testing and Validation: Does It Actually Work?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-testing.html#subsec-comfort-testing" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Test 1: Comfort and Support Assessment</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-testing.html#subsec-durability-testing" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Test 2: Durability and Longevity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-testing.html#subsec-cleanliness-testing" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Test 3: Cleanability and Hygiene</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-scaling.html" class="internal"><span class="codenumber">2.6</span> <span class="title">From One to Many: Scaling Production</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-scaling.html#subsec-customization-at-scale" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Maintaining Customization at Scale</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-scaling.html#subsec-manufacturing-process" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Streamlined Manufacturing Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-scaling.html#subsec-cost-at-scale" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Cost Analysis at Scale</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-tools.html" class="internal"><span class="codenumber">A</span> <span class="title">Tools Reference</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-materials.html" class="internal"><span class="codenumber">B</span> <span class="title">Materials Reference</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-scaling.html" class="internal"><span class="codenumber">C</span> <span class="title">From One to Many: Scaling Production</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-cam-manufacturing">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Manufacturing Methods: From Raw Material to Finished Part</span>
+</h2>
+<section class="introduction" id="sec-cam-manufacturing-2">
+<div class="para" id="sec-cam-manufacturing-2-1">Now you understand what you’re building (requirements) and what you’re building it from (materials). Next: <em class="emphasis">how</em> do you actually make it?<div class="autopermalink" data-description="Paragraph"><a href="#sec-cam-manufacturing-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-cam-manufacturing-2-2">Manufacturing is the bridge between design and reality. A perfect design on paper fails if you can’t manufacture it with your available tools. Conversely, simple manufacturing methods often lead to simpler, more reliable designs.<div class="autopermalink" data-description="Paragraph"><a href="#sec-cam-manufacturing-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="subsec-tools-needed">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Tools You’ll Need</span>
+</h3>
+<div class="para" id="subsec-tools-needed-2">This is a complete beginner’s guide. You’ll need:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-tools-needed-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="subsec-tools-needed-3"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Tools Required for Camera Fixture Build<div class="autopermalink" data-description="Table 1.4.1: Tools Required for Camera Fixture Build"><a href="#subsec-tools-needed-3" title="Copy heading and permalink for Table 1.4.1: Tools Required for Camera Fixture Build" aria-label="Copy heading and permalink for Table 1.4.1: Tools Required for Camera Fixture Build">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t3 lines">Tool</td>
+<td class="l m b0 r0 l0 t3 lines">Purpose</td>
+<td class="l m b0 r0 l0 t3 lines">Approximate Cost</td>
+<td class="l m b0 r0 l0 t3 lines">Can You Borrow It?</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hacksaw</td>
+<td class="l m b0 r0 l0 t0 lines">Cutting aluminum extrusion</td>
+<td class="l m b0 r0 l0 t0 lines">$15–30</td>
+<td class="l m b0 r0 l0 t0 lines">Yes, very common</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Drill (hand or electric)</td>
+<td class="l m b0 r0 l0 t0 lines">Drilling mounting holes</td>
+<td class="l m b0 r0 l0 t0 lines">$30–80</td>
+<td class="l m b0 r0 l0 t0 lines">Yes, most homes have one</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Drill bits (assorted set)</td>
+<td class="l m b0 r0 l0 t0 lines">Various hole sizes</td>
+<td class="l m b0 r0 l0 t0 lines">$10–20</td>
+<td class="l m b0 r0 l0 t0 lines">Yes</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Metric wrench set</td>
+<td class="l m b0 r0 l0 t0 lines">Tightening fasteners</td>
+<td class="l m b0 r0 l0 t0 lines">$15–30</td>
+<td class="l m b0 r0 l0 t0 lines">Yes</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hex key (Allen) set</td>
+<td class="l m b0 r0 l0 t0 lines">Fasteners with hex sockets</td>
+<td class="l m b0 r0 l0 t0 lines">$10–15</td>
+<td class="l m b0 r0 l0 t0 lines">Yes</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Clamps (at least 4)</td>
+<td class="l m b0 r0 l0 t0 lines">Holding pieces while drilling</td>
+<td class="l m b0 r0 l0 t0 lines">$30–50</td>
+<td class="l m b0 r0 l0 t0 lines">Yes, essential in workshops</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Measuring tape</td>
+<td class="l m b0 r0 l0 t0 lines">Measuring dimensions</td>
+<td class="l m b0 r0 l0 t0 lines">$10–15</td>
+<td class="l m b0 r0 l0 t0 lines">Yes</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Speed square or angle finder</td>
+<td class="l m b0 r0 l0 t0 lines">Checking angles and perpendicularity</td>
+<td class="l m b0 r0 l0 t0 lines">$15–25</td>
+<td class="l m b0 r0 l0 t0 lines">Yes</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Work table or bench</td>
+<td class="l m b0 r0 l0 t0 lines">Stable surface for assembly</td>
+<td class="l m b0 r0 l0 t0 lines">N/A (borrow or use sturdy table)</td>
+<td class="l m b0 r0 l0 t0 lines">Yes, improvise if needed</td>
+</tr>
+</table></div>
+</figure>
+<div class="para" id="subsec-tools-needed-4">Total cost if buying everything: $150–250. Cost if borrowing: $50–100 for consumables (fasteners, connectors).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-tools-needed-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="note remark-like" id="subsec-tools-needed-5"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Where to Get Tools.</span>
+</h4>
+<div class="para" id="subsec-tools-needed-5-2">Community maker spaces (TechShop, Makerspace, local hackerspaces) often provide all tools free or for low membership. This is the cheapest route if one exists near you. Otherwise, basic tool sets from home improvement stores are affordable and worth keeping.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-tools-needed-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 1.4.2: Where to Get Tools"><a href="#subsec-tools-needed-5" title="Copy heading and permalink for Note 1.4.2: Where to Get Tools" aria-label="Copy heading and permalink for Note 1.4.2: Where to Get Tools">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.4.1: Tools You’ll Need"><a href="#subsec-tools-needed" title="Copy heading and permalink for Subsection 1.4.1: Tools You’ll Need" aria-label="Copy heading and permalink for Subsection 1.4.1: Tools You’ll Need">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-cutting">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Manufacturing Step 1: Cutting Aluminum Extrusion</span>
+</h3>
+<div class="para" id="subsec-cutting-2">Aluminum extrusion comes in standard lengths (typically 3m or 6m). You need to cut it to specific lengths. A hacksaw is the simplest tool.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cutting-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-cutting-3-2-1">Measure twice. Mark your cut line in pencil on all four sides of the beam. A slightly crooked cut is fine; misaligned cuts are not.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cutting-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-cutting-3-3-1">Clamp firmly. Secure the extrusion in a vise or with clamps so it cannot move. Aluminum can shift during cutting, resulting in imprecise cuts.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cutting-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-cutting-3-4-1">Cut slowly. Use a hacksaw with smooth, even pressure. Fast aggressive cutting can cause blade binding and poor cut quality. Let the saw do the work.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cutting-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-cutting-3-5-1">File the edge. After cutting, the edge will be sharp and slightly uneven. Use a metal file to smooth it. This prevents cut fingers and ensures better assembly.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cutting-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-cutting-4">Why this matters: A crooked cut means the beam won’t sit flat against connector plates. Your entire frame will be slightly twisted. This is why precision starts here.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cutting-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="insight remark-like" id="subsec-cutting-5"><h4 class="heading">
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Principle of Tolerances.</span>
+</h4>
+<div class="para" id="subsec-cutting-5-2">In manufacturing, "tolerance" is the acceptable range of error. For a camera fixture, ±2mm is acceptable. ±5mm will be visible in video angles. You want to stay within ±1mm for best results.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cutting-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-cutting-5-3">This is why professional manufacturing pays for precision tools and training. Every cut, every hole, every assembly step compounds errors. Good manufacturing processes minimize these accumulations.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-cutting-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Insight 1.4.3: The Principle of Tolerances"><a href="#subsec-cutting-5" title="Copy heading and permalink for Insight 1.4.3: The Principle of Tolerances" aria-label="Copy heading and permalink for Insight 1.4.3: The Principle of Tolerances">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.4.2: Manufacturing Step 1: Cutting Aluminum Extrusion"><a href="#subsec-cutting" title="Copy heading and permalink for Subsection 1.4.2: Manufacturing Step 1: Cutting Aluminum Extrusion" aria-label="Copy heading and permalink for Subsection 1.4.2: Manufacturing Step 1: Cutting Aluminum Extrusion">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-drilling">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Manufacturing Step 2: Drilling Mounting Holes</span>
+</h3>
+<div class="para logical" id="subsec-drilling-2">
+<div class="para">You need holes for:</div>
+<ul class="disc" id="subsec-drilling-2-1">
+<li id="subsec-drilling-2-1-1">
+<div class="para" id="p-derived-subsec-drilling-2-1-1">Connecting extrusion pieces to brackets</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-drilling-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-drilling-2-1-2">
+<div class="para" id="p-derived-subsec-drilling-2-1-2">Mounting ball joints for adjustment arms</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-drilling-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-drilling-2-1-3">
+<div class="para" id="p-derived-subsec-drilling-2-1-3">Camera mounting blocks</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-drilling-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-drilling-2-1-4">
+<div class="para" id="p-derived-subsec-drilling-2-1-4">Cable pass-throughs</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-drilling-2-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-drilling-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-drilling-3-2-1">Mark the hole location. Use a center punch (a small pointed tool) to mark where the hole should go. This prevents drill bit wandering.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-drilling-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-drilling-3-3-1">Clamp the workpiece. Never hold a piece by hand while drilling. Your hand can slip into the bit, causing injury. Always clamp.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-drilling-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-drilling-3-4-1">Start with a pilot hole. Use a small drill bit first (2mm) to establish the hole location accurately. Then increase to your target size.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-drilling-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-drilling-3-5-1">Drill perpendicular. Use a speed square to ensure the drill is perpendicular to the surface. Angled holes weaken joints.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-drilling-3-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-drilling-3-6-1">Use cutting fluid. A small amount of cutting oil on the drill bit makes cutting smoother and extends bit life.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-drilling-3-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-drilling-3-7-1">Remove burrs. After drilling, the hole edges are sharp. Use a countersink bit or file to deburr (smooth the edges).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-drilling-3-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-drilling-4">Why this matters: A hole that’s slightly angled weakens the joint. A hole that’s too large (from a dull bit) won’t hold a tight bolt. Drilling precision determines joint strength.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-drilling-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.4.3: Manufacturing Step 2: Drilling Mounting Holes"><a href="#subsec-drilling" title="Copy heading and permalink for Subsection 1.4.3: Manufacturing Step 2: Drilling Mounting Holes" aria-label="Copy heading and permalink for Subsection 1.4.3: Manufacturing Step 2: Drilling Mounting Holes">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-assembly">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Manufacturing Step 3: Assembly and Joining</span>
+</h3>
+<div class="para" id="subsec-assembly-2">Once pieces are cut and drilled, they must be joined into a rigid structure. For aluminum extrusion, you have three primary joining methods:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="subsec-assembly-3"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Joining Methods for Aluminum<div class="autopermalink" data-description="Table 1.4.4: Joining Methods for Aluminum"><a href="#subsec-assembly-3" title="Copy heading and permalink for Table 1.4.4: Joining Methods for Aluminum" aria-label="Copy heading and permalink for Table 1.4.4: Joining Methods for Aluminum">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t3 lines">Method</td>
+<td class="l m b0 r0 l0 t3 lines">Strength</td>
+<td class="l m b0 r0 l0 t3 lines">Permanence</td>
+<td class="l m b0 r0 l0 t3 lines">Difficulty</td>
+<td class="l m b0 r0 l0 t3 lines">Best For</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Bolted connection (most recommended)</td>
+<td class="l m b0 r0 l0 t0 lines">⭐⭐⭐⭐⭐</td>
+<td class="l m b0 r0 l0 t0 lines">Semi-permanent (can unbolt)</td>
+<td class="l m b0 r0 l0 t0 lines">Easy</td>
+<td class="l m b0 r0 l0 t0 lines">Main frame (camera fixture)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T-slot nuts and bolts</td>
+<td class="l m b0 r0 l0 t0 lines">⭐⭐⭐⭐⭐</td>
+<td class="l m b0 r0 l0 t0 lines">Semi-permanent</td>
+<td class="l m b0 r0 l0 t0 lines">Easy</td>
+<td class="l m b0 r0 l0 t0 lines">Modular extrusion systems</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Welding</td>
+<td class="l m b0 r0 l0 t0 lines">⭐⭐⭐⭐⭐</td>
+<td class="l m b0 r0 l0 t0 lines">Permanent</td>
+<td class="l m b0 r0 l0 t0 lines">Difficult (requires equipment)</td>
+<td class="l m b0 r0 l0 t0 lines">Professional shops</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Epoxy adhesive</td>
+<td class="l m b0 r0 l0 t0 lines">⭐⭐⭐</td>
+<td class="l m b0 r0 l0 t0 lines">Permanent</td>
+<td class="l m b0 r0 l0 t0 lines">Easy</td>
+<td class="l m b0 r0 l0 t0 lines">Secondary reinforcement</td>
+</tr>
+</table></div>
+</figure>
+<div class="para" id="subsec-assembly-4">We’re using bolted connections. Here’s why:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-assembly-5">
+<li id="subsec-assembly-5-1">
+<div class="para" id="p-derived-subsec-assembly-5-1">You don’t need welding equipment</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-assembly-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-assembly-5-2">
+<div class="para" id="p-derived-subsec-assembly-5-2">Bolted joints are as strong as welded (if done correctly)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-assembly-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-assembly-5-3">
+<div class="para" id="p-derived-subsec-assembly-5-3">You can disassemble and reconfigure if needed</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-assembly-5-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-assembly-5-4">
+<div class="para" id="p-derived-subsec-assembly-5-4">It’s forgiving—if a bolt loosens, you can tighten it. Welded joints can’t be fixed</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-assembly-5-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul> 
+<div class="para" id="subsec-assembly-6-2-1">Align the pieces. Use clamps to hold two pieces in their correct position relative to each other. Use a speed square to ensure perpendicularity.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-assembly-6-3-1">Drill through both pieces simultaneously. If you mark and drill separately, holes won’t align. Drilling through both at once ensures perfect alignment.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-assembly-6-4-1">Insert the bolt. Slide the bolt through both holes. For aluminum, use stainless steel bolts (they resist corrosion and won’t seize).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-6-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-assembly-6-5-1">Add a washer under the bolt head. The washer distributes pressure and prevents the bolt head from sinking into soft aluminum.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-6-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-assembly-6-6-1">Thread on the nut. Use a nut on the opposite end. Start by hand, then tighten with a wrench.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-6-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-assembly-6-7-1">Tighten firmly but don’t over-tighten. A bolt should be tight enough that two pieces won’t move relative to each other, but not so tight that you strip the aluminum threads. Tighten until resistance, then give it one more 1/4 turn.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-6-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-assembly-6-8-1">Lock the bolt. Use a lock washer or thread-lock compound (like Loctite) to prevent the bolt from loosening due to vibration during recording.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-6-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="insight remark-like" id="subsec-assembly-7"><h4 class="heading">
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Why Bolts Work.</span>
+</h4>
+<div class="para" id="subsec-assembly-7-2">A bolted joint works because the bolt is under tension. The two materials are clamped together between the bolt head and the nut. This clamping force creates friction that prevents the pieces from sliding relative to each other. A tighter bolt = more clamping force = stronger joint.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-assembly-7-3">This is physics in action. You’re using the physics of friction and tension to create a mechanical bond.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-assembly-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Insight 1.4.5: Why Bolts Work"><a href="#subsec-assembly-7" title="Copy heading and permalink for Insight 1.4.5: Why Bolts Work" aria-label="Copy heading and permalink for Insight 1.4.5: Why Bolts Work">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.4.4: Manufacturing Step 3: Assembly and Joining"><a href="#subsec-assembly" title="Copy heading and permalink for Subsection 1.4.4: Manufacturing Step 3: Assembly and Joining" aria-label="Copy heading and permalink for Subsection 1.4.4: Manufacturing Step 3: Assembly and Joining">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 1.4: Manufacturing Methods: From Raw Material to Finished Part"><a href="#sec-cam-manufacturing" title="Copy heading and permalink for Section 1.4: Manufacturing Methods: From Raw Material to Finished Part" aria-label="Copy heading and permalink for Section 1.4: Manufacturing Methods: From Raw Material to Finished Part">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-cam-materials.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-cam-build.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

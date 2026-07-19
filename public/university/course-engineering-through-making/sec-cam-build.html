@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Step-by-Step Build: Making Your Fixture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "textmacros",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[tex]/textmacros",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Engineering Through Making">
+<meta property="book:author" content="Everything in Perspective">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.1.14';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.cb5af2e851de3574.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.f51cd4153b45055d.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.66fa8a682a32c0ac.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="engineering-through-making.html"><span class="title">Engineering Through Making</span> <span class="subtitle">Design, Manufacture, and Production</span></a></h1>
+<p class="byline">Everything in Perspective</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-cam-manufacturing.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="target-1-camera-fixture.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-cam-testing.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">How This Course Works</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="target-1-camera-fixture.html" class="internal"><span class="codenumber">1</span> <span class="title">Target 1: Multi-Camera Podcasting Fixture</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-problem.html" class="internal"><span class="codenumber">1.1</span> <span class="title">The Problem: Repeatability at Scale</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-problem.html#subsec-requirements" class="internal"><span class="codenumber">1.1.1</span> <span class="title">Design Requirements (The Hard Constraints)</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-design.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Design Constraints: Why Engineering Requires Trade-offs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-design.html#subsec-rigidity" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Constraint 1: Rigidity vs. Weight</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-design.html#subsec-adjustability" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Constraint 2: Adjustability vs. Stability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-design.html#subsec-compatibility" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Constraint 3: Universal Mounting</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-design.html#subsec-manufacturing" class="internal"><span class="codenumber">1.2.4</span> <span class="title">Constraint 4: Manufacturability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-materials.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Materials: Why We Choose What We Choose</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-materials.html#subsec-material-candidates" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Evaluating Material Options</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-materials.html#subsec-material-properties" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Deep Dive: Why Aluminum Extrusion Works</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-materials.html#subsec-component-materials" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Material Selection for Each Component</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-manufacturing.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Manufacturing Methods: From Raw Material to Finished Part</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-manufacturing.html#subsec-tools-needed" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Tools You’ll Need</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-manufacturing.html#subsec-cutting" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Manufacturing Step 1: Cutting Aluminum Extrusion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-manufacturing.html#subsec-drilling" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Manufacturing Step 2: Drilling Mounting Holes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-manufacturing.html#subsec-assembly" class="internal"><span class="codenumber">1.4.4</span> <span class="title">Manufacturing Step 3: Assembly and Joining</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-cam-build.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Step-by-Step Build: Making Your Fixture</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-materials-list" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Bill of Materials (What You Need to Buy)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-phase1-frame" class="internal"><span class="codenumber">1.5.2</span> <span class="title">Build Phase 1: Main Frame (1-2 hours)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-phase2-arms" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Build Phase 2: Camera Mounting Arms (2-3 hours)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-phase3-cables" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Build Phase 3: Cable Management (30-45 minutes)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-build.html#subsec-phase4-cameras" class="internal"><span class="codenumber">1.5.5</span> <span class="title">Build Phase 4: Installing Your Cameras (30 minutes)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-testing.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Testing and Validation: Verifying Your Build Works</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-testing.html#subsec-test-rigidity" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Test 1: Rigidity and Stability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-testing.html#subsec-test-repeatability" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Test 2: Repeatability (The Core Requirement)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-testing.html#subsec-test-quick-swap" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Test 3: Quick-Swap Capability</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-testing.html#subsec-test-audio" class="internal"><span class="codenumber">1.6.4</span> <span class="title">Test 4: Audio and Power Management</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-cam-production.html" class="internal"><span class="codenumber">1.7</span> <span class="title">From One to Many: Scaling to Production</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-production.html#subsec-standardization" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Standardization: Designing for Production</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-production.html#subsec-cost-reduction" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Cost Reduction: Maintaining Margin</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-cam-production.html#subsec-quality" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Quality Control: Maintaining Standards</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="target-2-scoliosis-mattress.html" class="internal"><span class="codenumber">2</span> <span class="title">Target 2: Custom Scoliosis Support Mattress</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-problem.html" class="internal"><span class="codenumber">2.1</span> <span class="title">The Problem: Scoliosis and Sleep</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-problem.html#subsec-scoliosis-basics" class="internal"><span class="codenumber">2.1.1</span> <span class="title">What Is Scoliosis? (And Why It Matters for Sleep)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-problem.html#subsec-existing-solutions" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Why Existing Solutions Fail</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-problem.html#subsec-design-requirements" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Design Requirements for the Scoliosis Mattress Topper</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-biomechanics.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Biomechanics: Understanding How the Body Works</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-biomechanics.html#subsec-pressure-points" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Pressure Points and Load Distribution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-biomechanics.html#subsec-spine-curvature" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Measuring and Understanding Individual Spine Curvature</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-biomechanics.html#subsec-firmness-comfort" class="internal"><span class="codenumber">2.2.3</span> <span class="title">The Firmness Paradox: Support vs. Comfort</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-materials.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Materials Science: Fabrics, Fillings, and Construction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-materials.html#subsec-outer-fabric" class="internal"><span class="codenumber">2.3.1</span> <span class="title">The Outer Fabric: Choosing Your Shell</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-materials.html#subsec-filling-material" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Fill Material: Creating the Support</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-materials.html#subsec-cover-design" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Cover Design: Removable and Washable</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-manufacturing.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Manufacturing: Building the Custom Topper</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-manufacturing.html#subsec-tools-sewing" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Tools and Equipment</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-manufacturing.html#subsec-custom-fit" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Phase 1: Creating a Custom Fit (Design)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-manufacturing.html#subsec-cutting-assembly" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Phase 2: Cutting and Assembling Panels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-manufacturing.html#subsec-filling" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Phase 3: Filling and Sealing</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-testing.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Testing and Validation: Does It Actually Work?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-testing.html#subsec-comfort-testing" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Test 1: Comfort and Support Assessment</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-testing.html#subsec-durability-testing" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Test 2: Durability and Longevity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-testing.html#subsec-cleanliness-testing" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Test 3: Cleanability and Hygiene</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-scol-scaling.html" class="internal"><span class="codenumber">2.6</span> <span class="title">From One to Many: Scaling Production</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-scaling.html#subsec-customization-at-scale" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Maintaining Customization at Scale</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-scaling.html#subsec-manufacturing-process" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Streamlined Manufacturing Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-scol-scaling.html#subsec-cost-at-scale" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Cost Analysis at Scale</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-tools.html" class="internal"><span class="codenumber">A</span> <span class="title">Tools Reference</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-materials.html" class="internal"><span class="codenumber">B</span> <span class="title">Materials Reference</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-scaling.html" class="internal"><span class="codenumber">C</span> <span class="title">From One to Many: Scaling Production</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-cam-build">
+<h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Step-by-Step Build: Making Your Fixture</span>
+</h2>
+<section class="introduction" id="sec-cam-build-2">
+<div class="para" id="sec-cam-build-2-1">You now understand the why (requirements, constraints, materials). Now comes the how: the actual build.<div class="autopermalink" data-description="Paragraph"><a href="#sec-cam-build-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-cam-build-2-2">This section assumes you’re a complete beginner with no manufacturing experience. Every step is explained clearly. If you follow these steps, you will build a professional-quality camera fixture.<div class="autopermalink" data-description="Paragraph"><a href="#sec-cam-build-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-cam-build-2-3">Estimated time: 6-8 hours for your first build (will be faster on subsequent builds as you get familiar with the process).<div class="autopermalink" data-description="Paragraph"><a href="#sec-cam-build-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="subsection" id="subsec-materials-list">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bill of Materials (What You Need to Buy)</span>
+</h3>
+<div class="para" id="subsec-materials-list-2">Here’s everything you’ll need. Print this list and take it to a hardware store or order online.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-materials-list-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="subsec-materials-list-3"><figcaption><span class="type">Table</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Complete Bill of Materials<div class="autopermalink" data-description="Table 1.5.1: Complete Bill of Materials"><a href="#subsec-materials-list-3" title="Copy heading and permalink for Table 1.5.1: Complete Bill of Materials" aria-label="Copy heading and permalink for Table 1.5.1: Complete Bill of Materials">🔗</a></div></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t3 lines">Part</td>
+<td class="l m b0 r0 l0 t3 lines">Quantity</td>
+<td class="l m b0 r0 l0 t3 lines">Specification</td>
+<td class="l m b0 r0 l0 t3 lines">Est. Cost</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Aluminum extrusion</td>
+<td class="l m b0 r0 l0 t0 lines">20 m total</td>
+<td class="l m b0 r0 l0 t0 lines">30×30mm anodized aluminum (pre-cut or you cut)</td>
+<td class="l m b0 r0 l0 t0 lines">$150–200</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Corner brackets</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">90° aluminum corner plates for 30×30mm extrusion</td>
+<td class="l m b0 r0 l0 t0 lines">$30–40</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">M8 stainless bolts</td>
+<td class="l m b0 r0 l0 t0 lines">50</td>
+<td class="l m b0 r0 l0 t0 lines">M8 × 30mm stainless steel socket head cap bolts</td>
+<td class="l m b0 r0 l0 t0 lines">$10–15</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">M8 stainless nuts</td>
+<td class="l m b0 r0 l0 t0 lines">50</td>
+<td class="l m b0 r0 l0 t0 lines">M8 hex nuts, stainless steel</td>
+<td class="l m b0 r0 l0 t0 lines">$5–8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">M8 lock washers</td>
+<td class="l m b0 r0 l0 t0 lines">50</td>
+<td class="l m b0 r0 l0 t0 lines">Split lock washers, stainless steel</td>
+<td class="l m b0 r0 l0 t0 lines">$3–5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">M8 flat washers</td>
+<td class="l m b0 r0 l0 t0 lines">100</td>
+<td class="l m b0 r0 l0 t0 lines">Stainless steel, M8 size</td>
+<td class="l m b0 r0 l0 t0 lines">$3–5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ball joint assemblies</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">Camera arm adjustment joints (friction ball mounts)</td>
+<td class="l m b0 r0 l0 t0 lines">$40–60</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ball lock pins</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">Stainless steel quick-release ball lock pins (M8)</td>
+<td class="l m b0 r0 l0 t0 lines">$30–50</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Camera adapters</td>
+<td class="l m b0 r0 l0 t0 lines">As needed</td>
+<td class="l m b0 r0 l0 t0 lines">GoPro mounts, Sony tripod adapters</td>
+<td class="l m b0 r0 l0 t0 lines">$20–30 per type</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Quick-release mounting blocks</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">Aluminum blocks drilled for ball lock pins</td>
+<td class="l m b0 r0 l0 t0 lines">$50–80 (or 3D print yourself)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Aluminum angle extrusion</td>
+<td class="l m b0 r0 l0 t0 lines">10 m</td>
+<td class="l m b0 r0 l0 t0 lines">20×20mm aluminum for adjustment arms</td>
+<td class="l m b0 r0 l0 t0 lines">$50–70</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">T-slot nuts and bolts (optional)</td>
+<td class="l m b0 r0 l0 t0 lines">As needed</td>
+<td class="l m b0 r0 l0 t0 lines">For modular assembly alternative</td>
+<td class="l m b0 r0 l0 t0 lines">$30–50</td>
+</tr>
+</table></div>
+</figure>
+<div class="para" id="subsec-materials-list-4">Total estimated cost: $420–650. This is reasonable for professional-grade equipment that would otherwise cost $2,000+.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-materials-list-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="note remark-like" id="subsec-materials-list-5"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Money-Saving Tips.</span>
+</h4>
+<ul class="disc" id="subsec-materials-list-5-2">
+<li id="subsec-materials-list-5-2-1">
+<div class="para" id="p-derived-subsec-materials-list-5-2-1">Reclaimed aluminum: Check local metal recyclers or industrial salvage shops. Slightly used extrusion is often 40-50% cheaper.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-materials-list-5-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-materials-list-5-2-2">
+<div class="para" id="p-derived-subsec-materials-list-5-2-2">3D printing: If you have access to a 3D printer, print the camera mounting blocks yourself (save $30-50).</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-materials-list-5-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-materials-list-5-2-3">
+<div class="para" id="p-derived-subsec-materials-list-5-2-3">Bulk buying: Buy fasteners in bulk—500 M8 bolts cost less per unit than 50.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-materials-list-5-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-materials-list-5-2-4">
+<div class="para" id="p-derived-subsec-materials-list-5-2-4">Community workshops: Maker spaces often have material discounts or free materials from members.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-materials-list-5-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Note 1.5.2: Money-Saving Tips"><a href="#subsec-materials-list-5" title="Copy heading and permalink for Note 1.5.2: Money-Saving Tips" aria-label="Copy heading and permalink for Note 1.5.2: Money-Saving Tips">🔗</a></div>
+</article><div class="autopermalink" data-description="Subsection 1.5.1: Bill of Materials (What You Need to Buy)"><a href="#subsec-materials-list" title="Copy heading and permalink for Subsection 1.5.1: Bill of Materials (What You Need to Buy)" aria-label="Copy heading and permalink for Subsection 1.5.1: Bill of Materials (What You Need to Buy)">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-phase1-frame">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Build Phase 1: Main Frame (1-2 hours)</span>
+</h3>
+<div class="para" id="subsec-phase1-frame-2">The main frame is the rigid backbone. Everything else mounts to this.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="subsec-phase1-frame-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/coming-soon.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Main frame structure (exploded view)<div class="autopermalink" data-description="Figure 1.5.3"><a href="#subsec-phase1-frame-3" title="Copy heading and permalink for Figure 1.5.3" aria-label="Copy heading and permalink for Figure 1.5.3">🔗</a></div></figcaption>
+</figure>
+<div class="para logical" id="subsec-phase1-frame-4">
+<div class="para">The frame is essentially a rectangular box:</div>
+<ul class="disc" id="subsec-phase1-frame-4-1">
+<li id="subsec-phase1-frame-4-1-1">
+<div class="para" id="p-derived-subsec-phase1-frame-4-1-1">Base dimensions: 1.2m × 0.8m (adjustable to your studio space)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase1-frame-4-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase1-frame-4-1-2">
+<div class="para" id="p-derived-subsec-phase1-frame-4-1-2">Height: 1.5m (adjustable)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase1-frame-4-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase1-frame-4-1-3">
+<div class="para" id="p-derived-subsec-phase1-frame-4-1-3">Four vertical corner posts with horizontal cross-bracing for rigidity</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase1-frame-4-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-2-1">Cut the extrusion pieces.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ul class="disc" id="subsec-phase1-frame-5-2-2">
+<li id="subsec-phase1-frame-5-2-2-1">
+<div class="para" id="p-derived-subsec-phase1-frame-5-2-2-1">4 vertical pieces: 1500mm each (height)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase1-frame-5-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase1-frame-5-2-2-2">
+<div class="para" id="p-derived-subsec-phase1-frame-5-2-2-2">4 base pieces: 2 × 1200mm and 2 × 800mm (rectangular base)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase1-frame-5-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase1-frame-5-2-2-3">
+<div class="para" id="p-derived-subsec-phase1-frame-5-2-2-3">4 top pieces: 2 × 1200mm and 2 × 800mm (matching base for rigidity)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase1-frame-5-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase1-frame-5-2-2-4">
+<div class="para" id="p-derived-subsec-phase1-frame-5-2-2-4">4 cross-bracing pieces: 800mm each (prevents twisting)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase1-frame-5-2-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul> 
+<div class="para" id="subsec-phase1-frame-5-2-3">Use a hacksaw to cut all pieces. Measure twice, cut once.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-3-1">Create the base rectangle.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-3-2">Lay out the two 1200mm and two 800mm base pieces to form a rectangle. Use clamps to hold them at 90° angles. Drill holes at each corner (one hole per corner initially to align, then add a second for strength). Insert bolts and tighten.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-3-3">Check that your rectangle is square using a speed square at each corner. Adjust clamps if needed before tightening bolts fully.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-4-1">Install the vertical corner posts.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-4-2">At each corner of the base rectangle, bolt a vertical 1500mm extrusion pointing straight up. Use two bolts per corner for strength. Check with a level to ensure they’re truly vertical.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-5-1">Create the top ring.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-5-2">Connect the tops of the four vertical posts with extrusion pieces, creating a rectangle at the top matching the base dimensions. This adds rigidity and provides mounting surfaces.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-6-1">Add cross-bracing.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-6-2">Install diagonal or horizontal bracing to prevent the frame from twisting. Mount the four 800mm cross-brace pieces at mid-height on the sides. This is critical—it prevents wobbling.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-7-1">Final check.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase1-frame-5-7-2">Shake the frame. It should not wobble. Use a level to verify it’s not tilted. If it moves or tilts, re-tighten bolts and re-brace as needed.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-5-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="insight remark-like" id="subsec-phase1-frame-6"><h4 class="heading">
+<span class="type">Insight</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Diagonal Bracing Explained.</span>
+</h4>
+<div class="para" id="subsec-phase1-frame-6-2">A rectangle made from four pieces can collapse into a parallelogram (imagine a picture frame getting squashed sideways). Diagonal bracing prevents this. The diagonal creates triangles, and triangles are rigid—they can’t collapse without changing the length of a side.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-phase1-frame-6-3">This is why structures under load use triangular bracing. It’s a fundamental principle in engineering.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Insight 1.5.4: Diagonal Bracing Explained"><a href="#subsec-phase1-frame-6" title="Copy heading and permalink for Insight 1.5.4: Diagonal Bracing Explained" aria-label="Copy heading and permalink for Insight 1.5.4: Diagonal Bracing Explained">🔗</a></div>
+</article>
+<div class="para" id="subsec-phase1-frame-7">Result after Phase 1: You have a rigid, freestanding aluminum frame capable of holding the weight of 10 cameras.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase1-frame-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.5.2: Build Phase 1: Main Frame (1-2 hours)"><a href="#subsec-phase1-frame" title="Copy heading and permalink for Subsection 1.5.2: Build Phase 1: Main Frame (1-2 hours)" aria-label="Copy heading and permalink for Subsection 1.5.2: Build Phase 1: Main Frame (1-2 hours)">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-phase2-arms">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Build Phase 2: Camera Mounting Arms (2-3 hours)</span>
+</h3>
+<div class="para logical" id="subsec-phase2-arms-2">
+<div class="para">Now you’ll build the adjustable arms that hold individual cameras. Each arm has:</div>
+<ul class="disc" id="subsec-phase2-arms-2-1">
+<li id="subsec-phase2-arms-2-1-1">
+<div class="para" id="p-derived-subsec-phase2-arms-2-1-1">A mounting point on the main frame</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase2-arms-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase2-arms-2-1-2">
+<div class="para" id="p-derived-subsec-phase2-arms-2-1-2">An adjustment ball joint (for pan/tilt)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase2-arms-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase2-arms-2-1-3">
+<div class="para" id="p-derived-subsec-phase2-arms-2-1-3">A lock mechanism (to freeze position)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase2-arms-2-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase2-arms-2-1-4">
+<div class="para" id="p-derived-subsec-phase2-arms-2-1-4">A quick-release camera mount</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase2-arms-2-1-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="subsec-phase2-arms-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external/coming-soon.svg" role="img" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>Single camera mounting arm (assembly diagram)<div class="autopermalink" data-description="Figure 1.5.5"><a href="#subsec-phase2-arms-3" title="Copy heading and permalink for Figure 1.5.5" aria-label="Copy heading and permalink for Figure 1.5.5">🔗</a></div></figcaption>
+</figure> 
+<div class="para" id="subsec-phase2-arms-4-2-1">Install the ball joint base.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-2-2">Choose a location on the main frame where you want a camera. Bolt a ball joint assembly to that location. The ball joint will allow the arm to pivot in multiple directions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-2-3">Use two M8 bolts per ball joint base, tightened firmly (but not over-tightened, which can crack aluminum).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-3-1">Cut and prepare the arm extrusion.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-3-2">Cut a piece of 20×20mm aluminum extrusion approximately 400-600mm long (length depends on how far out from the frame you want the camera). File the cut end smooth.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-4-1">Create the adjustment mechanism.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-4-2">The arm needs to adjust smoothly but lock firmly. You have two options:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ul class="disc" id="subsec-phase2-arms-4-4-3">
+<li id="subsec-phase2-arms-4-4-3-1">
+<div class="para" id="p-derived-subsec-phase2-arms-4-4-3-1">Option A (Simpler): Attach a friction ball mount (a ball joint that you tighten to lock). You can find these commercially. Loosen the collar = free adjustment. Tighten the collar = locked position.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase2-arms-4-4-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase2-arms-4-4-3-2">
+<div class="para" id="p-derived-subsec-phase2-arms-4-4-3-2">Option B (More Professional): Design a custom lock using ball lock pins. This provides positive locking (it either locks or doesn’t, no middle ground).</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase2-arms-4-4-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul> 
+<div class="para" id="subsec-phase2-arms-4-4-4">For a first build, Option A is recommended. You’ll bolt the friction ball mount to the top of the arm extrusion.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-5-1">Install the quick-release camera mount.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-5-2">At the end of the arm extrusion, bolt a quick-release mounting block. This block will have:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ul class="disc" id="subsec-phase2-arms-4-5-3">
+<li id="subsec-phase2-arms-4-5-3-1">
+<div class="para" id="p-derived-subsec-phase2-arms-4-5-3-1">Universal 1/4"-20 tripod socket (standard for most cameras)</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase2-arms-4-5-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase2-arms-4-5-3-2">
+<div class="para" id="p-derived-subsec-phase2-arms-4-5-3-2">Quick-release mechanism (ball lock pins or Arca-Swiss plate) for hot-swapping cameras</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase2-arms-4-5-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul> 
+<div class="para" id="subsec-phase2-arms-4-5-4">Ensure this block is oriented so the camera mounts level and pointing in the desired direction.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-6-1">Test the adjustment and locking.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-6-2">Loosen the friction ball mount and move the arm. It should move smoothly with light pressure. Tighten the collar until the arm holds position against light shaking. It should not drift when you let go.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-7-1">Repeat for all 10 camera positions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase2-arms-4-7-2">Build and install 10 of these arms (or as many as you have cameras). Space them around the frame to provide different angles: some high, some low, some angled toward the subject, some for wide shots.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-4-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-phase2-arms-5">Result after Phase 2: You have 10 adjustable, lockable camera arms ready for mounting.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase2-arms-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.5.3: Build Phase 2: Camera Mounting Arms (2-3 hours)"><a href="#subsec-phase2-arms" title="Copy heading and permalink for Subsection 1.5.3: Build Phase 2: Camera Mounting Arms (2-3 hours)" aria-label="Copy heading and permalink for Subsection 1.5.3: Build Phase 2: Camera Mounting Arms (2-3 hours)">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-phase3-cables">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Build Phase 3: Cable Management (30-45 minutes)</span>
+</h3>
+<div class="para" id="subsec-phase3-cables-2">Your cameras need power (battery or USB), audio input, and control cables. Unorganized cables look unprofessional and can interfere with recording.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase3-cables-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase3-cables-3-2-1">Identify cable paths.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase3-cables-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase3-cables-3-2-2">Run all camera power, audio, and control cables along the frame’s vertical posts. Use cable ties or cable trays (aluminum channels) to organize them.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase3-cables-3-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase3-cables-3-3-1">Create cable exit points.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase3-cables-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase3-cables-3-3-2">At the base of the frame, create a single exit point where all cables leave the fixture. This connects to your control center (recorder, mixer, power supply).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase3-cables-3-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase3-cables-3-4-1">Label cables.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase3-cables-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase3-cables-3-4-2">Use labels or color-coded tape to mark which cable belongs to which camera. This prevents confusion during setup.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase3-cables-3-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-phase3-cables-4">Result after Phase 3: Professional-looking, organized cable routing that makes setup faster and cleaner.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase3-cables-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.5.4: Build Phase 3: Cable Management (30-45 minutes)"><a href="#subsec-phase3-cables" title="Copy heading and permalink for Subsection 1.5.4: Build Phase 3: Cable Management (30-45 minutes)" aria-label="Copy heading and permalink for Subsection 1.5.4: Build Phase 3: Cable Management (30-45 minutes)">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-phase4-cameras">
+<h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.5.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Build Phase 4: Installing Your Cameras (30 minutes)</span>
+</h3> 
+<div class="para" id="subsec-phase4-cameras-2-2-1">Install GoPro cameras.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-2-2">GoPro has a proprietary mounting system. Install the GoPro mount adapter on your quick-release block. Snap the GoPro into place. Tighten the friction ball mount once the camera is in position.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-3-1">Install Sony cameras.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-3-2">Sony cameras use standard 1/4"-20 tripod sockets. Install a tripod adapter on the mounting block. Screw the camera in. Tighten the friction ball mount.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-4-1">Adjust angles and directions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-4-2">For each camera, loosen the friction ball mount slightly and adjust the arm to the desired angle:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<ul class="disc" id="subsec-phase4-cameras-2-4-3">
+<li id="subsec-phase4-cameras-2-4-3-1">
+<div class="para" id="p-derived-subsec-phase4-cameras-2-4-3-1">Camera 1 (wide shot): Angled wide, showing the entire scene</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase4-cameras-2-4-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase4-cameras-2-4-3-2">
+<div class="para" id="p-derived-subsec-phase4-cameras-2-4-3-2">Camera 2 (medium): Showing the speaker waist-up</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase4-cameras-2-4-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase4-cameras-2-4-3-3">
+<div class="para" id="p-derived-subsec-phase4-cameras-2-4-3-3">Camera 3 (close-up): Tight on face</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase4-cameras-2-4-3-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-phase4-cameras-2-4-3-4">
+<div class="para" id="p-derived-subsec-phase4-cameras-2-4-3-4">Additional cameras: Side angles, top-down shots, detail shots</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-phase4-cameras-2-4-3-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul> 
+<div class="para" id="subsec-phase4-cameras-2-4-4">Once positioned, tighten the friction ball mount fully.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-4-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-5-1">Verify camera positions in the viewfinder.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-5-2">Turn on each camera and review the framing. Adjust if needed. Once satisfied, mark the camera position with a small marking (tape on the arm or a note). This is your reference for future setups.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-6-1">Test power and connectivity.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para" id="subsec-phase4-cameras-2-6-2">Ensure all cameras power on and record properly. Check audio inputs if using external mics. Verify all cameras are recording cleanly.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-2-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-phase4-cameras-3">Result after Phase 4: A complete, professional, multi-camera podcasting rig.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-phase4-cameras-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.5.5: Build Phase 4: Installing Your Cameras (30 minutes)"><a href="#subsec-phase4-cameras" title="Copy heading and permalink for Subsection 1.5.5: Build Phase 4: Installing Your Cameras (30 minutes)" aria-label="Copy heading and permalink for Subsection 1.5.5: Build Phase 4: Installing Your Cameras (30 minutes)">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 1.5: Step-by-Step Build: Making Your Fixture"><a href="#sec-cam-build" title="Copy heading and permalink for Section 1.5: Step-by-Step Build: Making Your Fixture" aria-label="Copy heading and permalink for Section 1.5: Step-by-Step Build: Making Your Fixture">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-cam-manufacturing.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-cam-testing.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
