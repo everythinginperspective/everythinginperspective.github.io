@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Identical Particles and Many-Body Systems (Dimension 3)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "textmacros",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[tex]/textmacros",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Quantum Theories - The Missing Big Picture">
+<meta property="book:author" content="The Unified Framework Collective">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.13.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.52176322e2c1dde5.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.bbf2283c5c1d4f99.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="quantum-theories-missing-big-picture" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="quantum-theories-complete.html"><span class="title">Quantum Theories - The Missing Big Picture</span> <span class="subtitle">A Unified Framework for Understanding Quantum Evolution</span></a></h1>
+<p class="byline">The Unified Framework Collective</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-7.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch05-spin-and-angular-momentum.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="part-dimensions.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch07-perturbation-theory.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+
+\newcommand{\ket}[1]{\left|#1\right\rangle}
+\newcommand{\bra}[1]{\left\langle #1\right|}
+\newcommand{\braket}[2]{\left\langle #1|#2\right\rangle}
+\newcommand{\ketbra}[2]{\left|#1\right\rangle\left\langle #2\right|}
+\newcommand{\expect}[1]{\left\langle #1 \right\rangle}
+\newcommand{\expval}[3]{\left\langle #1 | #2 | #3 \right\rangle}
+\newcommand{\comm}[2]{\left[#1, #2\right]}
+\newcommand{\anticomm}[2]{\left\{#1, #2\right\}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+
+\newcommand{\HH}{\hat{H}}
+\newcommand{\pp}{\hat{\mathbf{p}}}
+\newcommand{\rr}{\hat{\mathbf{r}}}
+\newcommand{\AA}{\hat{A}}
+\newcommand{\BB}{\hat{B}}
+\newcommand{\LL}{\hat{\mathbf{L}}}
+\newcommand{\SS}{\hat{\mathbf{S}}}
+\newcommand{\II}{\hat{I}}
+\newcommand{\PP}{\hat{P}}
+\newcommand{\UU}{\hat{U}}
+
+\newcommand{\del}{\nabla}
+\newcommand{\del2}{\nabla^2}
+\newcommand{\Hilbert}{\mathcal{H}}
+\newcommand{\Fock}{\mathcal{F}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 parts focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Dedication</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="foreword.html" class="internal"><span class="title">Foreword</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-foundations.html" class="internal"><span class="codenumber">I</span> <span class="title">Foundations: The Schrödinger Equation as Bedrock</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch01-universal-language.html" class="internal"><span class="codenumber">1</span> <span class="title">The Universal Language of Quantum Mechanics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch01-universal-language.html#sec-ch01-development" class="internal"><span class="codenumber">1.1</span> <span class="title">The Development of Quantum Mechanics</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch01-universal-language.html#sec-ch01-time-evolution" class="internal"><span class="codenumber">1.2</span> <span class="title">Why Time Evolution?</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch01-universal-language.html#sec-ch01-11d-framework" class="internal"><span class="codenumber">1.3</span> <span class="title">The 11-Dimensional Framework</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim1-formalism" class="internal"><span class="codenumber">1.3.1</span> <span class="title">Dimension 1: Formalism</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim2-relativity" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Dimension 2: Relativity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim3-particle" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Dimension 3: Particle Number</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim4-picture" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Dimension 4: Picture</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim5-purity" class="internal"><span class="codenumber">1.3.5</span> <span class="title">Dimension 5: State Purity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim6-system" class="internal"><span class="codenumber">1.3.6</span> <span class="title">Dimension 6: System</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim7-spin" class="internal"><span class="codenumber">1.3.7</span> <span class="title">Dimension 7: Spin</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim8-mass" class="internal"><span class="codenumber">1.3.8</span> <span class="title">Dimension 8: Mass</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim9-approximation" class="internal"><span class="codenumber">1.3.9</span> <span class="title">Dimension 9: Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim10-classical" class="internal"><span class="codenumber">1.3.10</span> <span class="title">Dimension 10: Classical Limit</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch01-universal-language.html#subsec-dim11-solutions" class="internal"><span class="codenumber">1.3.11</span> <span class="title">Dimension 11: Solutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch01-universal-language.html#sec-ch01-framework-action" class="internal"><span class="codenumber">1.4</span> <span class="title">The Framework in Action</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch01-universal-language.html#sec-ch01-navigating" class="internal"><span class="codenumber">1.5</span> <span class="title">Navigating the Quantum Landscape</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch01-universal-language.html#sec-ch01-summary" class="internal"><span class="codenumber">1.6</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch01-universal-language.html#exercises-ch01" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch02-schrodinger-equation.html" class="internal"><span class="codenumber">2</span> <span class="title">The Simplest Case: Non-Relativistic Spinless Schrödinger Equation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch02-schrodinger-equation.html#sec-ch02-foundations" class="internal"><span class="codenumber">2.1</span> <span class="title">Establishing the Foundation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#subsec-hilbert-space" class="internal"><span class="codenumber">2.1.1</span> <span class="title">The Hilbert Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#subsec-operators" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Operators and Observables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#sec-ch02-time-independent" class="internal"><span class="codenumber">2.2</span> <span class="title">The Time-Independent Schrödinger Equation</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch02-schrodinger-equation.html#sec-ch02-one-d-systems" class="internal"><span class="codenumber">2.3</span> <span class="title">Solved Examples: One-Dimensional Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#subsec-particle-box" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Particle in an Infinite Square Well</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#subsec-harmonic-osc" class="internal"><span class="codenumber">2.3.2</span> <span class="title">The Harmonic Oscillator</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch02-schrodinger-equation.html#sec-ch02-hydrogen" class="internal"><span class="codenumber">2.4</span> <span class="title">The Hydrogen Atom: Crown Jewel of Quantum Mechanics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#subsec-hydrogen-3d" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The Three-Dimensional Problem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#subsec-separation" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Separation in Spherical Coordinates</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#subsec-hydrogen-spectrum" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Energy Spectrum</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#subsec-radial-wavefunctions" class="internal"><span class="codenumber">2.4.4</span> <span class="title">Radial Wavefunctions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#sec-ch02-expectation-values" class="internal"><span class="codenumber">2.5</span> <span class="title">Expectation Values and Measurements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#sec-ch02-time-evolution" class="internal"><span class="codenumber">2.6</span> <span class="title">Time Evolution and Transitions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#sec-ch02-summary" class="internal"><span class="codenumber">2.7</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch02-schrodinger-equation.html#exercises-ch02" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch03-mathematical-foundations.html" class="internal"><span class="codenumber">3</span> <span class="title">Mathematical Foundations of Quantum Mechanics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch03-mathematical-foundations.html#sec-ch03-hilbert" class="internal"><span class="codenumber">3.1</span> <span class="title">Hilbert Spaces</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-definition" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Definition and Structure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-examples" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Hilbert Spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-dirac" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Dirac Notation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch03-mathematical-foundations.html#sec-ch03-operators" class="internal"><span class="codenumber">3.2</span> <span class="title">Operators on Hilbert Space</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-linear-ops" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Linear Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-hermitian" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Hermitian (Self-Adjoint) Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-unitary" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Unitary Operators</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch03-mathematical-foundations.html#sec-ch03-commutators" class="internal"><span class="codenumber">3.3</span> <span class="title">Commutators and Uncertainty Relations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-commutator-algebra" class="internal"><span class="codenumber">3.3.1</span> <span class="title">The Commutator</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-uncertainty" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Heisenberg Uncertainty Principle</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#sec-ch03-postulates" class="internal"><span class="codenumber">3.4</span> <span class="title">The Five Postulates of Quantum Mechanics</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch03-mathematical-foundations.html#sec-ch03-measurement" class="internal"><span class="codenumber">3.5</span> <span class="title">Measurement Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-born-rule" class="internal"><span class="codenumber">3.5.1</span> <span class="title">The Born Rule</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-collapse" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Measurement and Collapse</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-compatible" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Compatible and Incompatible Observables</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch03-mathematical-foundations.html#sec-ch03-basis" class="internal"><span class="codenumber">3.6</span> <span class="title">Basis Representations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-position-basis" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Position Representation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#subsec-momentum-basis" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Momentum Representation</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#sec-ch03-summary" class="internal"><span class="codenumber">3.7</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch03-mathematical-foundations.html#exercises-ch03" class="internal"><span class="codenumber">3.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part contains-active">
+<div class="toc-title-box"><a href="part-dimensions.html" class="internal"><span class="codenumber">II</span> <span class="title">Dimension Variations: Building the Quantum Landscape</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch04-pictures.html" class="internal"><span class="codenumber">4</span> <span class="title">Pictures of Quantum Mechanics (Dimension 4)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch04-pictures.html#sec-ch04-schrodinger" class="internal"><span class="codenumber">4.1</span> <span class="title">The Schrödinger Picture</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch04-pictures.html#sec-ch04-heisenberg" class="internal"><span class="codenumber">4.2</span> <span class="title">The Heisenberg Picture</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch04-pictures.html#sec-ch04-conserved" class="internal"><span class="codenumber">4.2.1</span> <span class="title">Conserved Quantities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch04-pictures.html#sec-ch04-interaction" class="internal"><span class="codenumber">4.3</span> <span class="title">The Interaction Picture</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch04-pictures.html#sec-ch04-dyson" class="internal"><span class="codenumber">4.3.1</span> <span class="title">The Dyson Series</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch04-pictures.html#sec-ch04-equivalence" class="internal"><span class="codenumber">4.4</span> <span class="title">Equivalence of the Pictures</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch04-pictures.html#sec-ch04-which-picture" class="internal"><span class="codenumber">4.5</span> <span class="title">Which Picture Should One Use?</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch04-pictures.html#sec-ch04-summary" class="internal"><span class="codenumber">4.6</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch04-pictures.html#ch04-pictures-10" class="internal"><span class="codenumber">4.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html" class="internal"><span class="codenumber">5</span> <span class="title">Spin and Angular Momentum (Dimension 7)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-orbital" class="internal"><span class="codenumber">5.1</span> <span class="title">Orbital Angular Momentum</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-eigenvalues" class="internal"><span class="codenumber">5.2</span> <span class="title">Eigenvalues and Eigenstates</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-ladder" class="internal"><span class="codenumber">5.2.1</span> <span class="title">Ladder Operators</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-spherical-harmonics" class="internal"><span class="codenumber">5.3</span> <span class="title">Spherical Harmonics as Eigenstates</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-spin" class="internal"><span class="codenumber">5.4</span> <span class="title">Spin: Intrinsic Angular Momentum</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-stern-gerlach" class="internal"><span class="codenumber">5.5</span> <span class="title">The Stern-Gerlach Experiment</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-composite" class="internal"><span class="codenumber">5.6</span> <span class="title">Composite Angular Momentum: Addition of Angular Momenta</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-statistics" class="internal"><span class="codenumber">5.7</span> <span class="title">Spin and Statistics: Connection to Many-Body Physics</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#sec-ch05-summary" class="internal"><span class="codenumber">5.8</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch05-spin-and-angular-momentum.html#ch05-spin-and-angular-momentum-12" class="internal"><span class="codenumber">5.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch06-identical-particles.html" class="internal"><span class="codenumber">6</span> <span class="title">Identical Particles and Many-Body Systems (Dimension 3)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-indistinguishability" class="internal"><span class="codenumber">6.1</span> <span class="title">The Principle of Indistinguishability</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch06-identical-particles.html#subsec-permutation-group" class="internal"><span class="codenumber">6.1.1</span> <span class="title">The Permutation Group</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-bosonic-states" class="internal"><span class="codenumber">6.2</span> <span class="title">Bosonic States: Symmetric Wavefunctions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-fermionic-states" class="internal"><span class="codenumber">6.3</span> <span class="title">Fermionic States: Antisymmetric Wavefunctions and Slater Determinants</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-exchange-interaction" class="internal"><span class="codenumber">6.4</span> <span class="title">The Exchange Interaction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-atoms-periodic" class="internal"><span class="codenumber">6.5</span> <span class="title">Atomic Structure and the Periodic Table</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-second-quantization" class="internal"><span class="codenumber">6.6</span> <span class="title">Second Quantization</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch06-identical-particles.html#subsec-creation-annihilation" class="internal"><span class="codenumber">6.6.1</span> <span class="title">Creation and Annihilation Operators</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch06-identical-particles.html#subsec-fock-space" class="internal"><span class="codenumber">6.6.2</span> <span class="title">Fock Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch06-identical-particles.html#subsec-operators-second-quant" class="internal"><span class="codenumber">6.6.3</span> <span class="title">Operators in Second Quantization</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-free-electron-gas" class="internal"><span class="codenumber">6.7</span> <span class="title">The Free Electron Gas</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-11d-context" class="internal"><span class="codenumber">6.8</span> <span class="title">Dimension 3 in the 11-Dimensional Framework</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch06-identical-particles.html#sec-ch06-summary" class="internal"><span class="codenumber">6.9</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch06-identical-particles.html#exercises-ch06" class="internal"><span class="codenumber">6.10</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch07-perturbation-theory.html" class="internal"><span class="codenumber">7</span> <span class="title">Approximation Methods: Perturbation Theory (Dimension 9)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#sec-ch07-ti-nondegenerate" class="internal"><span class="codenumber">7.1</span> <span class="title">Time-Independent Perturbation Theory: Non-Degenerate Case</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#sec-ch07-ti-degenerate" class="internal"><span class="codenumber">7.2</span> <span class="title">Degenerate Perturbation Theory</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch07-perturbation-theory.html#sec-ch07-td-perturbation" class="internal"><span class="codenumber">7.3</span> <span class="title">Time-Dependent Perturbation Theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#subsec-harmonic-pert" class="internal"><span class="codenumber">7.3.1</span> <span class="title">Harmonic Perturbation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#subsec-fermis-golden" class="internal"><span class="codenumber">7.3.2</span> <span class="title">Fermi’s Golden Rule</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#sec-ch07-variational" class="internal"><span class="codenumber">7.4</span> <span class="title">The Variational Method</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch07-perturbation-theory.html#sec-ch07-sudden-adiabatic" class="internal"><span class="codenumber">7.5</span> <span class="title">Sudden and Adiabatic Approximations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#subsec-sudden" class="internal"><span class="codenumber">7.5.1</span> <span class="title">The Sudden Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#subsec-adiabatic" class="internal"><span class="codenumber">7.5.2</span> <span class="title">The Adiabatic Theorem and Berry Phase</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#sec-ch07-framework" class="internal"><span class="codenumber">7.6</span> <span class="title">Approximation Methods in the 11-Dimensional Framework</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#sec-ch07-summary" class="internal"><span class="codenumber">7.7</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch07-perturbation-theory.html#exercises-ch07" class="internal"><span class="codenumber">7.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-extended.html" class="internal"><span class="codenumber">III</span> <span class="title">Extended Formalism: Beyond Pure States and Closed Systems</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch08-density-matrices.html" class="internal"><span class="codenumber">8</span> <span class="title">Density Matrices and Mixed States (Dimension 5)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch08-density-matrices.html#sec-ch08-pure-mixed" class="internal"><span class="codenumber">8.1</span> <span class="title">Pure States vs. Mixed States</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch08-density-matrices.html#sec-ch08-expectation" class="internal"><span class="codenumber">8.2</span> <span class="title">Expectation Values and Measurements</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch08-density-matrices.html#sec-ch08-time-evolution" class="internal"><span class="codenumber">8.3</span> <span class="title">Time Evolution: The von Neumann Equation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch08-density-matrices.html#sec-ch08-entropy" class="internal"><span class="codenumber">8.4</span> <span class="title">Von Neumann Entropy</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch08-density-matrices.html#sec-ch08-reduced" class="internal"><span class="codenumber">8.5</span> <span class="title">Reduced Density Matrices and Entanglement</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch08-density-matrices.html#sec-ch08-thermal" class="internal"><span class="codenumber">8.6</span> <span class="title">Thermal Equilibrium and Quantum Statistical Mechanics</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch08-density-matrices.html#sec-ch08-decoherence" class="internal"><span class="codenumber">8.7</span> <span class="title">Decoherence</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch08-density-matrices.html#sec-ch08-summary" class="internal"><span class="codenumber">8.8</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch08-density-matrices.html#exercises-ch08" class="internal"><span class="codenumber">8.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch09-open-systems.html" class="internal"><span class="codenumber">9</span> <span class="title">Open Quantum Systems (Dimension 6)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch09-open-systems.html#sec-ch09-system-env" class="internal"><span class="codenumber">9.1</span> <span class="title">System-Environment Framework</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch09-open-systems.html#sec-ch09-lindblad" class="internal"><span class="codenumber">9.2</span> <span class="title">The Lindblad Master Equation</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch09-open-systems.html#sec-ch09-examples" class="internal"><span class="codenumber">9.3</span> <span class="title">Key Examples of Open-System Dynamics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch09-open-systems.html#subsec-amplitude-damping" class="internal"><span class="codenumber">9.3.1</span> <span class="title">Amplitude Damping (Spontaneous Emission)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch09-open-systems.html#subsec-dephasing" class="internal"><span class="codenumber">9.3.2</span> <span class="title">Pure Dephasing</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch09-open-systems.html#subsec-thermalization" class="internal"><span class="codenumber">9.3.3</span> <span class="title">Thermalization</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch09-open-systems.html#sec-ch09-kraus" class="internal"><span class="codenumber">9.4</span> <span class="title">Quantum Channels and Kraus Operators</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch09-open-systems.html#sec-ch09-quantum-jump" class="internal"><span class="codenumber">9.5</span> <span class="title">Quantum Trajectories and Quantum Jumps</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch09-open-systems.html#sec-ch09-summary" class="internal"><span class="codenumber">9.6</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch09-open-systems.html#exercises-ch09" class="internal"><span class="codenumber">9.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch10-path-integrals.html" class="internal"><span class="codenumber">10</span> <span class="title">Path Integral Formalism (Dimension 1: Alternative)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch10-path-integrals.html#sec-ch10-motivation" class="internal"><span class="codenumber">10.1</span> <span class="title">From Operators to Paths</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch10-path-integrals.html#sec-ch10-derivation" class="internal"><span class="codenumber">10.2</span> <span class="title">Derivation by Time Slicing</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch10-path-integrals.html#sec-ch10-free-particle" class="internal"><span class="codenumber">10.3</span> <span class="title">The Free Particle Propagator</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch10-path-integrals.html#sec-ch10-harmonic" class="internal"><span class="codenumber">10.4</span> <span class="title">The Harmonic Oscillator Path Integral</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch10-path-integrals.html#sec-ch10-classical-limit" class="internal"><span class="codenumber">10.5</span> <span class="title">The Classical Limit and Stationary Phase</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch10-path-integrals.html#sec-ch10-euclidean" class="internal"><span class="codenumber">10.6</span> <span class="title">Euclidean Path Integrals and Tunneling</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch10-path-integrals.html#sec-ch10-field-theory" class="internal"><span class="codenumber">10.7</span> <span class="title">Path Integrals and Quantum Field Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch10-path-integrals.html#sec-ch10-summary" class="internal"><span class="codenumber">10.8</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch10-path-integrals.html#exercises-ch10" class="internal"><span class="codenumber">10.9</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-relativistic.html" class="internal"><span class="codenumber">IV</span> <span class="title">Relativistic and Field Theory Quantum Mechanics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch11-relativistic-quantum.html" class="internal"><span class="codenumber">11</span> <span class="title">Special Relativistic Quantum Mechanics (Dimension 2)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch11-relativistic-quantum.html#sec-ch11-need-relativity" class="internal"><span class="codenumber">11.1</span> <span class="title">Why Relativity Matters</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch11-relativistic-quantum.html#sec-ch11-klein-gordon" class="internal"><span class="codenumber">11.2</span> <span class="title">The Klein-Gordon Equation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch11-relativistic-quantum.html#sec-ch11-dirac" class="internal"><span class="codenumber">11.3</span> <span class="title">The Dirac Equation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch11-relativistic-quantum.html#sec-ch11-solutions" class="internal"><span class="codenumber">11.4</span> <span class="title">Solutions and Physical Interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch11-relativistic-quantum.html#sec-ch11-hydrogen" class="internal"><span class="codenumber">11.5</span> <span class="title">The Dirac Hydrogen Atom</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch11-relativistic-quantum.html#sec-ch11-limitations" class="internal"><span class="codenumber">11.6</span> <span class="title">Limitations and the Need for QFT</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch11-relativistic-quantum.html#sec-ch11-summary" class="internal"><span class="codenumber">11.7</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch11-relativistic-quantum.html#exercises-ch11" class="internal"><span class="codenumber">11.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch12-qft.html" class="internal"><span class="codenumber">12</span> <span class="title">Quantum Field Theory Basics (Dimensions 2, 3 Extended)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch12-qft.html#sec-ch12-classical-fields" class="internal"><span class="codenumber">12.1</span> <span class="title">From Particles to Fields</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch12-qft.html#sec-ch12-canonical" class="internal"><span class="codenumber">12.2</span> <span class="title">Canonical Quantization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch12-qft.html#sec-ch12-feynman" class="internal"><span class="codenumber">12.3</span> <span class="title">Interactions and Feynman Diagrams</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch12-qft.html#sec-ch12-qed" class="internal"><span class="codenumber">12.4</span> <span class="title">Quantum Electrodynamics</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch12-qft.html#sec-ch12-renormalization" class="internal"><span class="codenumber">12.5</span> <span class="title">Renormalization: A Brief Introduction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch12-qft.html#sec-ch12-summary" class="internal"><span class="codenumber">12.6</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch12-qft.html#exercises-ch12" class="internal"><span class="codenumber">12.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch13-quantum-info.html" class="internal"><span class="codenumber">13</span> <span class="title">Quantum Information and Computation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch13-quantum-info.html#sec-ch13-qubits" class="internal"><span class="codenumber">13.1</span> <span class="title">Qubits and Quantum States</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch13-quantum-info.html#sec-ch13-gates" class="internal"><span class="codenumber">13.2</span> <span class="title">Quantum Gates and Circuits</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch13-quantum-info.html#sec-ch13-entanglement" class="internal"><span class="codenumber">13.3</span> <span class="title">Entanglement as a Resource</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch13-quantum-info.html#sec-ch13-algorithms" class="internal"><span class="codenumber">13.4</span> <span class="title">Quantum Algorithms</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch13-quantum-info.html#subsec-deutsch" class="internal"><span class="codenumber">13.4.1</span> <span class="title">Deutsch-Jozsa Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch13-quantum-info.html#subsec-grover" class="internal"><span class="codenumber">13.4.2</span> <span class="title">Grover’s Search Algorithm</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch13-quantum-info.html#subsec-shor" class="internal"><span class="codenumber">13.4.3</span> <span class="title">Shor’s Factoring Algorithm</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch13-quantum-info.html#sec-ch13-error-correction" class="internal"><span class="codenumber">13.5</span> <span class="title">Quantum Error Correction</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch13-quantum-info.html#sec-ch13-summary" class="internal"><span class="codenumber">13.6</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch13-quantum-info.html#exercises-ch13" class="internal"><span class="codenumber">13.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-methods.html" class="internal"><span class="codenumber">V</span> <span class="title">Solution Techniques: From WKB to Numerics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch14-wkb.html" class="internal"><span class="codenumber">14</span> <span class="title">WKB and Semiclassical Methods (Dimension 10)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch14-wkb.html#sec-ch14-wkb-derivation" class="internal"><span class="codenumber">14.1</span> <span class="title">The WKB Approximation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch14-wkb.html#sec-ch14-connection" class="internal"><span class="codenumber">14.2</span> <span class="title">Connection Formulas at Turning Points</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch14-wkb.html#sec-ch14-quantization" class="internal"><span class="codenumber">14.3</span> <span class="title">Bohr-Sommerfeld Quantization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch14-wkb.html#sec-ch14-tunneling" class="internal"><span class="codenumber">14.4</span> <span class="title">Quantum Tunneling</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch14-wkb.html#sec-ch14-ehrenfest" class="internal"><span class="codenumber">14.5</span> <span class="title">Ehrenfest’s Theorem and Coherent States</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch14-wkb.html#sec-ch14-summary" class="internal"><span class="codenumber">14.6</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch14-wkb.html#exercises-ch14" class="internal"><span class="codenumber">14.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch15-numerical.html" class="internal"><span class="codenumber">15</span> <span class="title">Numerical and Computational Methods (Dimension 11)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch15-numerical.html#sec-ch15-exact-diag" class="internal"><span class="codenumber">15.1</span> <span class="title">Exact Diagonalization</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch15-numerical.html#sec-ch15-variational-comp" class="internal"><span class="codenumber">15.2</span> <span class="title">Computational Variational Methods</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch15-numerical.html#sec-ch15-finite-diff" class="internal"><span class="codenumber">15.3</span> <span class="title">Finite-Difference Methods</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch15-numerical.html#sec-ch15-monte-carlo" class="internal"><span class="codenumber">15.4</span> <span class="title">Quantum Monte Carlo</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch15-numerical.html#sec-ch15-dft" class="internal"><span class="codenumber">15.5</span> <span class="title">Density Functional Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch15-numerical.html#sec-ch15-tensor" class="internal"><span class="codenumber">15.6</span> <span class="title">Tensor Network Methods</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch15-numerical.html#sec-ch15-summary" class="internal"><span class="codenumber">15.7</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch15-numerical.html#exercises-ch15" class="internal"><span class="codenumber">15.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch16-classical-limit.html" class="internal"><span class="codenumber">16</span> <span class="title">Classical Limit and Correspondence (Dimension 10)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch16-classical-limit.html#sec-ch16-ehrenfest-revisited" class="internal"><span class="codenumber">16.1</span> <span class="title">Ehrenfest’s Theorem Revisited</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch16-classical-limit.html#sec-ch16-wigner" class="internal"><span class="codenumber">16.2</span> <span class="title">The Wigner Function</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch16-classical-limit.html#sec-ch16-deformation" class="internal"><span class="codenumber">16.3</span> <span class="title">From Commutators to Poisson Brackets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch16-classical-limit.html#sec-ch16-decoherence-classical" class="internal"><span class="codenumber">16.4</span> <span class="title">Decoherence and the Emergence of Classicality</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch16-classical-limit.html#sec-ch16-summary" class="internal"><span class="codenumber">16.5</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch16-classical-limit.html#exercises-ch16" class="internal"><span class="codenumber">16.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-part">
+<div class="toc-title-box"><a href="part-unification.html" class="internal"><span class="codenumber">VI</span> <span class="title">Unification and Applications: The Complete Framework</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch17-framework.html" class="internal"><span class="codenumber">17</span> <span class="title">The Complete 11-Dimensional Framework (Synthesis)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch17-framework.html#sec-ch17-recap" class="internal"><span class="codenumber">17.1</span> <span class="title">The Eleven Dimensions Recapped</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch17-framework.html#sec-ch17-interdependencies" class="internal"><span class="codenumber">17.2</span> <span class="title">Interdependencies Between Dimensions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch17-framework.html#subsec-relativity-fock" class="internal"><span class="codenumber">17.2.1</span> <span class="title">Relativity Forces Fock Space</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch17-framework.html#subsec-open-mixed" class="internal"><span class="codenumber">17.2.2</span> <span class="title">Open Systems Require Density Matrices</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch17-framework.html#subsec-complexity-approx" class="internal"><span class="codenumber">17.2.3</span> <span class="title">Complexity Drives Approximation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch17-framework.html#subsec-spin-statistics" class="internal"><span class="codenumber">17.2.4</span> <span class="title">Spin Determines Statistics</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch17-framework.html#sec-ch17-classification" class="internal"><span class="codenumber">17.3</span> <span class="title">Classifying Quantum Theories</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch17-framework.html#sec-ch17-open-questions" class="internal"><span class="codenumber">17.4</span> <span class="title">Open Questions and Future Directions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch17-framework.html#sec-ch17-summary" class="internal"><span class="codenumber">17.5</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch17-framework.html#exercises-ch17" class="internal"><span class="codenumber">17.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch18-applications.html" class="internal"><span class="codenumber">18</span> <span class="title">Applications Across Physics and Chemistry</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch18-applications.html#sec-ch18-atomic" class="internal"><span class="codenumber">18.1</span> <span class="title">Atomic Physics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch18-applications.html#subsec-multielectron" class="internal"><span class="codenumber">18.1.1</span> <span class="title">Multi-Electron Atoms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch18-applications.html#subsec-lasers" class="internal"><span class="codenumber">18.1.2</span> <span class="title">Lasers and Atomic Clocks</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch18-applications.html#sec-ch18-molecular" class="internal"><span class="codenumber">18.2</span> <span class="title">Molecular and Chemical Physics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch18-applications.html#subsec-bonding" class="internal"><span class="codenumber">18.2.1</span> <span class="title">Chemical Bonding</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch18-applications.html#subsec-spectroscopy" class="internal"><span class="codenumber">18.2.2</span> <span class="title">Molecular Spectroscopy</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="ch18-applications.html#sec-ch18-condensed" class="internal"><span class="codenumber">18.3</span> <span class="title">Condensed Matter Physics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch18-applications.html#subsec-bands" class="internal"><span class="codenumber">18.3.1</span> <span class="title">Band Theory and Semiconductors</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch18-applications.html#subsec-superconductivity" class="internal"><span class="codenumber">18.3.2</span> <span class="title">Superconductivity</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="ch18-applications.html#subsec-topological" class="internal"><span class="codenumber">18.3.3</span> <span class="title">Topological Phases of Matter</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch18-applications.html#sec-ch18-particle" class="internal"><span class="codenumber">18.4</span> <span class="title">Particle Physics</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch18-applications.html#sec-ch18-technology" class="internal"><span class="codenumber">18.5</span> <span class="title">Quantum Technologies</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch18-applications.html#sec-ch18-conclusion" class="internal"><span class="codenumber">18.6</span> <span class="title">Conclusion: The Unity of Quantum Theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ch18-applications.html#sec-ch18-summary" class="internal"><span class="codenumber">18.7</span> <span class="title">Chapter Summary</span></a></div></li>
+<li class="toc-item toc-exercises"><div class="toc-title-box"><a href="ch18-applications.html#exercises-ch18" class="internal"><span class="codenumber">18.8</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation and Conventions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-notation.html#app-notation-dirac" class="internal"><span class="codenumber">A.1</span> <span class="title">Dirac Notation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-notation.html#app-notation-operators" class="internal"><span class="codenumber">A.2</span> <span class="title">Common Operators</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-notation.html#app-notation-spaces" class="internal"><span class="codenumber">A.3</span> <span class="title">Spaces and Sets</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-notation.html#app-notation-conventions" class="internal"><span class="codenumber">A.4</span> <span class="title">Conventions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-math.html" class="internal"><span class="codenumber">B</span> <span class="title">Essential Mathematical Tools</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-math.html#app-math-linalg" class="internal"><span class="codenumber">B.1</span> <span class="title">Linear Algebra Review</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-math.html#app-math-calculus" class="internal"><span class="codenumber">B.2</span> <span class="title">Calculus and Differential Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-math.html#app-math-special" class="internal"><span class="codenumber">B.3</span> <span class="title">Special Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-math.html#app-math-group" class="internal"><span class="codenumber">B.4</span> <span class="title">Group Theory Essentials</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-constants.html" class="internal"><span class="codenumber">C</span> <span class="title">Physical Constants and Conversion Factors</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-constants.html#app-constants-fundamental" class="internal"><span class="codenumber">C.1</span> <span class="title">Fundamental Constants</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-constants.html#app-constants-derived" class="internal"><span class="codenumber">C.2</span> <span class="title">Derived Quantum Constants</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="appendix-solutions.html" class="internal"><span class="codenumber">D</span> <span class="title">Solutions to Selected Exercises</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-solutions.html#app-sol-part1" class="internal"><span class="codenumber">D.1</span> <span class="title">Part I: Foundations (Chapters 1–3)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-solutions.html#app-sol-part2" class="internal"><span class="codenumber">D.2</span> <span class="title">Part II: Dimension Variations (Chapters 4–7)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="appendix-solutions.html#app-sol-part3" class="internal"><span class="codenumber">D.3</span> <span class="title">Parts III–VI: Selected Solutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-references">
+<div class="toc-title-box"><a href="references.html" class="internal"><span class="title">Bibliography and Further Reading</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="references.html#bib-foundational" class="internal"><span class="codenumber">1</span> <span class="title">Foundational Texts</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="references.html#bib-modern-qm" class="internal"><span class="codenumber">2</span> <span class="title">Modern Quantum Mechanics Textbooks</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="references.html#bib-advanced" class="internal"><span class="codenumber">3</span> <span class="title">Advanced and Specialized Topics</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-glossary"><div class="toc-title-box"><a href="glossary.html" class="internal"><span class="title">Glossary of Terms</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-7.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="chapter" id="ch06-identical-particles">
+<h2 class="heading">
+<span class="type">Chapter</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Identical Particles and Many-Body Systems (Dimension 3)</span>
+</h2>
+<article class="objectives goal-like" id="ch06-identical-particles-2"><h3 class="heading"><span class="type">Learning Goals</span></h3>
+<ul class="disc" id="ch06-identical-particles-2-1">
+<li id="ch06-identical-particles-2-1-1">
+<div class="para" id="p-derived-ch06-identical-particles-2-1-1">Understand the principle of indistinguishability of identical quantum particles.</div>
+<div class="autopermalink" data-description="Objective"><a href="#ch06-identical-particles-2-1-1" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="ch06-identical-particles-2-1-2">
+<div class="para" id="p-derived-ch06-identical-particles-2-1-2">Derive the symmetrization postulate for bosons and fermions.</div>
+<div class="autopermalink" data-description="Objective"><a href="#ch06-identical-particles-2-1-2" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="ch06-identical-particles-2-1-3">
+<div class="para" id="p-derived-ch06-identical-particles-2-1-3">Master the construction of Slater determinants for fermionic systems.</div>
+<div class="autopermalink" data-description="Objective"><a href="#ch06-identical-particles-2-1-3" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="ch06-identical-particles-2-1-4">
+<div class="para" id="p-derived-ch06-identical-particles-2-1-4">Apply the Pauli exclusion principle to atomic structure and the periodic table.</div>
+<div class="autopermalink" data-description="Objective"><a href="#ch06-identical-particles-2-1-4" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="ch06-identical-particles-2-1-5">
+<div class="para" id="p-derived-ch06-identical-particles-2-1-5">Develop second quantization as the natural language for many-body physics.</div>
+<div class="autopermalink" data-description="Objective"><a href="#ch06-identical-particles-2-1-5" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+<li id="ch06-identical-particles-2-1-6">
+<div class="para" id="p-derived-ch06-identical-particles-2-1-6">Understand Fock space and creation/annihilation operators.</div>
+<div class="autopermalink" data-description="Objective"><a href="#ch06-identical-particles-2-1-6" title="Copy heading and permalink for Objective" aria-label="Copy heading and permalink for Objective">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Learning Goals 6"><a href="#ch06-identical-particles-2" title="Copy heading and permalink for Learning Goals 6" aria-label="Copy heading and permalink for Learning Goals 6">🔗</a></div>
+</article>
+<section class="introduction" id="ch06-identical-particles-3">
+<div class="para" id="ch06-identical-particles-3-1">The third dimension of our framework concerns the number of particles in the system. Moving from single-particle quantum mechanics to many-body systems introduces one of the most profound features of quantum theory: identical particles are truly indistinguishable. Unlike classical physics, where we can always track individual particles by their trajectories, quantum mechanics forbids this. Two electrons are not merely similar—they are fundamentally the same object. This indistinguishability has far-reaching consequences: it gives rise to the Pauli exclusion principle, determines the structure of atoms and molecules, and ultimately requires the development of quantum field theory.<div class="autopermalink" data-description="Paragraph"><a href="#ch06-identical-particles-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ch06-identical-particles-3-2">In this chapter we develop the formalism of identical particles step by step. We begin with the permutation symmetry of quantum states, derive the classification into bosons and fermions, construct properly symmetrized wavefunctions, and introduce second quantization—the algebraic framework that handles variable particle number naturally. This chapter bridges single-particle quantum mechanics and the full machinery of quantum field theory.<div class="autopermalink" data-description="Paragraph"><a href="#ch06-identical-particles-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></section>
+<section class="section" id="sec-ch06-indistinguishability">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Principle of Indistinguishability</span>
+</h3>
+<div class="para" id="sec-ch06-indistinguishability-2">Consider two particles described by quantum mechanics. In classical mechanics, we can label them as "particle 1" and "particle 2" and track their individual trajectories. In quantum mechanics, the situation is fundamentally different.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-indistinguishability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="assemblage assemblage-like" id="box-indistinguishability"><h4 class="heading"><span class="title">Indistinguishability Principle.</span></h4>
+<div class="para" id="box-indistinguishability-2">Identical quantum particles are truly indistinguishable. No measurement can determine which particle is which. Any physical observable must be symmetric under exchange of identical particles.<div class="autopermalink" data-description="Paragraph"><a href="#box-indistinguishability-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Key Concept: Indistinguishability Principle"><a href="#box-indistinguishability" title="Copy heading and permalink for Key Concept: Indistinguishability Principle" aria-label="Copy heading and permalink for Key Concept: Indistinguishability Principle">🔗</a></div>
+</article>
+<div class="para" id="sec-ch06-indistinguishability-4">For a two-particle system, the state lives in the tensor product space <span class="process-math">\(\Hilbert_1 \otimes \Hilbert_2\text{.}\)</span> The exchange operator <span class="process-math">\(\hat{P}_{12}\)</span> swaps the two particles:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-indistinguishability-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-ch06-indistinguishability-5">
+\begin{equation*}
+\hat{P}_{12} \ket{\psi_a}_1 \ket{\psi_b}_2 = \ket{\psi_b}_1 \ket{\psi_a}_2.
+\end{equation*}
+</div>
+<div class="para" id="sec-ch06-indistinguishability-6">Since applying the exchange twice returns to the original state, <span class="process-math">\(\hat{P}_{12}^2 = \hat{I}\text{,}\)</span> the eigenvalues of <span class="process-math">\(\hat{P}_{12}\)</span> are <span class="process-math">\(\pm 1\text{.}\)</span> This gives two classes of particles:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-indistinguishability-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="sec-ch06-indistinguishability-7">
+<li id="sec-ch06-indistinguishability-7-1">
+<div class="para" id="p-derived-sec-ch06-indistinguishability-7-1">
+<em class="emphasis">Bosons</em> (<span class="process-math">\(\hat{P}_{12}\ket{\Psi} = +\ket{\Psi}\)</span>): symmetric under exchange. Integer spin (0, 1, 2, ...).</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-indistinguishability-7-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-indistinguishability-7-2">
+<div class="para" id="p-derived-sec-ch06-indistinguishability-7-2">
+<em class="emphasis">Fermions</em> (<span class="process-math">\(\hat{P}_{12}\ket{\Psi} = -\ket{\Psi}\)</span>): antisymmetric under exchange. Half-integer spin (1/2, 3/2, ...).</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-indistinguishability-7-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="sec-ch06-indistinguishability-8">The connection between spin and statistics—the spin-statistics theorem—is one of the deepest results in quantum theory, rigorously provable only in relativistic quantum field theory.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-indistinguishability-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="subsection" id="subsec-permutation-group">
+<h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Permutation Group</span>
+</h4>
+<div class="para" id="subsec-permutation-group-2">For <span class="process-math">\(N\)</span> identical particles, the relevant symmetry group is the symmetric group <span class="process-math">\(S_N\text{,}\)</span> consisting of all <span class="process-math">\(N!\)</span> permutations. A general permutation <span class="process-math">\(\hat{P}_\sigma\)</span> acts on an <span class="process-math">\(N\)</span>-particle state as:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-permutation-group-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-permutation-group-3">
+\begin{equation*}
+\hat{P}_\sigma \ket{\psi_{a_1}} \ket{\psi_{a_2}} \cdots \ket{\psi_{a_N}} = \ket{\psi_{a_{\sigma(1)}}} \ket{\psi_{a_{\sigma(2)}}} \cdots \ket{\psi_{a_{\sigma(N)}}}.
+\end{equation*}
+</div>
+<div class="para" id="subsec-permutation-group-4">Physical states must transform according to specific representations of <span class="process-math">\(S_N\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-permutation-group-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-permutation-group-5">
+<li id="subsec-permutation-group-5-1">
+<div class="para" id="p-derived-subsec-permutation-group-5-1">Bosons: the totally symmetric representation</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-permutation-group-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-permutation-group-5-2">
+<div class="para" id="p-derived-subsec-permutation-group-5-2">Fermions: the totally antisymmetric representation</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-permutation-group-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec-permutation-group-6">In three spatial dimensions, these are the only possibilities for point particles. In two dimensions, more exotic possibilities (anyons) exist, relevant to the fractional quantum Hall effect.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-permutation-group-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 6.1.1: The Permutation Group"><a href="#subsec-permutation-group" title="Copy heading and permalink for Subsection 6.1.1: The Permutation Group" aria-label="Copy heading and permalink for Subsection 6.1.1: The Permutation Group">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 6.1: The Principle of Indistinguishability"><a href="#sec-ch06-indistinguishability" title="Copy heading and permalink for Section 6.1: The Principle of Indistinguishability" aria-label="Copy heading and permalink for Section 6.1: The Principle of Indistinguishability">🔗</a></div>
+</section>
+<section class="section" id="sec-ch06-bosonic-states">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Bosonic States: Symmetric Wavefunctions</span>
+</h3>
+<div class="para" id="sec-ch06-bosonic-states-2">For <span class="process-math">\(N\)</span> bosons, the properly symmetrized state is constructed by summing over all permutations:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-bosonic-states-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-ch06-bosonic-states-3">
+\begin{equation*}
+\ket{\Psi_{\text{sym}}} = \frac{1}{\sqrt{N! \prod_k n_k!}} \sum_{\sigma \in S_N} \hat{P}_\sigma \ket{\psi_{a_1}} \ket{\psi_{a_2}} \cdots \ket{\psi_{a_N}},
+\end{equation*}
+</div>
+<div class="para" id="sec-ch06-bosonic-states-4">where <span class="process-math">\(n_k\)</span> is the occupation number of the <span class="process-math">\(k\)</span>-th single-particle state.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-bosonic-states-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-ch06-two-bosons" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Two Identical Bosons.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="ex-ch06-two-bosons-2">Two bosons in states <span class="process-math">\(\ket{a}\)</span> and <span class="process-math">\(\ket{b}\)</span> with <span class="process-math">\(a \neq b\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ch06-two-bosons-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-ch06-two-bosons-3">
+\begin{equation*}
+\ket{\Psi_{\text{sym}}} = \frac{1}{\sqrt{2}} \left( \ket{a}_1 \ket{b}_2 + \ket{b}_1 \ket{a}_2 \right).
+\end{equation*}
+</div>
+<div class="para" id="ex-ch06-two-bosons-4">If both bosons are in the same state <span class="process-math">\(\ket{a}\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-ch06-two-bosons-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-ch06-two-bosons-5">
+\begin{equation*}
+\ket{\Psi_{\text{sym}}} = \ket{a}_1 \ket{a}_2.
+\end{equation*}
+</div>
+<div class="para" id="ex-ch06-two-bosons-6">Bosons can occupy the same quantum state—this is the basis of Bose-Einstein condensation, lasers, and superfluidity.<div class="autopermalink" data-description="Paragraph"><a href="#ex-ch06-two-bosons-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.1: Two Identical Bosons"><a href="#ex-ch06-two-bosons" title="Copy heading and permalink for Example 6.1: Two Identical Bosons" aria-label="Copy heading and permalink for Example 6.1: Two Identical Bosons">🔗</a></div>
+</article></details>
+<div class="para" id="sec-ch06-bosonic-states-6">The tendency of bosons to cluster in the same state is called <em class="emphasis">bosonic bunching</em>. It has no classical analog and is responsible for phenomena ranging from stimulated emission to the macroscopic quantum states of superfluid helium-4.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-bosonic-states-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 6.2: Bosonic States: Symmetric Wavefunctions"><a href="#sec-ch06-bosonic-states" title="Copy heading and permalink for Section 6.2: Bosonic States: Symmetric Wavefunctions" aria-label="Copy heading and permalink for Section 6.2: Bosonic States: Symmetric Wavefunctions">🔗</a></div>
+</section>
+<section class="section" id="sec-ch06-fermionic-states">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fermionic States: Antisymmetric Wavefunctions and Slater Determinants</span>
+</h3>
+<div class="para" id="sec-ch06-fermionic-states-2">For <span class="process-math">\(N\)</span> fermions, the properly antisymmetrized state is:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-fermionic-states-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-ch06-fermionic-states-3">
+\begin{equation*}
+\ket{\Psi_{\text{anti}}} = \frac{1}{\sqrt{N!}} \sum_{\sigma \in S_N} (-1)^{\sigma} \hat{P}_\sigma \ket{\psi_{a_1}} \ket{\psi_{a_2}} \cdots \ket{\psi_{a_N}},
+\end{equation*}
+</div>
+<div class="para" id="sec-ch06-fermionic-states-4">where <span class="process-math">\((-1)^\sigma\)</span> is the sign of the permutation (even permutations get <span class="process-math">\(+1\text{,}\)</span> odd get <span class="process-math">\(-1\)</span>).<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-fermionic-states-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch06-fermionic-states-5">This antisymmetrized product can be written as a determinant—the <em class="emphasis">Slater determinant</em>:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-fermionic-states-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="assemblage assemblage-like" id="box-slater"><h4 class="heading"><span class="title">Slater Determinant.</span></h4>
+<div class="para" id="box-slater-3">If any two rows are identical (same quantum state), the determinant vanishes. This is the <em class="emphasis">Pauli exclusion principle</em>: no two identical fermions can occupy the same quantum state.<div class="autopermalink" data-description="Paragraph"><a href="#box-slater-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Key Concept: Slater Determinant"><a href="#box-slater" title="Copy heading and permalink for Key Concept: Slater Determinant" aria-label="Copy heading and permalink for Key Concept: Slater Determinant">🔗</a></div>
+</article>
+<details id="ex-ch06-two-fermions" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Two Electrons in a Box.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="ex-ch06-two-fermions-2">Consider two electrons (spin-1/2 fermions) in an infinite square well. The total wavefunction must be antisymmetric under exchange of both spatial and spin coordinates:<div class="autopermalink" data-description="Paragraph"><a href="#ex-ch06-two-fermions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-ch06-two-fermions-3">
+\begin{equation*}
+\Psi(\mathbf{r}_1, s_1; \mathbf{r}_2, s_2) = -\Psi(\mathbf{r}_2, s_2; \mathbf{r}_1, s_1).
+\end{equation*}
+</div>
+<div class="para" id="ex-ch06-two-fermions-4">This can be achieved in two ways:<div class="autopermalink" data-description="Paragraph"><a href="#ex-ch06-two-fermions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="ex-ch06-two-fermions-5">
+<li id="ex-ch06-two-fermions-5-1">
+<div class="para" id="p-derived-ex-ch06-two-fermions-5-1">
+<em class="emphasis">Symmetric spatial, antisymmetric spin (singlet):</em><div class="displaymath process-math" id="ex-ch06-two-fermions-5-1-2">
+\begin{equation*}
+\Psi = \psi_{\text{sym}}(\mathbf{r}_1, \mathbf{r}_2) \cdot \frac{1}{\sqrt{2}}(\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow})
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-ch06-two-fermions-5-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-ch06-two-fermions-5-2">
+<div class="para" id="p-derived-ex-ch06-two-fermions-5-2">
+<em class="emphasis">Antisymmetric spatial, symmetric spin (triplet):</em><div class="displaymath process-math" id="ex-ch06-two-fermions-5-2-2">
+\begin{equation*}
+\Psi = \psi_{\text{anti}}(\mathbf{r}_1, \mathbf{r}_2) \cdot \chi_{\text{triplet}}
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-ch06-two-fermions-5-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="ex-ch06-two-fermions-6">The spatial symmetry affects the energy through the exchange interaction, even though there is no explicit spin-dependent force in the Hamiltonian.<div class="autopermalink" data-description="Paragraph"><a href="#ex-ch06-two-fermions-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.2: Two Electrons in a Box"><a href="#ex-ch06-two-fermions" title="Copy heading and permalink for Example 6.2: Two Electrons in a Box" aria-label="Copy heading and permalink for Example 6.2: Two Electrons in a Box">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Section 6.3: Fermionic States: Antisymmetric Wavefunctions and Slater Determinants"><a href="#sec-ch06-fermionic-states" title="Copy heading and permalink for Section 6.3: Fermionic States: Antisymmetric Wavefunctions and Slater Determinants" aria-label="Copy heading and permalink for Section 6.3: Fermionic States: Antisymmetric Wavefunctions and Slater Determinants">🔗</a></div>
+</section>
+<section class="section" id="sec-ch06-exchange-interaction">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Exchange Interaction</span>
+</h3>
+<div class="para" id="sec-ch06-exchange-interaction-2">For two electrons with Coulomb repulsion <span class="process-math">\(V = e^2/|\mathbf{r}_1 - \mathbf{r}_2|\text{,}\)</span> the energy depends on whether the spatial wavefunction is symmetric or antisymmetric. Define the direct integral <span class="process-math">\(J\)</span> and the exchange integral <span class="process-math">\(K\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-exchange-interaction-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-ch06-exchange-interaction-3">
+\begin{equation*}
+J = \int d^3r_1 \, d^3r_2 \, |\psi_a(\mathbf{r}_1)|^2 \frac{e^2}{|\mathbf{r}_1 - \mathbf{r}_2|} |\psi_b(\mathbf{r}_2)|^2,
+\end{equation*}
+</div>
+<div class="displaymath process-math" id="sec-ch06-exchange-interaction-4">
+\begin{equation*}
+K = \int d^3r_1 \, d^3r_2 \, \psi_a^*(\mathbf{r}_1) \psi_b^*(\mathbf{r}_2) \frac{e^2}{|\mathbf{r}_1 - \mathbf{r}_2|} \psi_b(\mathbf{r}_1) \psi_a(\mathbf{r}_2).
+\end{equation*}
+</div>
+<div class="para" id="sec-ch06-exchange-interaction-5">The energies are:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-exchange-interaction-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="sec-ch06-exchange-interaction-6">
+<li id="sec-ch06-exchange-interaction-6-1">
+<div class="para" id="p-derived-sec-ch06-exchange-interaction-6-1">Singlet (symmetric spatial): <span class="process-math">\(E_{\text{singlet}} = E_a + E_b + J + K\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-exchange-interaction-6-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-exchange-interaction-6-2">
+<div class="para" id="p-derived-sec-ch06-exchange-interaction-6-2">Triplet (antisymmetric spatial): <span class="process-math">\(E_{\text{triplet}} = E_a + E_b + J - K\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-exchange-interaction-6-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="sec-ch06-exchange-interaction-7">The exchange integral <span class="process-math">\(K\)</span> is typically positive, so the triplet state has lower energy. This is the origin of Hund’s first rule in atomic physics: electrons in degenerate orbitals prefer parallel spins to maximize total spin.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-exchange-interaction-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="remark remark-like" id="sec-ch06-exchange-interaction-8"><h4 class="heading">
+<span class="type">Remark</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exchange Is Not a Force.</span>
+</h4>
+<div class="para" id="sec-ch06-exchange-interaction-8-2">The exchange interaction is often described as a "force," but it is purely a consequence of the symmetrization requirement. There is no new force in the Hamiltonian—only the Coulomb repulsion. The energy splitting arises because symmetric and antisymmetric spatial wavefunctions sample the Coulomb potential differently.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-exchange-interaction-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 6.3: Exchange Is Not a Force"><a href="#sec-ch06-exchange-interaction-8" title="Copy heading and permalink for Remark 6.3: Exchange Is Not a Force" aria-label="Copy heading and permalink for Remark 6.3: Exchange Is Not a Force">🔗</a></div>
+</article><div class="autopermalink" data-description="Section 6.4: The Exchange Interaction"><a href="#sec-ch06-exchange-interaction" title="Copy heading and permalink for Section 6.4: The Exchange Interaction" aria-label="Copy heading and permalink for Section 6.4: The Exchange Interaction">🔗</a></div>
+</section>
+<section class="section" id="sec-ch06-atoms-periodic">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.5</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Atomic Structure and the Periodic Table</span>
+</h3>
+<div class="para" id="sec-ch06-atoms-periodic-2">The Pauli exclusion principle, combined with the shell structure of the hydrogen atom, explains the periodic table. Each electron in a multi-electron atom occupies a state labeled by quantum numbers <span class="process-math">\((n, \ell, m_\ell, m_s)\text{.}\)</span> No two electrons can share all four quantum numbers.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-atoms-periodic-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch06-atoms-periodic-3">The filling order follows the aufbau principle (building-up principle):<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-atoms-periodic-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="sec-ch06-atoms-periodic-4">
+<li id="sec-ch06-atoms-periodic-4-1">
+<div class="para" id="p-derived-sec-ch06-atoms-periodic-4-1">Shell <span class="process-math">\(n=1\text{:}\)</span> 1s (2 electrons)</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-atoms-periodic-4-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-atoms-periodic-4-2">
+<div class="para" id="p-derived-sec-ch06-atoms-periodic-4-2">Shell <span class="process-math">\(n=2\text{:}\)</span> 2s (2), 2p (6) — total 8 electrons</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-atoms-periodic-4-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-atoms-periodic-4-3">
+<div class="para" id="p-derived-sec-ch06-atoms-periodic-4-3">Shell <span class="process-math">\(n=3\text{:}\)</span> 3s (2), 3p (6), 3d (10) — total 18 electrons</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-atoms-periodic-4-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-atoms-periodic-4-4">
+<div class="para" id="p-derived-sec-ch06-atoms-periodic-4-4">Shell <span class="process-math">\(n=4\text{:}\)</span> 4s (2), 3d (10), 4p (6) — with energy-level crossings</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-atoms-periodic-4-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="sec-ch06-atoms-periodic-5">Each subshell <span class="process-math">\((n, \ell)\)</span> can hold <span class="process-math">\(2(2\ell + 1)\)</span> electrons (the factor of 2 comes from spin). The periodic properties of the elements—chemical reactivity, ionization energies, atomic radii—all follow from this shell-filling pattern.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-atoms-periodic-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="ex-ch06-helium" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Helium Atom.</span>
+</h4></summary>
+<article class="example example-like knowl__content">
+<div class="para" id="ex-ch06-helium-2">Helium has two electrons. The ground-state configuration is <span class="process-math">\(1s^2\)</span> (both electrons in the 1s orbital with opposite spins). The spatial wavefunction is symmetric, and the spin state is the singlet:<div class="autopermalink" data-description="Paragraph"><a href="#ex-ch06-helium-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="ex-ch06-helium-3">
+\begin{equation*}
+\Psi = \psi_{1s}(\mathbf{r}_1)\psi_{1s}(\mathbf{r}_2) \cdot \frac{1}{\sqrt{2}}(\ket{\uparrow\downarrow} - \ket{\downarrow\uparrow}).
+\end{equation*}
+</div>
+<div class="para" id="ex-ch06-helium-4">The ground-state energy cannot be found exactly due to the electron-electron repulsion term. Using the variational method with an effective nuclear charge <span class="process-math">\(Z_{\text{eff}}\)</span> as variational parameter yields <span class="process-math">\(Z_{\text{eff}} \approx 27/16\text{,}\)</span> giving an energy of <span class="process-math">\(-77.5\)</span> eV compared to the experimental value of <span class="process-math">\(-79.0\)</span> eV—already within 2%.<div class="autopermalink" data-description="Paragraph"><a href="#ex-ch06-helium-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 6.4: The Helium Atom"><a href="#ex-ch06-helium" title="Copy heading and permalink for Example 6.4: The Helium Atom" aria-label="Copy heading and permalink for Example 6.4: The Helium Atom">🔗</a></div>
+</article></details><div class="autopermalink" data-description="Section 6.5: Atomic Structure and the Periodic Table"><a href="#sec-ch06-atoms-periodic" title="Copy heading and permalink for Section 6.5: Atomic Structure and the Periodic Table" aria-label="Copy heading and permalink for Section 6.5: Atomic Structure and the Periodic Table">🔗</a></div>
+</section>
+<section class="section" id="sec-ch06-second-quantization">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.6</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Second Quantization</span>
+</h3>
+<div class="para" id="sec-ch06-second-quantization-2">The Slater determinant formalism becomes unwieldy for large <span class="process-math">\(N\text{.}\)</span> Second quantization provides an elegant algebraic framework that automatically handles symmetrization or antisymmetrization.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-second-quantization-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<section class="subsection" id="subsec-creation-annihilation">
+<h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.6.1</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Creation and Annihilation Operators</span>
+</h4>
+<div class="para" id="subsec-creation-annihilation-2">Define operators <span class="process-math">\(\hat{a}_k^\dagger\)</span> (creation) and <span class="process-math">\(\hat{a}_k\)</span> (annihilation) for each single-particle state <span class="process-math">\(\ket{k}\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-creation-annihilation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="subsec-creation-annihilation-3">
+<li id="subsec-creation-annihilation-3-1">
+<div class="para" id="p-derived-subsec-creation-annihilation-3-1">
+<span class="process-math">\(\hat{a}_k^\dagger\)</span> adds a particle in state <span class="process-math">\(\ket{k}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-creation-annihilation-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-creation-annihilation-3-2">
+<div class="para" id="p-derived-subsec-creation-annihilation-3-2">
+<span class="process-math">\(\hat{a}_k\)</span> removes a particle from state <span class="process-math">\(\ket{k}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-creation-annihilation-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="subsec-creation-annihilation-4">For <em class="emphasis">bosons</em>, these satisfy commutation relations:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-creation-annihilation-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-creation-annihilation-5">
+\begin{equation*}
+[\hat{a}_j, \hat{a}_k^\dagger] = \delta_{jk}, \quad [\hat{a}_j, \hat{a}_k] = 0, \quad [\hat{a}_j^\dagger, \hat{a}_k^\dagger] = 0.
+\end{equation*}
+</div>
+<div class="para" id="subsec-creation-annihilation-6">For <em class="emphasis">fermions</em>, they satisfy anticommutation relations:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-creation-annihilation-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-creation-annihilation-7">
+\begin{equation*}
+\{\hat{c}_j, \hat{c}_k^\dagger\} = \delta_{jk}, \quad \{\hat{c}_j, \hat{c}_k\} = 0, \quad \{\hat{c}_j^\dagger, \hat{c}_k^\dagger\} = 0.
+\end{equation*}
+</div>
+<div class="para" id="subsec-creation-annihilation-8">The anticommutation relation <span class="process-math">\(\{\hat{c}_k^\dagger, \hat{c}_k^\dagger\} = 0\)</span> means <span class="process-math">\((\hat{c}_k^\dagger)^2 = 0\text{:}\)</span> you cannot create two fermions in the same state. This is the Pauli exclusion principle in algebraic form.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-creation-annihilation-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 6.6.1: Creation and Annihilation Operators"><a href="#subsec-creation-annihilation" title="Copy heading and permalink for Subsection 6.6.1: Creation and Annihilation Operators" aria-label="Copy heading and permalink for Subsection 6.6.1: Creation and Annihilation Operators">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-fock-space">
+<h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.6.2</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Fock Space</span>
+</h4>
+<div class="para" id="subsec-fock-space-2">The Fock space is the direct sum of all <span class="process-math">\(N\)</span>-particle Hilbert spaces:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-fock-space-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-fock-space-3">
+\begin{equation*}
+\Fock = \Hilbert_0 \oplus \Hilbert_1 \oplus \Hilbert_2 \oplus \cdots
+\end{equation*}
+</div>
+<div class="para" id="subsec-fock-space-4">where <span class="process-math">\(\Hilbert_0 = \mathbb{C}\)</span> (the vacuum), <span class="process-math">\(\Hilbert_1\)</span> is the single-particle space, <span class="process-math">\(\Hilbert_2\)</span> is the (anti)symmetrized two-particle space, and so on.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-fock-space-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-fock-space-5">The vacuum state <span class="process-math">\(\ket{0}\)</span> satisfies <span class="process-math">\(\hat{a}_k\ket{0} = 0\)</span> for all <span class="process-math">\(k\text{.}\)</span> Multi-particle states are built by applying creation operators:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-fock-space-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-fock-space-6">
+\begin{equation*}
+\ket{n_1, n_2, \ldots} = \frac{(\hat{a}_1^\dagger)^{n_1}}{\sqrt{n_1!}} \frac{(\hat{a}_2^\dagger)^{n_2}}{\sqrt{n_2!}} \cdots \ket{0}.
+\end{equation*}
+</div>
+<div class="para" id="subsec-fock-space-7">The number operator <span class="process-math">\(\hat{n}_k = \hat{a}_k^\dagger \hat{a}_k\)</span> counts particles in state <span class="process-math">\(\ket{k}\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-fock-space-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-fock-space-8">
+\begin{equation*}
+\hat{n}_k \ket{\ldots, n_k, \ldots} = n_k \ket{\ldots, n_k, \ldots}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Subsection 6.6.2: Fock Space"><a href="#subsec-fock-space" title="Copy heading and permalink for Subsection 6.6.2: Fock Space" aria-label="Copy heading and permalink for Subsection 6.6.2: Fock Space">🔗</a></div>
+</section>
+<section class="subsection" id="subsec-operators-second-quant">
+<h4 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.6.3</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Operators in Second Quantization</span>
+</h4>
+<div class="para" id="subsec-operators-second-quant-2">Any one-body operator <span class="process-math">\(\hat{O}_1 = \sum_{i=1}^N \hat{o}(i)\)</span> becomes:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-operators-second-quant-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-operators-second-quant-3">
+\begin{equation*}
+\hat{O}_1 = \sum_{jk} \langle j | \hat{o} | k \rangle \, \hat{a}_j^\dagger \hat{a}_k.
+\end{equation*}
+</div>
+<div class="para" id="subsec-operators-second-quant-4">Any two-body operator <span class="process-math">\(\hat{O}_2 = \frac{1}{2}\sum_{i \neq j} \hat{v}(i,j)\)</span> becomes:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-operators-second-quant-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="subsec-operators-second-quant-5">
+\begin{equation*}
+\hat{O}_2 = \frac{1}{2} \sum_{jk\ell m} \langle jk | \hat{v} | \ell m \rangle \, \hat{a}_j^\dagger \hat{a}_k^\dagger \hat{a}_m \hat{a}_\ell.
+\end{equation*}
+</div>
+<div class="para" id="subsec-operators-second-quant-6">Note the reversed order of annihilation operators in the two-body term, which is essential for getting the correct signs for fermions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-operators-second-quant-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 6.6.3: Operators in Second Quantization"><a href="#subsec-operators-second-quant" title="Copy heading and permalink for Subsection 6.6.3: Operators in Second Quantization" aria-label="Copy heading and permalink for Subsection 6.6.3: Operators in Second Quantization">🔗</a></div>
+</section><div class="autopermalink" data-description="Section 6.6: Second Quantization"><a href="#sec-ch06-second-quantization" title="Copy heading and permalink for Section 6.6: Second Quantization" aria-label="Copy heading and permalink for Section 6.6: Second Quantization">🔗</a></div>
+</section>
+<section class="section" id="sec-ch06-free-electron-gas">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.7</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Free Electron Gas</span>
+</h3>
+<div class="para" id="sec-ch06-free-electron-gas-2">A simple but powerful application: <span class="process-math">\(N\)</span> non-interacting electrons confined to a box of volume <span class="process-math">\(V = L^3\text{.}\)</span> The single-particle states are plane waves with wavevector <span class="process-math">\(\mathbf{k}\)</span> and spin <span class="process-math">\(\sigma\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-free-electron-gas-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch06-free-electron-gas-3">At zero temperature, electrons fill states up to the Fermi wavevector <span class="process-math">\(k_F\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-free-electron-gas-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-ch06-free-electron-gas-4">
+\begin{equation*}
+k_F = \left(\frac{3\pi^2 N}{V}\right)^{1/3}.
+\end{equation*}
+</div>
+<div class="para" id="sec-ch06-free-electron-gas-5">The corresponding Fermi energy is:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-free-electron-gas-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-ch06-free-electron-gas-6">
+\begin{equation*}
+E_F = \frac{\hbar^2 k_F^2}{2m_e}.
+\end{equation*}
+</div>
+<div class="para" id="sec-ch06-free-electron-gas-7">The Fermi energy for typical metals is several electron volts—much larger than thermal energies at room temperature (<span class="process-math">\(k_BT \approx 0.025\)</span> eV). This explains why metals are good conductors: the electrons near the Fermi surface can easily be excited into empty states above it.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-free-electron-gas-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-ch06-free-electron-gas-8">The total ground-state energy of the electron gas is:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-free-electron-gas-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="sec-ch06-free-electron-gas-9">
+\begin{equation*}
+E_{\text{total}} = \frac{3}{5} N E_F.
+\end{equation*}
+</div>
+<div class="para" id="sec-ch06-free-electron-gas-10">The factor <span class="process-math">\(3/5\)</span> reflects the average kinetic energy per electron in a filled Fermi sphere.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-free-electron-gas-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 6.7: The Free Electron Gas"><a href="#sec-ch06-free-electron-gas" title="Copy heading and permalink for Section 6.7: The Free Electron Gas" aria-label="Copy heading and permalink for Section 6.7: The Free Electron Gas">🔗</a></div>
+</section>
+<section class="section" id="sec-ch06-11d-context">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.8</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Dimension 3 in the 11-Dimensional Framework</span>
+</h3>
+<div class="para" id="sec-ch06-11d-context-2">Moving along dimension 3 of our framework—from single particle to fixed-<span class="process-math">\(N\)</span> to Fock space—we encounter qualitatively new physics at each step:<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-11d-context-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<ul class="disc" id="sec-ch06-11d-context-3">
+<li id="sec-ch06-11d-context-3-1">
+<div class="para" id="p-derived-sec-ch06-11d-context-3-1">
+<em class="emphasis">Single particle → Fixed N:</em> exchange symmetry, Pauli exclusion, shell structure</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-11d-context-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-11d-context-3-2">
+<div class="para" id="p-derived-sec-ch06-11d-context-3-2">
+<em class="emphasis">Fixed N → Fock space:</em> particle creation and annihilation, vacuum fluctuations, quantum field theory</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-11d-context-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para" id="sec-ch06-11d-context-4">The key insight is that increasing particle number is not just a quantitative change—it introduces qualitatively new phenomena. The Pauli exclusion principle, which governs all of chemistry and condensed matter physics, simply does not exist in the single-particle sector. And the phenomena of particle creation and annihilation, central to high-energy physics, require the full Fock-space framework.<div class="autopermalink" data-description="Paragraph"><a href="#sec-ch06-11d-context-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 6.8: Dimension 3 in the 11-Dimensional Framework"><a href="#sec-ch06-11d-context" title="Copy heading and permalink for Section 6.8: Dimension 3 in the 11-Dimensional Framework" aria-label="Copy heading and permalink for Section 6.8: Dimension 3 in the 11-Dimensional Framework">🔗</a></div>
+</section>
+<section class="section" id="sec-ch06-summary">
+<h3 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.9</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Chapter Summary</span>
+</h3>
+<ul class="disc" id="sec-ch06-summary-2">
+<li id="sec-ch06-summary-2-1">
+<div class="para" id="p-derived-sec-ch06-summary-2-1">Identical quantum particles are truly indistinguishable; physical states must have definite symmetry under exchange.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-summary-2-2">
+<div class="para" id="p-derived-sec-ch06-summary-2-2">Bosons (integer spin) have symmetric wavefunctions; fermions (half-integer spin) have antisymmetric wavefunctions.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-summary-2-3">
+<div class="para" id="p-derived-sec-ch06-summary-2-3">The Slater determinant constructs antisymmetric fermionic states; it vanishes if two particles share a state (Pauli exclusion).</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-summary-2-4">
+<div class="para" id="p-derived-sec-ch06-summary-2-4">The exchange interaction splits singlet and triplet energies even without explicit spin-dependent forces.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-summary-2-5">
+<div class="para" id="p-derived-sec-ch06-summary-2-5">The Pauli exclusion principle explains atomic shell structure and the periodic table.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-summary-2-6">
+<div class="para" id="p-derived-sec-ch06-summary-2-6">Second quantization uses creation and annihilation operators to handle symmetrization automatically.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-6" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-summary-2-7">
+<div class="para" id="p-derived-sec-ch06-summary-2-7">Fock space <span class="process-math">\(\Fock = \bigoplus_{N=0}^\infty \Hilbert_N\)</span> accommodates variable particle number.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-7" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-summary-2-8">
+<div class="para" id="p-derived-sec-ch06-summary-2-8">The number operator <span class="process-math">\(\hat{n}_k = \hat{a}_k^\dagger \hat{a}_k\)</span> counts particles in each mode.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-8" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-ch06-summary-2-9">
+<div class="para" id="p-derived-sec-ch06-summary-2-9">The free electron gas illustrates Fermi statistics: electrons fill states up to the Fermi energy.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-ch06-summary-2-9" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Section 6.9: Chapter Summary"><a href="#sec-ch06-summary" title="Copy heading and permalink for Section 6.9: Chapter Summary" aria-label="Copy heading and permalink for Section 6.9: Chapter Summary">🔗</a></div>
+</section>
+<section class="exercises" id="exercises-ch06">
+<h3 class="heading hide-type">
+<span class="type">Exercises</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6.10</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exer-ch06-symmetrize"><h4 class="heading"><span class="codenumber">1<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exer-ch06-symmetrize-1-1">Construct the properly symmetrized state for three identical bosons, two in state <span class="process-math">\(\ket{a}\)</span> and one in state <span class="process-math">\(\ket{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-symmetrize-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="exer-ch06-symmetrize-2" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary>
+<div class="hint solution-like knowl__content">
+<div class="para" id="exer-ch06-symmetrize-2-1">Sum over all distinct permutations and normalize. How many distinct permutations are there?<div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-symmetrize-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Hint 6.10.1.1"><a href="#exer-ch06-symmetrize-2" title="Copy heading and permalink for Hint 6.10.1.1" aria-label="Copy heading and permalink for Hint 6.10.1.1">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Exercise 6.10.1"><a href="#exer-ch06-symmetrize" title="Copy heading and permalink for Exercise 6.10.1" aria-label="Copy heading and permalink for Exercise 6.10.1">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exer-ch06-slater"><h4 class="heading"><span class="codenumber">2<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exer-ch06-slater-1-1">Write the Slater determinant for three electrons in states <span class="process-math">\(\psi_1, \psi_2, \psi_3\text{.}\)</span> Verify that it changes sign under exchange of any two particles.<div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-slater-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.10.2"><a href="#exer-ch06-slater" title="Copy heading and permalink for Exercise 6.10.2" aria-label="Copy heading and permalink for Exercise 6.10.2">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exer-ch06-helium-var"><h4 class="heading"><span class="codenumber">3<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exer-ch06-helium-var-1-1">For the helium atom, use a trial wavefunction <span class="process-math">\(\psi(\mathbf{r}_1, \mathbf{r}_2) = \phi_{Z_{\text{eff}}}(\mathbf{r}_1)\phi_{Z_{\text{eff}}}(\mathbf{r}_2)\)</span> where <span class="process-math">\(\phi_{Z_{\text{eff}}}(\mathbf{r}) = (Z_{\text{eff}}^3/(\pi a_0^3))^{1/2} e^{-Z_{\text{eff}} r/a_0}\text{.}\)</span> Find the optimal <span class="process-math">\(Z_{\text{eff}}\)</span> by minimizing the total energy.<div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-helium-var-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.10.3"><a href="#exer-ch06-helium-var" title="Copy heading and permalink for Exercise 6.10.3" aria-label="Copy heading and permalink for Exercise 6.10.3">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exer-ch06-commutation"><h4 class="heading"><span class="codenumber">4<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exer-ch06-commutation-1-1">Verify that bosonic creation and annihilation operators satisfy <span class="process-math">\([\hat{a}, \hat{a}^\dagger] = 1\)</span> by computing their action on number states <span class="process-math">\(\ket{n}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-commutation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.10.4"><a href="#exer-ch06-commutation" title="Copy heading and permalink for Exercise 6.10.4" aria-label="Copy heading and permalink for Exercise 6.10.4">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exer-ch06-anticommutation"><h4 class="heading"><span class="codenumber">5<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exer-ch06-anticommutation-1-1">Show that the fermionic anticommutation relation <span class="process-math">\(\{\hat{c}_k^\dagger, \hat{c}_k^\dagger\} = 0\)</span> implies the Pauli exclusion principle: <span class="process-math">\((\hat{c}_k^\dagger)^2 = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-anticommutation-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.10.5"><a href="#exer-ch06-anticommutation" title="Copy heading and permalink for Exercise 6.10.5" aria-label="Copy heading and permalink for Exercise 6.10.5">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exer-ch06-number-op"><h4 class="heading"><span class="codenumber">6<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exer-ch06-number-op-1-1">For a system of non-interacting fermions, show that the Hamiltonian can be written as <span class="process-math">\(\hat{H} = \sum_k \varepsilon_k \hat{n}_k\)</span> where <span class="process-math">\(\hat{n}_k = \hat{c}_k^\dagger \hat{c}_k\text{,}\)</span> and find the ground-state energy.<div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-number-op-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.10.6"><a href="#exer-ch06-number-op" title="Copy heading and permalink for Exercise 6.10.6" aria-label="Copy heading and permalink for Exercise 6.10.6">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exer-ch06-fermi-energy"><h4 class="heading"><span class="codenumber">7<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exer-ch06-fermi-energy-1-1">Calculate the Fermi energy for copper, which has one conduction electron per atom and a density of <span class="process-math">\(8.96 \times 10^3\)</span> kg/m<span class="process-math">\(^3\)</span> with atomic mass 63.55 u.<div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-fermi-energy-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.10.7"><a href="#exer-ch06-fermi-energy" title="Copy heading and permalink for Exercise 6.10.7" aria-label="Copy heading and permalink for Exercise 6.10.7">🔗</a></div>
+</article>
+<article class="exercise exercise-like" id="exer-ch06-challenge"><h4 class="heading"><span class="codenumber">8<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4>
+<div class="para" id="exer-ch06-challenge-1-1">
+<em class="emphasis">Challenge.</em> Derive the second-quantized form of a two-body interaction <span class="process-math">\(\hat{V} = \frac{1}{2}\sum_{i\neq j} v(\mathbf{r}_i - \mathbf{r}_j)\)</span> in terms of creation and annihilation operators. Explain the ordering of the annihilation operators.<div class="autopermalink" data-description="Paragraph"><a href="#exer-ch06-challenge-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Exercise 6.10.8"><a href="#exer-ch06-challenge" title="Copy heading and permalink for Exercise 6.10.8" aria-label="Copy heading and permalink for Exercise 6.10.8">🔗</a></div>
+</article><div class="autopermalink" data-description="Exercises 6.10: Exercises"><a href="#exercises-ch06" title="Copy heading and permalink for Exercises 6.10: Exercises" aria-label="Copy heading and permalink for Exercises 6.10: Exercises">🔗</a></div>
+</section><div class="autopermalink" data-description="Chapter 6: Identical Particles and Many-Body Systems (Dimension 3)"><a href="#ch06-identical-particles" title="Copy heading and permalink for Chapter 6: Identical Particles and Many-Body Systems (Dimension 3)" aria-label="Copy heading and permalink for Chapter 6: Identical Particles and Many-Body Systems (Dimension 3)">🔗</a></div>
+</section>
+</div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch05-spin-and-angular-momentum.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch07-perturbation-theory.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

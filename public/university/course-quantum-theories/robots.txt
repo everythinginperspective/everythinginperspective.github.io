@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://humanitiesclinic.github.io/quantum-theories/sitemap_alt3.xml
