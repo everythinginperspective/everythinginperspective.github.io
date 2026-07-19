@@ -38,7 +38,7 @@ definePageMeta({
 })
 
 const route = useRoute()
-const slug = decodeURIComponent(route.params.slug as string)
+const slug = route.params.slug as string
 
 // Fetch article by slug (v3: queryCollection)
 const { data: article } = await useAsyncData(
