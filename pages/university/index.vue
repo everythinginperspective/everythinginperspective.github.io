@@ -8,7 +8,7 @@
         <NuxtLink 
           v-for="course in courses" 
           :key="course.name"
-          :to="`/university/${course.name}/`"
+          :to="`/university/${course.name}/frontmatter`"
           class="course-card"
         >
           <h2>{{ course.label }}</h2>
