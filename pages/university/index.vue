@@ -24,49 +24,8 @@ definePageMeta({
   layout: 'default'
 })
 
-// Course metadata (add descriptions here)
-const courseMetadata: Record<string, { label: string; description: string }> = {
-  'course-multilingual': {
-    label: 'How To Be Multilingual FAST',
-    description: 'Learning Languages Through Comparative Study'
-  },
-  'course-quantum-theories': {
-    label: 'Quantum Theories',
-    description: 'Interactive course on quantum mechanics'
-  },
-  'course-engineering-through-making': {
-    label: 'Engineering Through Making',
-    description: 'Hands-on engineering principles and practice'
-  },
-  'course-ai-universe': {
-    label: 'Traversing the Universe of AI',
-    description: 'Exploring artificial intelligence and machine learning'
-  }
-}
-
-// Dynamically read available courses from /courses/ directory
-const { data: folderNames } = await useFetch('/api/university/courses')
-
-const courses = computed(() => {
-  if (!folderNames.value) return []
-  
-  return (folderNames.value as string[])
-    .filter((name: string) => name.startsWith('course-'))
-    .map((name: string) => ({
-      name,
-      label: courseMetadata[name]?.label || toTitleCase(name),
-      description: courseMetadata[name]?.description || 'Interactive course content'
-    }))
-})
-
-// Helper to convert folder names to title case
-const toTitleCase = (str: string) => {
-  return str
-    .replace('course-', '')
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
-}
+// Import auto-generated courses list
+const { courses } = useUniversityCourses()
 
 // SEO
 useSeoMeta({
