@@ -45,23 +45,18 @@ const courseMetadata: Record<string, { label: string; description: string }> = {
 }
 
 // Dynamically read available courses from /courses/ directory
-const courses = computed(async () => {
-  try {
-    // Fetch list of course folders
-    const response = await fetch('/api/university/courses')
-    const folderNames = await response.json()
-    
-    return folderNames
-      .filter((name: string) => name.startsWith('course-'))
-      .map((name: string) => ({
-        name,
-        label: courseMetadata[name]?.label || toTitleCase(name),
-        description: courseMetadata[name]?.description || 'Interactive course content'
-      }))
-  } catch (error) {
-    console.error('Failed to load courses:', error)
-    return []
-  }
+const { data: folderNames } = await useFetch('/api/university/courses')
+
+const courses = computed(() => {
+  if (!folderNames.value) return []
+  
+  return (folderNames.value as string[])
+    .filter((name: string) => name.startsWith('course-'))
+    .map((name: string) => ({
+      name,
+      label: courseMetadata[name]?.label || toTitleCase(name),
+      description: courseMetadata[name]?.description || 'Interactive course content'
+    }))
 })
 
 // Helper to convert folder names to title case
