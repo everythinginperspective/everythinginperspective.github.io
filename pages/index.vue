@@ -9,6 +9,9 @@
         <p>
           A curated collection of essays exploring global trends, context, and nuance. Organized by articles, perspectives, people, and languages.
         </p>
+        <p class="hero-subtitle">
+          Now featuring <NuxtLink to="/university/course-AIuniverse/">Traversing the Universe of AI</NuxtLink> — an interactive textbook on machine learning.
+        </p>
       </div>
       <!-- Rainbow accent bar -->
       <div class="rainbow-bar"></div>
