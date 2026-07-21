@@ -1,22 +1,19 @@
 <template>
-  <div>
-    <nav v-if="breadcrumbs.length > 1" class="breadcrumbs-nav">
-      <div class="breadcrumbs-content">
-        <ol class="breadcrumbs-list">
-          <li v-for="(crumb, index) in breadcrumbs" :key="crumb.to" class="breadcrumbs-item">
-            <NuxtLink
-              :to="crumb.to"
-              :class="index === breadcrumbs.length - 1 ? 'breadcrumbs-active' : 'breadcrumbs-link'"
-            >
-              {{ crumb.label }}
-            </NuxtLink>
-            <span v-if="index < breadcrumbs.length - 1" class="breadcrumbs-sep">/</span>
-          </li>
-        </ol>
-      </div>
-    </nav>
-    <PageHeader />
-  </div>
+  <nav v-if="breadcrumbs.length > 1" class="breadcrumbs-nav">
+    <div class="breadcrumbs-content">
+      <ol class="breadcrumbs-list">
+        <li v-for="(crumb, index) in breadcrumbs" :key="crumb.to" class="breadcrumbs-item">
+          <NuxtLink
+            :to="crumb.to"
+            :class="index === breadcrumbs.length - 1 ? 'breadcrumbs-active' : 'breadcrumbs-link'"
+          >
+            {{ crumb.label }}
+          </NuxtLink>
+          <span v-if="index < breadcrumbs.length - 1" class="breadcrumbs-sep">/</span>
+        </li>
+      </ol>
+    </div>
+  </nav>
 </template>
 
 <script setup lang="ts">

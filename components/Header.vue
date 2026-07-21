@@ -16,10 +16,9 @@
           <!-- Desktop Navigation -->
           <nav class="nav-desktop">
             <a href="/">Home</a>
-            <a href="/magazine/articles">Articles</a>
-            <a href="/magazine/perspectives">Perspectives</a>
-            <a href="/page/faq">FAQ</a>
-            <a href="/page/contact-us">Contact</a>
+            <template v-for="item in navItems" :key="item.label">
+              <a :href="item.href">{{ item.label }}</a>
+            </template>
             <SearchBar />
           </nav>
 
@@ -53,18 +52,11 @@
         <a href="/" @click="navOpen = false">
           Home
         </a>
-        <a href="/magazine/articles" @click="navOpen = false">
-          Articles
-        </a>
-        <a href="/magazine/perspectives" @click="navOpen = false">
-          Perspectives
-        </a>
-        <a href="/page/faq" @click="navOpen = false">
-          FAQ
-        </a>
-        <a href="/page/contact-us" @click="navOpen = false">
-          Contact
-        </a>
+        <template v-for="item in navItems" :key="item.label">
+          <a :href="item.href" @click="navOpen = false">
+            {{ item.label }}
+          </a>
+        </template>
         <div class="nav-drawer-divider">
           <a href="/page/privacy-policy" @click="navOpen = false">
             Privacy Policy
@@ -82,7 +74,26 @@
 </template>
 
 <script setup lang="ts">
+import { shouldShowHeader, getHeaderLabel } from '~/composables/usePageHeaders'
+
 const navOpen = ref(false)
+
+// Build nav items from /pages top-level folders
+const navItems = computed(() => {
+  const items = [
+    // Magazine with sub-items
+    { label: 'Magazine', href: '/magazine/articles' },
+    { label: 'Dictionary', href: '/dictionary' },
+    { label: 'Encyclopedia', href: '/encyclopedia' },
+    { label: 'University', href: '/university' }
+  ]
+  
+  // Filter out suppressed items
+  return items.filter(item => {
+    const folder = item.href.split('/')[1]
+    return shouldShowHeader(folder)
+  })
+})
 
 const hilltopadsScript = '<script async src="//untimely-hello.com/bWX/V/s.d/Gslj0mYdWIcS/keTma9Mu/Z/Uxl/kkPMT/chw/MyjGA/yKNFTfM/tbNFzBA-yPMpDlId1pN-wT" referrerpolicy="no-referrer-when-downgrade"><\/script>'
 </script>
