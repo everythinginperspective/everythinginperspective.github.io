@@ -24,24 +24,54 @@ definePageMeta({
   layout: 'default'
 })
 
-// Available courses
-const courses = [
-  {
-    name: 'course-multilingual',
+// Course metadata (add descriptions here)
+const courseMetadata: Record<string, { label: string; description: string }> = {
+  'course-multilingual': {
     label: 'How To Be Multilingual FAST',
     description: 'Learning Languages Through Comparative Study'
   },
-  {
-    name: 'course-quantum-theories',
+  'course-quantum-theories': {
     label: 'Quantum Theories',
     description: 'Interactive course on quantum mechanics'
   },
-  {
-    name: 'course-engineering-through-making',
+  'course-engineering-through-making': {
     label: 'Engineering Through Making',
     description: 'Hands-on engineering principles and practice'
+  },
+  'course-ai-universe': {
+    label: 'Traversing the Universe of AI',
+    description: 'Exploring artificial intelligence and machine learning'
   }
-]
+}
+
+// Dynamically read available courses from /courses/ directory
+const courses = computed(async () => {
+  try {
+    // Fetch list of course folders
+    const response = await fetch('/api/university/courses')
+    const folderNames = await response.json()
+    
+    return folderNames
+      .filter((name: string) => name.startsWith('course-'))
+      .map((name: string) => ({
+        name,
+        label: courseMetadata[name]?.label || toTitleCase(name),
+        description: courseMetadata[name]?.description || 'Interactive course content'
+      }))
+  } catch (error) {
+    console.error('Failed to load courses:', error)
+    return []
+  }
+})
+
+// Helper to convert folder names to title case
+const toTitleCase = (str: string) => {
+  return str
+    .replace('course-', '')
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
 
 // SEO
 useSeoMeta({
