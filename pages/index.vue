@@ -4,13 +4,13 @@
     <section class="hero">
       <div class="hero-text">
         <h1>
-          Everything in Perspective Workflow Test P
+          Everything in Perspective
         </h1>
         <p>
-          A curated collection of essays exploring global trends, context, and nuance. Organized by articles, perspectives, people, and languages.
+          A curated collection of essays exploring global trends, context, and nuance. Organized by articles, perspectives, people, languages, and mnemonics.
         </p>
         <p class="hero-subtitle">
-          Now featuring <NuxtLink to="/university/course-AIuniverse/">Traversing the Universe of AI</NuxtLink> — an interactive textbook on machine learning.
+          Now featuring <NuxtLink to="/university/course-AIuniverse/">Traversing the Universe of AI</NuxtLink> — an interactive textbook on machine learning, and <NuxtLink to="/mnemonics">Mnemonics</NuxtLink> — memory techniques for learning.
         </p>
       </div>
       <!-- Rainbow accent bar -->
