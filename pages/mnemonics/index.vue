@@ -46,7 +46,7 @@
           <div class="card-category">{{ mnemonic.category || 'General' }}</div>
           <div class="card-content">
             <h3 class="card-title">
-              <NuxtLink :to="`/mnemonics/${mnemonic._path?.split('/').pop()}`">
+              <NuxtLink :to="`/mnemonics/${getSlug(mnemonic)}`">
                 {{ mnemonic.title }}
               </NuxtLink>
             </h3>
@@ -56,7 +56,7 @@
                 #{{ tag }}
               </span>
             </div>
-            <NuxtLink :to="`/mnemonics/${mnemonic._path?.split('/').pop()}`" class="card-link">
+            <NuxtLink :to="`/mnemonics/${getSlug(mnemonic)}`" class="card-link">
               Learn More →
             </NuxtLink>
           </div>
@@ -88,6 +88,13 @@ definePageMeta({
 })
 
 const selectedCategory = ref(null)
+
+// Helper to extract slug from _path
+const getSlug = (mnemonic: any) => {
+  if (!mnemonic._path) return ''
+  const filename = mnemonic._path.split('/').pop() || ''
+  return filename.replace('.md', '')
+}
 
 // Fetch all mnemonics
 const { data: mnemonicsData } = await useAsyncData('mnemonics', () =>

@@ -56,19 +56,13 @@ definePageMeta({
 const route = useRoute()
 const slug = route.params.slug as string
 
-// Fetch the specific mnemonic
-const { data: mnemonic } = await useAsyncData(`mnemonic-${slug}`, () =>
-  queryCollection('mnemonics').where({ _path: `/content/mnemonics/${slug}` }).first()
-)
-
-// If not found by direct path, try to find by slug
-if (!mnemonic.value) {
-  const { data: mnemonicBySlug } = await useAsyncData(`mnemonic-slug-${slug}`, () =>
-    queryCollection('mnemonics')
-      .find(item => item._path?.includes(slug))
-  )
-  mnemonic.value = mnemonicBySlug.value?.[0]
-}
+// Fetch the specific mnemonic by matching the filename
+const { data: mnemonic } = await useAsyncData(`mnemonic-${slug}`, () => {
+  return queryCollection('mnemonics').find(item => {
+    const filename = item._path?.split('/').pop()?.replace('.md', '') || ''
+    return filename === slug
+  })?.[0] || null
+})
 
 // SEO
 useSeoMeta({
