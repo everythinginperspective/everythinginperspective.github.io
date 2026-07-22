@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "generate:courses": "node scripts/generate-university-courses.js",
-    "build": "npm run generate:courses && nuxt build",
-    "generate": "npm run generate:courses && nuxt generate && rm -rf docs && cp -r .output/public docs && cp docs/404.html docs/200.html && pagefind --site docs",
-    "dev": "npm run generate:courses && nuxt dev",
+    "generate:nav": "node scripts/generate-nav-items.js",
+    "prebuild": "npm run generate:nav && npm run generate:courses",
+    "build": "nuxt build",
+    "generate": "npm run generate:nav && npm run generate:courses && nuxt generate && rm -rf docs && cp -r .output/public docs && cp docs/404.html docs/200.html && pagefind --site docs",
+    "dev": "npm run generate:nav && npm run generate:courses && nuxt dev",
     "start": "nuxt preview",
     "deploy": "npm run generate && git add docs && git commit -m 'Deploy to GitHub Pages' && git push origin main"
   },
