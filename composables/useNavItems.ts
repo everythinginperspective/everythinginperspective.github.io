@@ -1,7 +1,7 @@
 /**
  * Navigation Items - Auto-generated from /pages/ folders
  * Run: npm run generate:nav
- * Last updated: 2026-07-22T02:24:07.550Z
+ * Last updated: 2026-07-23T04:42:41.278Z
  */
 
 export interface NavItem {
