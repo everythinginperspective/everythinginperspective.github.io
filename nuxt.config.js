@@ -18,19 +18,30 @@ function generateRoutes() {
       .filter(folder => !folder.startsWith('.') && !folder.startsWith('_'))
     
     folders.forEach(folder => {
-      const singular = pluralize.singular(folder)
-      const plural = pluralize.plural(folder)
       const folderPath = join(contentDir, folder)
       const files = readdirSync(folderPath).filter(f => f.endsWith('.md'))
       
-      files.forEach(file => {
-        const slug = file.replace('.md', '')
-        routes.push(`/magazine/${singular}/${slug}`)
-        routes.push(`/linked-data/${folder}/${slug}`)
-      })
-      
-      routes.push(`/magazine/${plural}`)
-      routes.push(`/linked-data/${plural}`)
+      // Special handling for mnemonics (use /mnemonics/[slug] route)
+      if (folder === 'mnemonics') {
+        routes.push('/mnemonics') // Index page
+        files.forEach(file => {
+          const slug = file.replace('.md', '')
+          routes.push(`/mnemonics/${slug}`)
+        })
+      } else {
+        // Magazine/linked-data routes for other collections
+        const singular = pluralize.singular(folder)
+        const plural = pluralize.plural(folder)
+        
+        files.forEach(file => {
+          const slug = file.replace('.md', '')
+          routes.push(`/magazine/${singular}/${slug}`)
+          routes.push(`/linked-data/${folder}/${slug}`)
+        })
+        
+        routes.push(`/magazine/${plural}`)
+        routes.push(`/linked-data/${plural}`)
+      }
     })
   } catch (e) {
     console.warn('Could not generate routes from content:', e.message)
