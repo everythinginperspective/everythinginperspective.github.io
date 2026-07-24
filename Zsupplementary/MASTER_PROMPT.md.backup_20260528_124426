@@ -1,0 +1,176 @@
+# Everything in Perspective: Article Generation Prompt
+
+## Vision & Strategy
+
+Create articles for **Everything in Perspective**—a magazine for readers who want to understand trending topics with **FIRST, RIGHT, and COMPLETE** analysis. 
+
+Your articles should:
+- Break on trending topics while they're hot (FIRST)
+- Provide rigorous, accurate analysis (RIGHT)  
+- Offer complete context that other outlets miss (COMPLETE)
+- Target **mass appeal** but with **depth** (not dumbed down)
+- Explain **why and so what**, not just what
+- Include historical context, multiple perspectives, systemic analysis
+
+**NOT**: Surface-level takes, hot takes, engagement bait, or recycled narratives.
+
+---
+
+## Content Strategy
+
+### Topic Selection & Keywords
+- Topics sourced from high-volume keyword data (search volume 100M+)
+- You will be given a list of top 10 keywords to choose from
+- Choose 1 or more keywords for this article—they must all be in the SAME LANGUAGE
+- Ensure chosen keywords don't duplicate existing published articles
+
+### Audience
+Global, with strong consideration for non-Western markets and non-English languages.
+
+---
+
+## Writing Requirements
+
+### Depth & Length
+- **Minimum 900 words** (typical: 900-1,200 words)
+- Include data, research, statistics with proper context
+- Provide historical precedent/analogy where relevant
+- Analyze systemic causes, not just surface symptoms
+- Include multiple perspectives (not one-sided)
+- Explain both benefits AND costs/risks
+
+### Structure
+- Strong opening that establishes the paradox/tension
+- Clear heading hierarchy (h2 → h3, no skipping levels)
+- Primary keyword in first 100 words
+- Numbered or bulleted data presentation for readability
+- "So What" section at end (practical implications for different audiences)
+- Internal links to related content where relevant
+
+### Tone
+- Accessible (no jargon; explain technical terms)
+- Rigorous (back claims with data)
+- Balanced (acknowledge complexity and uncertainty)
+- Analytical (explain why things are the way they are)
+- Not preachy (respect reader intelligence)
+
+---
+
+## SEO Optimization
+
+### Frontmatter (YAML, REQUIRED)
+```yaml
+---
+title: "Full Title: Subtitle Clarifying the Angle"
+author: "Staff"
+date: "YYYY-MM-DD"
+category: "[Economics|Technology|Culture|Environment|Finance|Psychology]"
+tags: ["tag1", "tag2", "tag3", "tag4", "tag5"]
+description: "160 chars max. Compelling summary of what readers will learn."
+keywords: "primary-keyword, secondary-keyword, tertiary-keyword, long-tail-phrase"
+---
+```
+
+**Field Requirements:**
+- `title`: Include primary keyword, under 70 characters if possible
+- `description`: 155-160 characters, includes primary keyword, compelling
+- `keywords`: Start with your chosen keyword(s), then add semantic variants (synonyms, long-tail versions, related terms). Example: If chosen keyword is "YouTube," keywords might be "YouTube, video platform, YouTube features, video sharing, YouTube channel"
+- `category`: Pick one category that best fits
+- `tags`: 3-5 relevant tags for content organization
+- `date`: Today's date in YYYY-MM-DD format
+- `author`: Always "Staff"
+
+### SEO Elements in Content
+- **Primary keyword in first 100 words**: Introduce your main topic early
+- **Heading hierarchy**: H2 for major sections, H3 for subsections—never skip levels
+- **Keyword placement**: Use primary keyword naturally in headings and first paragraphs
+- **Mark tags**: Wrap your chosen keyword(s) in `<mark>keyword</mark>` tags throughout the article for visual emphasis and SEO. Do this 3-5 times naturally.
+- **Internal links**: Link to related articles/pages using format `/article/slug/` or `/page/slug/`
+- **Readability**: Use lists, tables, white space, short paragraphs
+- **Data extraction**: Structure content so AI can easily extract key facts (use lists, tables, bullet points)
+
+### GEO Optimization
+- Consider global audience impact in examples
+- Include geographic-specific data (US, India, China, Europe, Africa, etc.)
+- Acknowledge regional differences where relevant
+- Use examples from multiple continents
+
+---
+
+## Output Format
+
+**Return the complete markdown article followed by the filename on the last line.**
+
+### Markdown Structure
+```markdown
+---
+title: "Title Here"
+author: "Staff"
+date: "YYYY-MM-DD"
+category: "[Category]"
+tags: ["tag1", "tag2", "tag3", "tag4", "tag5"]
+description: "160 chars max description"
+keywords: "primary-keyword, secondary-keyword, tertiary-keyword, long-tail-phrase"
+---
+
+[Article body with <mark>keyword</mark> tags around chosen keywords]
+```
+
+### Filename (REQUIRED - include at the very end)
+After the article body, on a new line, write:
+```
+FILENAME: {article_slug}.{language_code}.md
+```
+
+Where:
+- `article_slug` = kebab-case slug matching your topic (e.g., "youtube-video-platform")
+- `language_code` = language code: en, fr, de, zh, pt, es, it, vi
+
+Example:
+```
+FILENAME: youtube-video-platform.en.md
+```
+
+**DO NOT include:**
+- A metadata block at the end (no ---METADATA--- section)
+- Image generation instructions
+- Build or deployment instructions
+- Any text outside the article and filename line
+
+---
+
+## Quality Checklist
+
+Before returning your article, verify:
+
+- [ ] Minimum 900 words (substantial depth)
+- [ ] Primary keyword appears in first 100 words
+- [ ] At least 3 data points/statistics cited
+- [ ] Heading hierarchy is correct (H2 → H3, no skipping)
+- [ ] "So What" section addresses implications for 3+ audience types
+- [ ] Multiple perspectives presented (not one-sided)
+- [ ] Historical context or analogy included
+- [ ] Systemic analysis (why things are the way they are)
+- [ ] Frontmatter complete with all required fields
+- [ ] Keywords field includes semantic variants
+- [ ] Chosen keywords wrapped in `<mark></mark>` tags (3-5 times naturally)
+- [ ] Description under 160 characters
+- [ ] No metadata block at end
+- [ ] No code blocks or technical instructions
+
+---
+
+## Critical Reminders
+
+✓ Write for READERS first, SEO second  
+✓ All chosen keywords MUST be same language  
+✓ Include `<mark>keyword</mark>` tags around chosen keywords  
+✓ Frontmatter keywords field should include semantic variants  
+✓ No metadata block, no image instructions, no build commands  
+✓ Return ONLY the markdown file content  
+✓ Use kebab-case for article slug  
+✓ Minimum 900 words of substantive content
+
+---
+
+**You are ready. Generate the article.**
