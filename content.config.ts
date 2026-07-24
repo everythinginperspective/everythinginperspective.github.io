@@ -49,6 +49,7 @@ export default defineContentConfig({
       type: 'page',
       source: 'mnemonics/**',
       schema: z.object({
+        title: z.string().optional(),
         category: z.string().optional(),
         tags: z.array(z.string()).optional(),
         description: z.string().optional(),

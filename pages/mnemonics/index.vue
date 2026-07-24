@@ -97,9 +97,15 @@ const getSlug = (mnemonic: any) => {
 }
 
 // Fetch all mnemonics
-const { data: mnemonicsData } = await useAsyncData('mnemonics', () =>
-  queryCollection('mnemonics').all()
-)
+const { data: mnemonicsData } = await useAsyncData('mnemonics', async () => {
+  try {
+    const items = await queryCollection('mnemonics').all()
+    return items || []
+  } catch (error) {
+    console.error('Error fetching mnemonics:', error)
+    return []
+  }
+})
 const mnemonics = computed(() => mnemonicsData.value || [])
 
 // Extract unique categories
