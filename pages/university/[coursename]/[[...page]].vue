@@ -5,27 +5,28 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
-
 definePageMeta({
   layout: 'default'
 })
 
 const route = useRoute()
-const router = useRouter()
 const coursename = route.params.coursename as string
 const pageParam = route.params.page
-const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'index')
 
-// Fetch HTML from public/courses/{coursename}/{page}.html
-const { data: html } = await useFetch(`/courses/${coursename}/${page}.html`, {
+if (!coursename) {
+  await navigateTo('/university', { redirectCode: 301 })
+}
+const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
+
+// Fetch HTML from public/university/{coursename}/{page}.html
+const { data: html } = await useFetch(`/university/${coursename}/${page}.html`, {
   server: false,  // Don't fetch on server, avoid SSR issues
   immediate: true
 })
 
-// If fetch fails (404), redirect to course index
+// If fetch fails (404), redirect to course frontmatter
 if (!html.value) {
-  navigateTo(`/university/${coursename}/`, { redirectCode: 301 })
+  await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
 }
 
 // Rewrite relative URLs to stay within course routes (remove .html extension)
@@ -35,8 +36,8 @@ const fixed = computed(() => {
   return html.value
     // Rewrite href links: remove .html and prefix with /university/{coursename}/
     .replace(/href="(?!https?|\/|#|data)([^"]+)\.html"/g, `href="/university/${coursename}/$1"`)
-    // Rewrite src links (static assets): prefix with /courses/{coursename}/
-    .replace(/src="(?!https?|\/|data)([^"]+)"/g, `src="/courses/${coursename}/$1"`)
+    // Rewrite src links (static assets): prefix with /university/{coursename}/
+    .replace(/src="(?!https?|\/|data)([^"]+)"/g, `src="/university/${coursename}/$1"`)
 })
 
 // SEO
