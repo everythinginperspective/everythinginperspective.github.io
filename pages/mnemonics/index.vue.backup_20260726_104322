@@ -46,9 +46,9 @@
           <div class="card-category">{{ mnemonic.category || 'General' }}</div>
           <div class="card-content">
             <h3 class="card-title">
-              <a :href="`/mnemonics/${getSlug(mnemonic)}`">
+              <NuxtLink :to="`/mnemonics/${getSlug(mnemonic)}`">
                 {{ mnemonic.title }}
-              </a>
+              </NuxtLink>
             </h3>
             <p class="card-description">{{ mnemonic.description }}</p>
             <div class="card-tags" v-if="mnemonic.tags?.length">
@@ -56,9 +56,9 @@
                 #{{ tag }}
               </span>
             </div>
-            <a :href="`/mnemonics/${getSlug(mnemonic)}`" class="card-link">
+            <NuxtLink :to="`/mnemonics/${getSlug(mnemonic)}`" class="card-link">
               Learn More →
-            </a>
+            </NuxtLink>
           </div>
         </article>
       </div>

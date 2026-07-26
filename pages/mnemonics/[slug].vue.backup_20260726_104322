@@ -23,9 +23,9 @@
           <h4>Tags</h4>
           <ul>
             <li v-for="tag in mnemonic.tags" :key="tag">
-              <a :href="`/mnemonics?tag=${tag}`" class="tag-link">
+              <NuxtLink :to="`/mnemonics?tag=${tag}`" class="tag-link">
                 #{{ tag }}
-              </a>
+              </NuxtLink>
             </li>
           </ul>
         </div>
@@ -34,9 +34,9 @@
 
     <!-- Navigation -->
     <nav class="article-nav">
-      <a href="/mnemonics" class="nav-back">
+      <NuxtLink to="/mnemonics" class="nav-back">
         ← Back to Mnemonics
-      </a>
+      </NuxtLink>
     </nav>
 
     <div class="footer-spacer"></div>
@@ -44,7 +44,7 @@
   <main v-else class="not-found">
     <h1>Mnemonic not found</h1>
     <p>This mnemonic doesn't exist yet.</p>
-    <a href="/mnemonics" class="nav-back">Back to Mnemonics</a>
+    <NuxtLink to="/mnemonics" class="nav-back">Back to Mnemonics</NuxtLink>
   </main>
 </template>
 

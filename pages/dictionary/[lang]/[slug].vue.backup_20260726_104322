@@ -9,7 +9,7 @@
     <div v-else-if="error" class="dictionary-error">
       <h2>Word Not Found</h2>
       <p>{{ error }}</p>
-      <a href="/dictionary" class="back-link">← Back to Dictionary</a>
+      <NuxtLink to="/dictionary" class="back-link">← Back to Dictionary</NuxtLink>
     </div>
 
     <!-- Content -->

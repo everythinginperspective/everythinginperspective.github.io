@@ -10,7 +10,7 @@
           A curated collection of essays exploring global trends, context, and nuance. Organized by articles, perspectives, people, languages, and mnemonics.
         </p>
         <p class="hero-subtitle">
-          Now featuring <a href="/university/course-AIuniverse/">Traversing the Universe of AI</a> — an interactive textbook on machine learning, and <a href="/mnemonics">Mnemonics</a> — memory techniques for learning.
+          Now featuring <NuxtLink to="/university/course-AIuniverse/">Traversing the Universe of AI</NuxtLink> — an interactive textbook on machine learning, and <NuxtLink to="/mnemonics">Mnemonics</NuxtLink> — memory techniques for learning.
         </p>
       </div>
       <!-- Rainbow accent bar -->

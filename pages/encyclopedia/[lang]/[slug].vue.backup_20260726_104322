@@ -9,7 +9,7 @@
     <div v-else-if="error" class="encyclopedia-error">
       <h2>Article Not Found</h2>
       <p>{{ error }}</p>
-      <a href="/encyclopedia" class="back-link">← Back to Encyclopedia</a>
+      <NuxtLink to="/encyclopedia" class="back-link">← Back to Encyclopedia</NuxtLink>
     </div>
 
     <!-- Content -->
