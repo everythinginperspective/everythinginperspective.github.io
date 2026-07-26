@@ -7,59 +7,84 @@
       </p>
     </div>
 
+    <!-- Top Entries Grid -->
+    <div class="top-entries-section">
+      <h2>Top Entries</h2>
+      <div class="language-grid">
+        <div 
+          v-for="(entries, lang) in topEntries" 
+          :key="lang"
+          class="language-card"
+        >
+          <h3 class="lang-name">{{ langNames[lang] || formatLang(lang) }}</h3>
+          <ul class="entries-list">
+            <li v-for="entry in entries.slice(0, 5)" :key="entry.title" class="entry-item">
+              <a :href="entry.einp_url" class="entry-link">
+                {{ entry.title }}
+              </a>
+              <span class="entry-views">({{ formatViews(entry.views) }} views)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- Language Selector -->
-    <div class="language-selector">
-      <label for="lang-select">Select language:</label>
-      <select v-model="selectedLang" id="lang-select" class="lang-select">
-        <option value="en">English</option>
-        <option value="es">Español (Spanish)</option>
-        <option value="fr">Français (French)</option>
-        <option value="de">Deutsch (German)</option>
-        <option value="it">Italiano (Italian)</option>
-        <option value="pt">Português (Portuguese)</option>
-        <option value="ru">Русский (Russian)</option>
-        <option value="ja">日本語 (Japanese)</option>
-        <option value="zh">中文 (Chinese)</option>
-        <option value="ko">한국어 (Korean)</option>
-        <option value="ar">العربية (Arabic)</option>
-        <option value="hi">हिन्दी (Hindi)</option>
-      </select>
-    </div>
+    <div class="search-section">
+      <h2>Search Wiktionary</h2>
+      <div class="language-selector">
+        <label for="lang-select">Select language:</label>
+        <select v-model="selectedLang" id="lang-select" class="lang-select">
+          <option value="en">English</option>
+          <option value="es">Español (Spanish)</option>
+          <option value="fr">Français (French)</option>
+          <option value="de">Deutsch (German)</option>
+          <option value="it">Italiano (Italian)</option>
+          <option value="pt">Português (Portuguese)</option>
+          <option value="ru">Русский (Russian)</option>
+          <option value="ja">日本語 (Japanese)</option>
+          <option value="zh">中文 (Chinese)</option>
+          <option value="ko">한국어 (Korean)</option>
+          <option value="ar">العربية (Arabic)</option>
+          <option value="hi">हिन्दी (Hindi)</option>
+        </select>
+      </div>
 
-    <!-- Search Box -->
-    <div class="dictionary-search">
-      <input
-        v-model="searchQuery"
-        type="text"
-        placeholder="Search dictionary..."
-        class="search-input"
-        @keyup.enter="performSearch"
-      >
-      <button class="search-button" @click="performSearch">
-        Search
-      </button>
-    </div>
+      <!-- Search Box -->
+      <div class="dictionary-search">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search dictionary..."
+          class="search-input"
+          @keyup.enter="performSearch"
+        >
+        <button class="search-button" @click="performSearch">
+          Search
+        </button>
+      </div>
 
-    <!-- Results -->
-    <div v-if="searchQuery && !loading" class="dictionary-results">
-      <p class="results-info">
-        Looking for "{{ searchQuery }}" — 
-        <a :href="`/dictionary/${selectedLang}/${encodeURIComponent(searchQuery)}`" class="results-link">
-          View definition →
-        </a>
-      </p>
-    </div>
+      <!-- Results -->
+      <div v-if="searchQuery && !loading" class="dictionary-results">
+        <p class="results-info">
+          Looking for "{{ searchQuery }}" — 
+          <a :href="`/dictionary/${selectedLang}/${encodeURIComponent(searchQuery)}`" class="results-link">
+            View definition →
+          </a>
+        </p>
+      </div>
 
-    <!-- Loading State -->
-    <div v-if="loading" class="dictionary-loading">
-      <p>Loading...</p>
-    </div>
+      <!-- Loading State -->
+      <div v-if="loading" class="dictionary-loading">
+        <p>Loading...</p>
+      </div>
 
-    <!-- Help Text -->
-    <div v-if="!searchQuery" class="dictionary-help">
-      <p>
-        Select a language and enter a word to search for its definition and usage on Wiktionary.
-      </p>
+      <!-- Help Text -->
+      <div v-if="!searchQuery" class="dictionary-help">
+        <p>
+          Select a language and enter a word to search for its definition and usage on Wiktionary.
+        </p>
+      </div>
     </div>
 
     <!-- Attribution -->
@@ -82,6 +107,46 @@ const selectedLang = ref('en')
 const searchQuery = ref('')
 const loading = ref(false)
 
+// Load wiki data
+const wikiData = await import('~/Zsupplementary/fetch_top_wikiarticles_master.json')
+const topEntries = wikiData.wiktionary || {}
+
+// Common language names
+const langNames: Record<string, string> = {
+  en: 'English',
+  es: 'Spanish',
+  fr: 'French',
+  de: 'German',
+  it: 'Italian',
+  pt: 'Portuguese',
+  ja: 'Japanese',
+  zh: 'Chinese',
+  ru: 'Russian',
+  ar: 'Arabic',
+  ko: 'Korean',
+  hi: 'Hindi',
+  nl: 'Dutch',
+  pl: 'Polish',
+  tr: 'Turkish',
+  th: 'Thai',
+  vi: 'Vietnamese',
+  id: 'Indonesian',
+  fil: 'Filipino',
+  he: 'Hebrew'
+}
+
+// Format language code to display name
+const formatLang = (code: string) => {
+  return code.toUpperCase()
+}
+
+// Format view counts
+const formatViews = (views: number) => {
+  if (views >= 1000000) return (views / 1000000).toFixed(1) + 'M'
+  if (views >= 1000) return (views / 1000).toFixed(1) + 'K'
+  return views.toString()
+}
+
 const performSearch = async () => {
   if (!searchQuery.value.trim()) return
   
@@ -96,15 +161,15 @@ const performSearch = async () => {
 // SEO
 useSeoMeta({
   title: 'Dictionary | Everything in Perspective',
-  description: 'Search word definitions and language reference from Wiktionary through Everything in Perspective',
+  description: 'Browse top Wiktionary entries and search word definitions',
   ogTitle: 'Dictionary',
-  ogDescription: 'Browse Wiktionary word definitions'
+  ogDescription: 'Top entries from Wiktionary by language'
 })
 </script>
 
 <style scoped>
 .dictionary-main {
-  max-width: 56rem;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1rem;
 }
@@ -125,6 +190,78 @@ useSeoMeta({
   color: #666666;
   font-size: 1.125rem;
   margin: 0;
+}
+
+.top-entries-section {
+  margin-bottom: 4rem;
+}
+
+.top-entries-section h2 {
+  font-family: Georgia, Garamond, serif;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.language-card {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+.lang-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.entries-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entry-item {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.entry-link {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.entry-link:hover {
+  text-decoration: underline;
+}
+
+.entry-views {
+  display: block;
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 0.2rem;
+}
+
+.search-section {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 6px;
+  margin-top: 3rem;
+}
+
+.search-section h2 {
+  font-family: Georgia, Garamond, serif;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .language-selector {
@@ -245,6 +382,10 @@ useSeoMeta({
     font-size: 2rem;
   }
 
+  .language-grid {
+    grid-template-columns: 1fr;
+  }
+
   .language-selector {
     flex-direction: column;
     align-items: stretch;
@@ -260,6 +401,10 @@ useSeoMeta({
 
   .search-button {
     width: 100%;
+  }
+
+  .search-section {
+    padding: 1.5rem;
   }
 }
 </style>
