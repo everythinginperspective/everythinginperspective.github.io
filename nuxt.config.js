@@ -65,6 +65,13 @@ export default defineNuxtConfig({
   },
   ssr: true,
   
+  // Runtime config
+  runtimeConfig: {
+    public: {
+      siteUrl: SITE_URL
+    }
+  },
+  
   // Site URL for SEO and sitemap
   site: {
     url: SITE_URL,
