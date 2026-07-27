@@ -19,11 +19,16 @@ if (!coursename) {
 const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
 // Fetch HTML from public/university/{coursename}/{page}.html
-const { data: html } = await useFetch(`/university/${coursename}/${page}.html`)
+// Use baseURL for SSR compatibility
+const config = useRuntimeConfig()
+const baseURL = import.meta.server ? (config.public.siteUrl || 'https://everythinginperspective.vercel.app') : ''
+const { data: html, error } = await useFetch(`${baseURL}/university/${coursename}/${page}.html`, {
+  responseType: 'text'
+})
 
-// If fetch fails (404), redirect to course frontmatter
-if (!html.value) {
-  await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
+// If fetch fails (404), show error or redirect
+if (error.value || !html.value) {
+  throw createError({ statusCode: 404, message: 'Course page not found' })
 }
 
 // Rewrite relative URLs to stay within course routes (remove .html extension)
