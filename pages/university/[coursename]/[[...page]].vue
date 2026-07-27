@@ -19,10 +19,7 @@ if (!coursename) {
 const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
 // Fetch HTML from public/university/{coursename}/{page}.html
-const { data: html } = await useFetch(`/university/${coursename}/${page}.html`, {
-  server: false,  // Don't fetch on server, avoid SSR issues
-  immediate: true
-})
+const { data: html } = await useFetch(`/university/${coursename}/${page}.html`)
 
 // If fetch fails (404), redirect to course frontmatter
 if (!html.value) {
