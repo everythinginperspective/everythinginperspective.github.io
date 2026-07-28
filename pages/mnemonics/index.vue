@@ -98,7 +98,7 @@ const getSlug = (mnemonic: any) => {
 
 // Fetch all mnemonics
 const { data: mnemonicsData } = await useAsyncData('mnemonics', () =>
-  queryCollection('mnemonics').all()
+  queryCollection('mnemonics').limit(50).all()
 )
 const mnemonics = computed(() => mnemonicsData.value || [])
 
