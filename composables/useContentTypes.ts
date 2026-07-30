@@ -13,7 +13,8 @@ const CONTENT_TYPES: ContentType[] = [
   { folder: 'perspectives', singular: 'perspective', plural: 'perspectives', urlSingular: '/magazine/perspective', urlPlural: '/magazine/perspectives' },
   { folder: 'books', singular: 'book', plural: 'books', urlSingular: '/magazine/book', urlPlural: '/magazine/books' },
   { folder: 'people', singular: 'person', plural: 'people', urlSingular: '/magazine/person', urlPlural: '/magazine/people' },
-  { folder: 'languages', singular: 'language', plural: 'languages', urlSingular: '/magazine/language', urlPlural: '/magazine/languages' }
+  { folder: 'languages', singular: 'language', plural: 'languages', urlSingular: '/magazine/language', urlPlural: '/magazine/languages' },
+  { folder: 'mnemonics', singular: 'mnemonic', plural: 'mnemonics', urlSingular: '/mnemonics', urlPlural: '/mnemonics' }
 ]
 
 let cachedContentTypes: ContentType[] | null = null
