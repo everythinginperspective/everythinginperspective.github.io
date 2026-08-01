@@ -43,7 +43,7 @@ const slug = decodeURIComponent(route.params.slug as string)
 // Fetch article by slug (v3: queryCollection)
 const { data: article } = await useAsyncData(
   `article-${slug}`,
-  () => queryCollection('articles').path(`/articles/${slug}`).first()
+  () => queryCollection('articles').path(`/${slug}`).first()
 )
 
 const formatDate = (date: string) => {

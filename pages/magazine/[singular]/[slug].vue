@@ -53,7 +53,7 @@ if (!folder) {
 // Fetch content — useAsyncData called before any await to preserve composable context
 const { data: content } = await useAsyncData(
   `${singular}-${slug}`,
-  () => queryCollection(folder as any).path(`/${folder}/${slug}`).first()
+  () => queryCollection(folder as any).path(`/${slug}`).first()
 )
 
 // Map type to template component

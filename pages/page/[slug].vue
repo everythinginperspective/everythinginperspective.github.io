@@ -23,7 +23,7 @@ const slug = route.params.slug as string
 // Fetch page by slug (v3: queryCollection)
 const { data: page } = await useAsyncData(
   `page-${slug}`,
-  () => queryCollection('pages').path(`/pages/${slug}`).first()
+  () => queryCollection('pages').path(`/${slug}`).first()
 )
 
 // SEO + breadcrumbs
