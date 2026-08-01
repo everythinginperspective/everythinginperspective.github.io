@@ -51,14 +51,13 @@ function generateRoutes() {
 }
 
 export default defineNuxtConfig({
-  // COMMENTED OUT: Disable prerender to avoid OOM on Vercel
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: true,
-  //     failOnError: false,
-  //     routes: generateRoutes()
-  //   }
-  // },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      routes: generateRoutes()
+    }
+  },
   
   // Disable payload extraction
   experimental: {
@@ -302,16 +301,15 @@ export default defineNuxtConfig({
     '/ld/**': { redirect: { to: '/linked-data/**', statusCode: 301 } }
   },
   
-  // COMMENTED OUT: Disable prerender to avoid OOM on Vercel (was for GitHub Pages)
   // Prerender config: exclude wiki routes (served dynamically)
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: true,
-  //     failOnError: false,
-  //     routes: generateRoutes(),
-  //     ignore: ['/encyclopedia', '/dictionary']
-  //   }
-  // },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false,
+      routes: generateRoutes(),
+      ignore: ['/encyclopedia', '/dictionary']
+    }
+  },
 
   // DevTools
   devtools: { enabled: false },
