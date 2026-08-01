@@ -19,11 +19,15 @@ if (!coursename) {
 const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
 // Fetch HTML from public/university/{coursename}/{page}.html
-const { data: html } = await useFetch(`/university/${coursename}/${page}.html`)
+const { data: html, error } = await useFetch(`/university/${coursename}/${page}.html`, {
+  timeout: 5000
+})
 
-// If fetch fails (404), redirect to course frontmatter
-if (!html.value) {
-  await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
+// If fetch fails (404/error), redirect to course frontmatter
+if (!html.value || error.value) {
+  if (page !== 'frontmatter') {
+    await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
+  }
 }
 
 // Rewrite relative URLs to stay within course routes (remove .html extension)
