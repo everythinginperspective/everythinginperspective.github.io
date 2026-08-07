@@ -136,28 +136,6 @@ export default defineNuxtConfig({
     xsl: false
   },
 
-  // @nuxt/content v3 configuration
-  content: {
-    sources: {
-      content: {
-        driver: 'fs',
-        base: './content'
-      }
-    },
-    markdown: {
-      anchorLinks: false,
-      // Disable mdc to avoid mdream native binding issues during prerender
-      // mdc: {
-      //   highlight: {
-      //     theme: 'github-light'
-      //   }
-      // }
-    },
-    // Supported file types: .md (markdown), .json, .yaml, .csv
-    // CSV files are parsed into structured data
-    extensions: ['.md', '.json', '.yaml', '.csv']
-  },
-
   // CSS & styling
   css: [
     '~/themes/default.css',
