@@ -64,6 +64,13 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false
   },
+  
+  // Use Node's native SQLite driver for Vercel serverless compatibility
+  content: {
+    experimental: {
+      sqliteConnector: 'node'
+    }
+  },
   ssr: true,
   
   // Runtime config
