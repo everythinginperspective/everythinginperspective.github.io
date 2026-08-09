@@ -64,14 +64,6 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false
   },
-  
-  // In-memory SQLite for Vercel serverless (no filesystem issues)
-  content: {
-    database: {
-      type: 'sqlite',
-      filename: ':memory:'
-    }
-  },
   ssr: true,
   
   // Runtime config
