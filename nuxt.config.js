@@ -65,10 +65,11 @@ export default defineNuxtConfig({
     payloadExtraction: false
   },
   
-  // Use Node's native SQLite driver for Vercel serverless compatibility
+  // In-memory SQLite for Vercel serverless (no filesystem issues)
   content: {
-    experimental: {
-      sqliteConnector: 'node'
+    database: {
+      type: 'sqlite',
+      filename: ':memory:'
     }
   },
   ssr: true,
