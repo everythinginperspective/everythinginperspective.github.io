@@ -110,6 +110,11 @@ export default defineNuxtConfig({
     }
   },
   
+  // Content configuration with native SQLite connector
+  content: {
+    experimental: { sqliteConnector: 'native' }
+  },
+  
   // i18n configuration
   i18n: {
     locales: [
