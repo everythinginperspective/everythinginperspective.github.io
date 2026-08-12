@@ -2,10 +2,6 @@ import { defineContentConfig, defineCollection } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
-    content: defineCollection({
-      type: 'page',
-      source: '*',
-    }),
     articles: defineCollection({
       type: 'page',
       source: 'articles/**',
@@ -33,6 +29,6 @@ export default defineContentConfig({
     mnemonics: defineCollection({
       type: 'page',
       source: 'mnemonics/**',
-    })
-  }
+    }),
+  },
 })
