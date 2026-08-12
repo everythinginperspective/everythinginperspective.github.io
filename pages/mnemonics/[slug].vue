@@ -57,8 +57,8 @@ const route = useRoute()
 const slug = route.params.slug as string
 
 // Fetch the specific mnemonic by path
-const { data: mnemonic } = await useAsyncData(`mnemonic-${slug}`, () =>
-  queryCollection('mnemonics').path(`/${slug}`).first()
+const { data: mnemonic } = await useAsyncData(`mnemonic-${route.path}`, () =>
+  queryCollection('mnemonics').path(route.path).first()
 )
 
 // SEO

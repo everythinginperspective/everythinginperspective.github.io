@@ -62,8 +62,8 @@ const itemSlug = slugParts.slice(1).join('/')
 
 // Fetch content using the same path pattern as magazine routes
 const { data: content } = await useAsyncData(
-  `ld-${folder}-${itemSlug}`,
-  () => queryCollection(folder).path(`/${itemSlug}`).first()
+  `ld-${route.path}`,
+  () => queryCollection(folder).path(route.path).first()
 )
 
 // Fetch graph for connections
