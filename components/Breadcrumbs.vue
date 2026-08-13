@@ -3,12 +3,12 @@
     <div class="breadcrumbs-content">
       <ol class="breadcrumbs-list">
         <li v-for="(crumb, index) in breadcrumbs" :key="crumb.to" class="breadcrumbs-item">
-          <NuxtLink
-            :to="crumb.to"
+          <a
+            :href="crumb.to"
             :class="index === breadcrumbs.length - 1 ? 'breadcrumbs-active' : 'breadcrumbs-link'"
           >
             {{ crumb.label }}
-          </NuxtLink>
+          </a>
           <span v-if="index < breadcrumbs.length - 1" class="breadcrumbs-sep">/</span>
         </li>
       </ol>

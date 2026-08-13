@@ -4,9 +4,9 @@
       <!-- Section Header -->
       <div class="grid-header">
         <h2>{{ title }}</h2>
-        <NuxtLink v-if="viewAllLink" :to="viewAllLink" class="view-all-link">
+        <a v-if="viewAllLink" :href="viewAllLink" class="view-all-link">
           View All →
-        </NuxtLink>
+        </a>
       </div>
 
       <!-- Grid -->
@@ -16,7 +16,7 @@
           :key="item._path || item.id"
           class="grid-item"
         >
-          <NuxtLink :to="getItemLink(item)" class="grid-card">
+          <a :href="getItemLink(item)" class="grid-card">
             <div class="grid-card-image">
               {{ item.title?.substring(0, 3).toUpperCase() }}
             </div>
@@ -30,7 +30,7 @@
                 <span v-if="item.date"> · {{ formatDate(item.date) }}</span>
               </div>
             </div>
-          </NuxtLink>
+          </a>
         </div>
       </div>
     </div>

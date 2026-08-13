@@ -5,9 +5,9 @@
     <!-- Back to site link -->
     <div style="background: var(--stone-100); padding: 1rem; border-bottom: 1px solid var(--stone-200);">
       <div style="max-width: 1440px; margin: 0 auto;">
-        <NuxtLink to="/" style="color: var(--stone-900); text-decoration: underline;">
+        <a href="/" style="color: var(--stone-900); text-decoration: underline;">
           ← Back to Everything in Perspective
-        </NuxtLink>
+        </a>
       </div>
     </div>
     

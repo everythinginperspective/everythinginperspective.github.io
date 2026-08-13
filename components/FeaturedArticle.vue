@@ -14,9 +14,9 @@
             <span v-if="item.author">By {{ item.author }}</span>
             <span v-if="item.date"> · {{ formatDate(item.date) }}</span>
           </div>
-          <NuxtLink :to="getItemLink(item)" class="featured-link">
+          <a :href="getItemLink(item)" class="featured-link">
             Read Full Article →
-          </NuxtLink>
+          </a>
         </div>
       </div>
     </div>

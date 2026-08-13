@@ -49,12 +49,12 @@
                 <p class="card-description">
                   {{ item.description || 'No description available' }}
                 </p>
-                <NuxtLink 
-                  :to="getItemLink(item)"
+                <a 
+                  :href="getItemLink(item)"
                   class="card-link"
                 >
                   Read More →
-                </NuxtLink>
+                </a>
               </div>
             </div>
           </div>
