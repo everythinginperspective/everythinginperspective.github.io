@@ -4,7 +4,7 @@ export default defineContentConfig({
   collections: {
     articles: defineCollection({
       type: 'page',
-      source: 'magazine/article{s}/**',
+      source: 'magazine/**',
     }),
     perspectives: defineCollection({
       type: 'page',
@@ -12,7 +12,7 @@ export default defineContentConfig({
     }),
     pages: defineCollection({
       type: 'page',
-      source: '{pages,page}/**',
+      source: '**',
     }),
     books: defineCollection({
       type: 'page',
