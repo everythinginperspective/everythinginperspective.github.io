@@ -53,7 +53,7 @@ if (!folder) {
 // Fetch content — useAsyncData called before any await to preserve composable context
 const { data: content } = await useAsyncData(
   `mag-${route.path}`,
-  () => queryCollection(folder as any).path(route.path).first()
+  () => queryCollection(folder as any).path(`/${folder}/${slug}`).first()
 )
 
 // Map type to template component

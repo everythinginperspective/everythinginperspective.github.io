@@ -4,7 +4,7 @@ export default defineContentConfig({
   collections: {
     articles: defineCollection({
       type: 'page',
-      source: 'articles/**',
+      source: 'magazine/articles/**',
     }),
     perspectives: defineCollection({
       type: 'page',

@@ -89,10 +89,10 @@ definePageMeta({
 
 const selectedCategory = ref(null)
 
-// Helper to extract slug from _path
+// Helper to extract slug from path
 const getSlug = (mnemonic: any) => {
-  if (!mnemonic._path) return ''
-  const filename = mnemonic._path.split('/').pop() || ''
+  if (!mnemonic.path) return ''
+  const filename = mnemonic.path.split('/').pop() || ''
   return filename.replace('.md', '')
 }
 
