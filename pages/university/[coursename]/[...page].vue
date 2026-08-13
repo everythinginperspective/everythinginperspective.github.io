@@ -20,7 +20,7 @@ const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'fro
 
 // Fetch HTML from public/university/{coursename}/{page}.html
 const { data: html, error } = await useFetch(`/university/${coursename}/${page}.html`, {
-  timeout: 5000
+  timeout: 30000
 })
 
 // If fetch fails (404/error), redirect to course frontmatter
