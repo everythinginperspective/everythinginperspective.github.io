@@ -55,10 +55,27 @@ const formatDate = (date: string) => {
 }
 
 const getItemLink = (item: any) => {
-  const path = item._path || item.path || ''
+  const path = item.path || item._path || ''
   const parts = path.split('/').filter(Boolean)
-  const collection = parts[0]
-  const slug = item.slug || item.path?.split('/').pop()?.replace(/\.md$/, '')
+  if (parts.length === 0) return '/'
+  
+  let collection: string
+  let slug: string
+  
+  // Handle new magazine structure: /magazine/articles/slug
+  if (parts[0] === 'magazine' && parts.length >= 3) {
+    collection = parts[1]
+    slug = parts[2]
+  } else if (parts.length >= 2) {
+    // Handle old structure: /articles/slug, /perspectives/slug, etc.
+    collection = parts[0]
+    slug = parts[1]
+  } else {
+    return '/'
+  }
+  
+  // Remove .md extension and language suffix if present
+  slug = slug.replace(/\.md$/, '').replace(/\.[a-z]{2}$/, '')
   
   const collectionMap: Record<string, string> = {
     articles: 'article',
