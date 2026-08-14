@@ -18,13 +18,17 @@ if (!coursename) {
 }
 const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
-// Fetch HTML from public/university/{coursename}/{page}.html
-const { data: html, error } = await useFetch(`/university/${coursename}/${page}.html`, {
-  timeout: 30000
-})
+// Read HTML file directly from public directory (server-side)
+let html = ''
+let error = false
 
-// If fetch fails (404/error), redirect to course frontmatter
-if (!html.value || error.value) {
+try {
+  const path = `./public/university/${coursename}/${page}.html`
+  const fs = await import('fs').then(m => m.promises)
+  html = await fs.readFile(path, 'utf-8')
+} catch (e) {
+  error = true
+  // If file not found, try to redirect to frontmatter
   if (page !== 'frontmatter') {
     await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
   }
@@ -32,9 +36,9 @@ if (!html.value || error.value) {
 
 // Rewrite relative URLs to stay within course routes (remove .html extension)
 const fixed = computed(() => {
-  if (!html.value) return ''
+  if (!html) return ''
   
-  return html.value
+  return html
     // Rewrite href links: remove .html and prefix with /university/{coursename}/
     .replace(/href="(?!https?|\/|#|data)([^"]+)\.html"/g, `href="/university/${coursename}/$1"`)
     // Rewrite src links (static assets): prefix with /university/{coursename}/
