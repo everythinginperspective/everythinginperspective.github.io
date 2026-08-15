@@ -23,9 +23,10 @@ let html = ''
 let error = false
 
 try {
-  const path = `./public/university/${coursename}/${page}.html`
+  const { join } = await import('path')
   const fs = await import('fs').then(m => m.promises)
-  html = await fs.readFile(path, 'utf-8')
+  const filePath = join(process.cwd(), `public/university/${coursename}/${page}.html`)
+  html = await fs.readFile(filePath, 'utf-8')
 } catch (e) {
   error = true
   // If file not found, try to redirect to frontmatter
