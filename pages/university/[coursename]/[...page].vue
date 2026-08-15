@@ -18,15 +18,15 @@ if (!coursename) {
 }
 const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
-// Read HTML file directly from public directory (server-side)
+// Fetch HTML file via HTTP (works on Vercel)
 let html = ''
 let error = false
 
 try {
-  const { join } = await import('path')
-  const fs = await import('fs').then(m => m.promises)
-  const filePath = join(process.cwd(), `public/university/${coursename}/${page}.html`)
-  html = await fs.readFile(filePath, 'utf-8')
+  const baseUrl = process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const response = await fetch(`${baseUrl}/university/${coursename}/${page}.html`)
+  if (!response.ok) throw new Error(`HTTP ${response.status}`)
+  html = await response.text()
 } catch (e) {
   error = true
   // If file not found, try to redirect to frontmatter
