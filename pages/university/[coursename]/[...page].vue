@@ -11,30 +11,40 @@ definePageMeta({
 
 const route = useRoute()
 const config = useRuntimeConfig()
-const coursename = route.params.coursename as string
-const pageParam = route.params.page
+const html = ref('')
+const error = ref(false)
+const coursename = computed(() => route.params.coursename as string)
 
-if (!coursename) {
-  await navigateTo('/university', { redirectCode: 301 })
-}
-const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
+const fetchContent = async () => {
+  const name = route.params.coursename as string
+  const pageParam = route.params.page
 
-// Fetch HTML file via HTTP (works on Vercel)
-let html = ''
-let error = false
+  if (!name) {
+    await navigateTo('/university', { redirectCode: 301 })
+    return
+  }
+  const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
-try {
-  const baseUrl = config.public.siteUrl || 'https://everythinginperspective.vercel.app'
-  const response = await fetch(`${baseUrl}/university/${coursename}/${page}.html`)
-  if (!response.ok) throw new Error(`HTTP ${response.status}`)
-  html = await response.text()
-} catch (e) {
-  error = true
-  // If file not found, try to redirect to frontmatter
-  if (page !== 'frontmatter') {
-    await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
+  error.value = false
+  html.value = ''
+
+  try {
+    const baseUrl = config.public.siteUrl || 'https://everythinginperspective.vercel.app'
+    const response = await fetch(`${baseUrl}/university/${name}/${page}.html`)
+    if (!response.ok) throw new Error(`HTTP ${response.status}`)
+    html.value = await response.text()
+  } catch (e) {
+    error.value = true
+    // If file not found, try to redirect to frontmatter
+    if (page !== 'frontmatter') {
+      await navigateTo(`/university/${name}/frontmatter`, { redirectCode: 301 })
+    }
   }
 }
+
+// Fetch on mount and when route changes
+await fetchContent()
+watch(() => route.fullPath, fetchContent)
 
 // Extract body content to avoid nested HTML structure
 const getBodyContent = (fullHtml: string): string => {
