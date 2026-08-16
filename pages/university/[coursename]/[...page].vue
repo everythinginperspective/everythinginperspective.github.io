@@ -6,45 +6,27 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'default'
+  layout: 'default',
+  middleware: 'university'
 })
 
 const route = useRoute()
 const config = useRuntimeConfig()
-const html = ref('')
-const error = ref(false)
-const coursename = computed(() => route.params.coursename as string)
+const coursename = route.params.coursename as string
+const pageParam = route.params.page
+const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
-const fetchContent = async () => {
-  const name = route.params.coursename as string
-  const pageParam = route.params.page
+// Fetch HTML file via HTTP (works on Vercel)
+let html = ''
 
-  if (!name) {
-    await navigateTo('/university', { redirectCode: 301 })
-    return
-  }
-  const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
-
-  error.value = false
-  html.value = ''
-
-  try {
-    const baseUrl = config.public.siteUrl || 'https://everythinginperspective.vercel.app'
-    const response = await fetch(`${baseUrl}/university/${name}/${page}.html`)
-    if (!response.ok) throw new Error(`HTTP ${response.status}`)
-    html.value = await response.text()
-  } catch (e) {
-    error.value = true
-    // If file not found, try to redirect to frontmatter
-    if (page !== 'frontmatter') {
-      await navigateTo(`/university/${name}/frontmatter`, { redirectCode: 301 })
-    }
-  }
+try {
+  const baseUrl = config.public.siteUrl || 'https://everythinginperspective.vercel.app'
+  const response = await fetch(`${baseUrl}/university/${coursename}/${page}.html`)
+  if (!response.ok) throw new Error(`HTTP ${response.status}`)
+  html = await response.text()
+} catch (e) {
+  html = ''
 }
-
-// Fetch on mount and when route changes
-await fetchContent()
-watch(() => route.fullPath, fetchContent)
 
 // Extract body content to avoid nested HTML structure
 const getBodyContent = (fullHtml: string): string => {

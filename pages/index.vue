@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="hero-text">
         <h1>
-          Everything in Perspective Workflow Test BM
+          Everything in Perspective Workflow Test BN
         </h1>
         <p>
           A curated collection of essays exploring global trends, context, and nuance. Organized by articles, perspectives, people, languages, and mnemonics.
