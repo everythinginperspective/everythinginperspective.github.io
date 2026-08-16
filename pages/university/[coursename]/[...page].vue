@@ -6,8 +6,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'default',
-  middleware: 'university'
+  layout: 'default'
 })
 
 const route = useRoute()
