@@ -1,19 +1,17 @@
 <template>
   <main>
     <h1>Test Fetch</h1>
-    <div>{{ content }}</div>
+    <div>{{ data }}</div>
   </main>
 </template>
 
 <script setup>
-const content = ref('Loading...')
-
-onMounted(async () => {
+const { data } = await useAsyncData('testUniversity', async () => {
   try {
     const res = await fetch('/university/course-AIuniverse/frontmatter.html')
-    content.value = await res.text()
+    return await res.text()
   } catch (e) {
-    content.value = `Error: ${e.message}`
+    return `Error: ${e.message}`
   }
 })
 </script>
