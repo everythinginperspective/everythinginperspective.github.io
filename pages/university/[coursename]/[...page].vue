@@ -10,6 +10,7 @@ definePageMeta({
 })
 
 const route = useRoute()
+const config = useRuntimeConfig()
 const coursename = route.params.coursename as string
 const pageParam = route.params.page
 
@@ -23,7 +24,7 @@ let html = ''
 let error = false
 
 try {
-  const baseUrl = process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  const baseUrl = config.public.siteUrl || 'https://everythinginperspective.vercel.app'
   const response = await fetch(`${baseUrl}/university/${coursename}/${page}.html`)
   if (!response.ok) throw new Error(`HTTP ${response.status}`)
   html = await response.text()
