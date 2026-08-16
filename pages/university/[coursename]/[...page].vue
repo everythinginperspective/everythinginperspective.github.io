@@ -36,11 +36,19 @@ try {
   }
 }
 
+// Extract body content to avoid nested HTML structure
+const getBodyContent = (fullHtml: string): string => {
+  const bodyMatch = fullHtml.match(/<body[^>]*>([\s\S]*)<\/body>/i)
+  return bodyMatch ? bodyMatch[1] : fullHtml
+}
+
 // Rewrite relative URLs to stay within course routes (remove .html extension)
 const fixed = computed(() => {
   if (!html) return ''
   
-  return html
+  const bodyContent = getBodyContent(html)
+  
+  return bodyContent
     // Rewrite href links: remove .html and prefix with /university/{coursename}/
     .replace(/href="(?!https?|\/|#|data)([^"]+)\.html"/g, `href="/university/${coursename}/$1"`)
     // Rewrite src links (static assets): prefix with /university/{coursename}/
