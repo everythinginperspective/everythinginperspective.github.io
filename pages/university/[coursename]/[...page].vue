@@ -24,10 +24,6 @@ try {
   if (!response.ok) throw new Error(`HTTP ${response.status}`)
   html = await response.text()
 } catch (e) {
-  // If not frontmatter, redirect to frontmatter
-  if (page !== 'frontmatter') {
-    await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
-  }
   html = ''
 }
 
