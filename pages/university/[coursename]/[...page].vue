@@ -6,18 +6,22 @@
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'default',
-  middleware: 'university'
+  layout: 'default'
 })
 
 const route = useRoute()
 const config = useRuntimeConfig()
 const coursename = route.params.coursename as string
 const pageParam = route.params.page
+
+if (!coursename) {
+  await navigateTo('/university', { redirectCode: 301 })
+}
 const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
 // Fetch HTML file via HTTP (works on Vercel)
 let html = ''
+let error = false
 
 try {
   const baseUrl = config.public.siteUrl || 'https://everythinginperspective.vercel.app'
@@ -25,22 +29,18 @@ try {
   if (!response.ok) throw new Error(`HTTP ${response.status}`)
   html = await response.text()
 } catch (e) {
-  html = ''
-}
-
-// Extract body content to avoid nested HTML structure
-const getBodyContent = (fullHtml: string): string => {
-  const bodyMatch = fullHtml.match(/<body[^>]*>([\s\S]*)<\/body>/i)
-  return bodyMatch ? bodyMatch[1] : fullHtml
+  error = true
+  // If file not found, try to redirect to frontmatter
+  if (page !== 'frontmatter') {
+    await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
+  }
 }
 
 // Rewrite relative URLs to stay within course routes (remove .html extension)
 const fixed = computed(() => {
   if (!html) return ''
   
-  const bodyContent = getBodyContent(html)
-  
-  return bodyContent
+  return html
     // Rewrite href links: remove .html and prefix with /university/{coursename}/
     .replace(/href="(?!https?|\/|#|data)([^"]+)\.html"/g, `href="/university/${coursename}/$1"`)
     // Rewrite src links (static assets): prefix with /university/{coursename}/
