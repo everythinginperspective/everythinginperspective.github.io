@@ -48,7 +48,7 @@ async function trackClickhousePageView() {
     const query = `INSERT INTO page_views (event_name, timestamp, ip, continent, country, referrer, user_agent, date_iso, timezone_offset, current_url, current_host, itisme) VALUES ('${payload.event_name}', '${payload.timestamp}', '${escapeSQL(payload.ip)}', '${escapeSQL(payload.continent)}', '${escapeSQL(payload.country)}', '${escapeSQL(payload.referrer)}', '${escapeSQL(payload.user_agent)}', '${payload.date_iso}', ${payload.timezone_offset}, '${escapeSQL(payload.current_url)}', '${escapeSQL(payload.current_host)}', '${escapeSQL(payload.itisme)}')`;
     console.log('Clickhouse: Query prepared');
     
-    const response = await fetch('https://ibio8yveei.asia-southeast1.gcp.clickhouse.cloud:8443', {
+    const response = await fetch('https://npd1ny90gv.asia-southeast1.gcp.clickhouse.cloud:8443', {
       method: 'POST',
       headers: {
         'Authorization': 'Basic ' + btoa('insertsonly:Insertsonly1@')
