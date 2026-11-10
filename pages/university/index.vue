@@ -3,16 +3,18 @@
     <div class="university-container">
       <h1>University Courses</h1>
       <p class="university-subtitle">Interactive textbooks and learning materials</p>
-      
+
       <div class="courses-grid">
-        <a 
-          v-for="course in courses" 
+        <a
+          v-for="course in courses"
           :key="course.name"
-          :href="`/university/${course.name}/frontmatter`"
+          :href="subscribed ? `/university/${course.name}/frontmatter` : '/pricing'"
           class="course-card"
+          :class="{ locked: !subscribed }"
         >
           <h2>{{ course.label }}</h2>
           <p>{{ course.description }}</p>
+          <span v-if="!subscribed" class="lock-label">Locked. Subscribe to read.</span>
         </a>
       </div>
     </div>
@@ -26,6 +28,13 @@ definePageMeta({
 
 // Import auto-generated courses list
 const { courses } = useUniversityCourses()
+
+// Login is required for this page
+const { data: session } = await useFetch('/api/auth/session')
+if (!session.value?.user) {
+  await navigateTo('/login?redirect=/university')
+}
+const subscribed = computed(() => !!session.value?.subscribed)
 
 // SEO
 useSeoMeta({
@@ -82,6 +91,10 @@ h1 {
   transform: translateY(-2px);
 }
 
+.course-card.locked {
+  opacity: 0.75;
+}
+
 .course-card h2 {
   font-family: Georgia, Garamond, serif;
   font-size: 1.5rem;
@@ -93,6 +106,14 @@ h1 {
   font-size: 0.875rem;
   color: var(--stone-600);
   margin: 0;
+}
+
+.lock-label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--stone-900);
 }
 
 @media (max-width: 640px) {

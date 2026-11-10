@@ -68,6 +68,11 @@ export default defineNuxtConfig({
   
   // Runtime config
   runtimeConfig: {
+    // Server-only. Set via NUXT_WHOP_API_KEY, NUXT_WHOP_WEBHOOK_SECRET, NUXT_WHOP_VARIANT_ID
+    whopApiKey: '',
+    whopWebhookSecret: '',
+    whopVariantId: '',
+    whopApiBase: 'https://api.whop.com/api/v1',
     public: {
       siteUrl: SITE_URL
     }
@@ -87,7 +92,7 @@ export default defineNuxtConfig({
   },
   
   // Modules
-  modules: ['@nuxt/content', '@nuxtjs/i18n'],
+  modules: ['@nuxt/content', '@nuxtjs/i18n', 'nuxt-auth-utils'],
   
   // @nuxtjs/seo configuration (bundles: sitemap, robots, og-image, schema-org, seo-utils, link-checker)
   seo: {

@@ -10,37 +10,29 @@ definePageMeta({
 })
 
 const route = useRoute()
-const config = useRuntimeConfig()
 const coursename = route.params.coursename as string
 const pageParam = route.params.page
-
-if (!coursename) {
-  await navigateTo('/university', { redirectCode: 301 })
-}
 const page = Array.isArray(pageParam) ? pageParam.join('/') : (pageParam || 'frontmatter')
 
-// Fetch HTML file via HTTP (works on Vercel)
-let html = ''
-let error = false
+// Lesson HTML comes only from the access-checked API
+const { data: html, error } = await useFetch<string>(
+  () => `/api/university/${coursename}/${page}`,
+  { key: `university-${coursename}-${page}`, responseType: 'text' }
+)
 
-try {
-  const baseUrl = config.public.siteUrl || 'https://everythinginperspective.vercel.app'
-  const response = await fetch(`${baseUrl}/university/${coursename}/${page}.html`)
-  if (!response.ok) throw new Error(`HTTP ${response.status}`)
-  html = await response.text()
-} catch (e) {
-  error = true
-  // If file not found, try to redirect to frontmatter
-  if (page !== 'frontmatter') {
-    await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
-  }
+if (error.value?.statusCode === 401) {
+  await navigateTo(`/login?redirect=${encodeURIComponent(route.fullPath)}`)
+} else if (error.value?.statusCode === 402) {
+  await navigateTo('/pricing')
+} else if (error.value && page !== 'frontmatter') {
+  await navigateTo(`/university/${coursename}/frontmatter`, { redirectCode: 301 })
 }
 
 // Rewrite relative URLs to stay within course routes (remove .html extension)
 const fixed = computed(() => {
-  if (!html) return ''
-  
-  return html
+  if (!html.value) return ''
+
+  return html.value
     // Rewrite href links: remove .html and prefix with /university/{coursename}/
     .replace(/href="(?!https?|\/|#|data)([^"]+)\.html"/g, `href="/university/${coursename}/$1"`)
     // Rewrite src links (static assets): prefix with /university/{coursename}/
